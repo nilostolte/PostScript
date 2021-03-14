@@ -48,13 +48,24 @@ In this example the shortcut itself was renamed to _"PS2JavaExclamationIcon"_ an
 
 ![shortcut](https://user-images.githubusercontent.com/80269251/111086187-34a2c780-84f1-11eb-8a7a-4d2279e7ebb8.png)
 
-In **Target** it should be typed the following information (**with the quotes**):
+In **Target**, it should be typed the following information (**with the quotes**):
 
 **"C:\Program Files\gs\gs9.52\bin\gswin64.exe" -dNOSAFER -c false -Y  "C:\Users\Java\ExclamationIcon\ExclamationIcon.gs"**
 
-In **Start in** it should be typed this or the corresponding path of Ghostscript in your system:
+_**Caution:**_ <br>
+_1. You will probably install another version of Ghostscript. Please substitute **"C:\Program Files\gs\gs9.52\bin\gswin64.exe"**
+by the correct path of your Ghostview applicaton._
+_2. **-dNOSAFER** is a flag that allows writting files in Ghostscript._
+_3. **-c false** pushes the boolean value **"false"** on the top of the stack._
+_4. **-Y** is a flg to indoicate the end of all flags. It causes a warning, just ignore it_
+
+In **Start in**, it should be typed this or the corresponding path of Ghostscript in your system (**with the quotes**):
 
 **"C:\Program Files\gs\gs9.52\bin"**
+
+For simplicity, the chosen storage directory is **"C:\Users\Java\ExclamationIcon"** because only complete paths work
+in shortcuts and inside the PostScript code. This allows to have shorter paths and makes it easier to make the example work 
+in any Windows machine.
 
 ## ExclamationIcon
 
