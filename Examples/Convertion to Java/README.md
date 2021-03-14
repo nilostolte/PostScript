@@ -72,6 +72,6 @@ in any Windows machine.
 In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to Java.
 
 ![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111082975-98bd8f80-84e1-11eb-8236-3de1841dba17.png)
-_Figure 1: ExclamationIcon_
+<br>_Figure 1: ExclamationIcon_
 
 **Link: https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java/ExclamationIcon**
