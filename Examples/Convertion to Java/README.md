@@ -53,11 +53,11 @@ In **Target**, it should be typed the following information (**with the quotes**
 **"C:\Program Files\gs\gs9.52\bin\gswin64.exe" -dNOSAFER -c false -Y  "C:\Users\Java\ExclamationIcon\ExclamationIcon.gs"**
 
 _**Caution:**_ <br>
-_1. You will probably install another version of Ghostscript. Please substitute **"C:\Program Files\gs\gs9.52\bin\gswin64.exe"**
-by the correct path of your Ghostview applicaton._
-_2. **-dNOSAFER** is a flag that allows writting files in Ghostscript._
-_3. **-c false** pushes the boolean value **"false"** on the top of the stack._
-_4. **-Y** is a flg to indoicate the end of all flags. It causes a warning, just ignore it_
+1. _You will probably install another version of Ghostscript. Please substitute **"C:\Program Files\gs\gs9.52\bin\gswin64.exe"**
+by the correct path of your Ghostview applicaton.
+2. _**-dNOSAFER** is a flag that allows writting files in Ghostscript._
+3. _**-c false** pushes the boolean value **"false"** on the top of the stack._
+4. _**-Y** is a flg to indicate the end of all flags. It causes a warning, just ignore it._
 
 In **Start in**, it should be typed this or the corresponding path of Ghostscript in your system (**with the quotes**):
 
