@@ -54,7 +54,7 @@ In **Target**, it should be typed the following information (**with the quotes**
 
 _**Caution:**_ <br>
 1. _You will probably install another version of Ghostscript. Please substitute **"C:\Program Files\gs\gs9.52\bin\gswin64.exe"**
-by the correct path of your Ghostview applicaton.
+by the correct path of your Ghostview applicaton._
 2. _**-dNOSAFER** is a flag that allows writting files in Ghostscript._
 3. _**-c false** pushes the boolean value **"false"** on the top of the stack._
 4. _**-Y** is a flg to indicate the end of all flags. It causes a warning, just ignore it._
