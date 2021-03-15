@@ -19,9 +19,15 @@ This file has a **very permissive licence but with some restrictions** as follow
 
 ### The Dual Purpose And How To Switch From One To Another
 
-After the licence comment, the first actual line of the code has the following statement:
+After the licence comment, the first two actual lines of the code set the variable **/ps** to true and **/sca** to 12. But then we find
+the following lines:
 
-**count 1 eq {/ps exch def } {/ps true def} ifelse**
+**count 1 eq {
+	dup type /booleantype eq { /ps exch def }
+	{
+	   dup type /integertype eq { /sca exch def } if
+	} ifelse
+} if**
 
 If the program is launched by clicking on the shortcut as stated in:
 
@@ -30,9 +36,9 @@ https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Ja
 And if the shortcut has a **-c false** as its first flag after **"-dNOSAFER"**, then the boolean **false** will be pushed to the 
 stack before the control is passed to the _PostScript_ program. Then the command **"count"** will return 1 and 
 the variable **"/ps"** will be initiallied with whatever was pushed on the stack. In this case it is with the boolean **false**. This 
-will indicate the program that what we is to convert the design to _Java_. If the file is open in another way (by doule clicking the
-_PostScript_ file or opening it with a different application, for example), the design is shown. Therefore it is this varibale that
-controls how the program is going to behave. The change can be done by hand in other systems different thn Windows. However,
+will indicate the program that what we is to convert the design to _Java_. If the file is opened in another way (by double clicking the
+_PostScript_ file or opening it with a different application, for example), the design is displayed by _GhostScript_. Therefore it is this varibale that
+controls how the program is going to behave. The change can be done by hand in other systems different then Windows. However,
 the shorcut method is far more faster when doing adjustments in the _Java_ version. Notice that most of the _Java_ code is automatically
 generated, but never completely. 
 
@@ -59,7 +65,9 @@ the **/javadefinitions** that is executed, otherwise it **"/psdefinitions"**. No
 other uses. For example, when the value passed in the stack is **true** this might indicate to use _GhostScript_ transparency,
 since we know that a true is when we want to visulize the design, and we know that it was called by _GhostScript_ through the
 _shortcut_.  We can also use initial stack values as parameters to the program the same way the flags are used for calling programs 
-in command prompts.
+in command prompts. Above, for example, when an integer is passed instead of a boolean it is interpreted that the scale is changed to 
+the value passed. This was used to generate an image of greater size instead of displaying the _PostScript_. This was also done 
+with the help of shortcuts. In this way, each different shortcut is used to produce a different output.
 
 What follows next are basically declarations that are done this way to structure the information in a way that can be easily
 converted to _Java_ without the need of explicitly programming in _Java_.
@@ -87,8 +95,19 @@ design only these three shapes are defined. That's the reason this icon was chos
 actually setting the programming environment.
 
 After the shape definitions, we can find gradient definitions. Here a radial gradient is used for **color_ring**. The effect is subtle 
-and cannot be seen visualizing the supplied image files. The gradient is more noticiable when the supplied _ExclamationIcon.jar_
-is executed or if _ExclamationIcon.pdf_ is dowloaded and visualized (the pdf visualized supplied in GitHub doesn't show. The intesting aspect of this gradient is that it starts with an integer color 
+and cannot be seen visualizing the supplied image files here in GitHub. The gradient is more noticiable when the supplied _ExclamationIcon.jar_
+is executed or if _ExclamationIcon.pdf_ or _ExclamationIcon.png_ is dowloaded and visualized. This gradient gives the impression
+that the disc with the warning sign is in relief against the color background. The intesting aspect of gradients here is that  
+colors can be defined with integer values, but then it is interpreted that the color values vary from 0 to 255. If the colors are given by 
+floating point values, the values are assumed to vary between 0.0 to 1.0. This means that colors are interpreted in the way they are 
+interpreted in _Java_. However, mixing values types in the same color may lead to impredictable results.
+
+For simplicity it is assumed that all gradients are stored as arrays. This is done to facilitate menus items processing.
+
+Radial gradients are simply delared with an array with the initial color, the end color and an array two set of three coordinates:
+the initial origin and radius followed the end origin and radius. This is what is shown in the code.
+
+The last item in the file is a call to **draw** function.
 
 
  
