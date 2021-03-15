@@ -21,7 +21,7 @@ The use of other types of fonts, particularly TrueType fonts, is a limitation th
 dealt using fonts which are available on the sytem via Java fonts. But this solution is a little cumbersome and it is tied to the
 system where Java is running. In addition, in this solution, the whole font has to be processed entirely before it can be used. 
 Actually, a more practical solution is to read the font offline and transform it into a Java class, a process that is similar
-to the done accomplished here with PostScript. This is an entirely different project that will appear here in Guithub soon.
+to what is accomplished here with PostScript. This is an entirely different project that will appear here in GuitHub soon.
 
 Transparency exists in Java, so this problem can easily be solved in Java itself, once the shape is converted to Java. But in doing 
 that one loses the advantage of defining everything in PostScript (which is a kind of a matrix, a substrate, a departing ground from where 
