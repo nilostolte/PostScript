@@ -50,7 +50,7 @@ It was found that the conversions here mentioned were much easier to be accompli
 it is a bit harder to code since it requires some discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
 development of other conversions.
 
-The file is structured thanks to two functions: **/psdefinition"** and **/javadefinitions**. In both functions it is the 
+The file is structured thanks to two functions: **/psdefinition** and **/javadefinitions**. In both functions it is the 
 function **/draw** that is called, and that uses other functions, to build the design. This function is the one that contains the
 command **showpage** that actually shows the page in _PostScript_ mode. In _Java_ it ressembles the function _main_, the entrypoint
 of the program. Some of these other functions are developed by the user because they have to do with the design. Other functions 
