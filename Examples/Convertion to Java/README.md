@@ -39,7 +39,7 @@ application. In this way, the _".ps"_ can be processed by other applications.
 
 However, the use of shortcuts improves a lot the interactivity with GhostScript in Windows. When applicable, a pertinent shortcut 
 (a file with a _".lnk"_ extention) will be present in this repository even though it is very probable its not going to work in your
-system. This indicates that one should generate the shortcut in the following way. Let's take the ExclamationIcon example to 
+system. This indicates that one should generate the shortcut in the following way. Let's take the **ExclamationIcon** example to 
 illustrate that.
 
 To create the shortcut one clicks the file _"ExclamationIcon.gs"_ with the **mouse right button**, and chose the option 
