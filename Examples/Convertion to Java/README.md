@@ -1,40 +1,39 @@
+# Conversion To _Java_
 
-# Conversion To Java
-
-The examples here concentrate in **converting Postscript vector graphics into Java**. The general principle here is to define a vector
-graphics design in PostScript and to automatically generate the code in Java with the same vector graphics information. This is an original 
-approach that is quite powerful because the programming aspects of the design are switched to PostScript, which is a 2D graphics
-language much more flexible than Java, and that is able to define practically every aspect of the original design. The only
-limitation of the technique are those of PostScript itself, that is, it lacks transparency and only accepts PostScript fonts 
+The examples here concentrate in **converting Postscript vector graphics into _Java_**. The general principle here is to define a vector
+graphics design in _PostScript_ and to automatically generate the code in _Java_ with the same vector graphics information. This is an original 
+approach that is quite powerful because the programming aspects of the design are switched to _PostScript_, which is a 2D graphics
+language much more flexible than _Java_, and that is able to define practically every aspect of the original design. The only
+limitation of the technique are those of _PostScript_ itself, that is, it lacks transparency and only accepts _PostScript_ fonts 
 (the defunct _Type 1_ and and _Type 3_ fonts). PDF would have been a much more adequate departure point for such a conversion 
-but it is an extremely complex file format, lacking all the programming power of PostScript. Here, two extremely powerful characteristics 
-of PostScript are exploited:
+but it is an extremely complex file format, lacking all the programming power of _PostScript_. Here, two extremely powerful characteristics 
+of _PostScript_ are exploited:
 
 1. Vector graphics capabilities
 2. Natural rapid prototyping capabilities
 
-The second characteristic is a much less known aspect of PostScript language. It allows to easily redefine commands and functions
+The second characteristic is a much less known aspect of _PostScript_ language. It allows to easily redefine commands and functions
 on the fly, which is a feature that helps avoiding to write a whole compiler and obtain practically the same result, particularly
 when decoding or translating from one format to another as in the case here.
 
 The use of other types of fonts, particularly TrueType fonts, is a limitation that has been circunvented in another way. It can be 
-dealt using fonts which are available on the sytem via Java fonts. But this solution is a little cumbersome and it is tied to the
-system where Java is running. In addition, in this solution, the whole font has to be processed entirely before it can be used. 
-Actually, a more practical solution is to read the font offline and transform it into a Java class, a process that is similar
-to what is accomplished here with PostScript. This is an entirely different project that will appear here in GuitHub soon.
+dealt using fonts which are available on the sytem via _Java_ fonts. But this solution is a little cumbersome and it is tied to the
+system where _Java_ is running. In addition, in this solution, the whole font has to be processed entirely before it can be used. 
+Actually, a more practical solution is to read the font offline and transform it into a _Java_ class, a process that is similar
+to what is accomplished here with _PostScript_. This is an entirely different project that will appear here in GuitHub soon.
 
-Transparency exists in Java, so this problem can easily be solved in Java itself, once the shape is converted to Java. But in doing 
-that one loses the advantage of defining everything in PostScript (which is a kind of a matrix, a substrate, a departing ground from where 
-the final code is obtained) and deriving the Java code automatically. Thus, the solution may be to use a pseudo language in PostScript
-to express the trasnsparency that may be visible in Java only, or displayed using GhostScript transparency capabilities.
+Transparency exists in _Java_, so this problem can easily be solved in _Java_ itself, once the shape is converted to _Java_. But in doing 
+that one loses the advantage of defining everything in _PostScript_ (which is a kind of a matrix, a substrate, a departing ground from where 
+the final code is obtained) and deriving the _Java_ code automatically. Thus, the solution may be to use a pseudo language in _PostScript_
+to express the trasnsparency that may be visible in _Java_ only, or displayed using GhostScript transparency capabilities.
 
 Anyhow, the choice of using Ghostscript for the generation of code was adopted for its additional features like, for example, 
-transmitting information from the command line to the PostScript program. This has been done with the use of shortcuts in
+transmitting information from the command line to the _PostScript_ program. This has been done with the use of shortcuts in
 Windows, which allows converting the file simply double clicking the shortcut. This is explained next.
 
 ## Using Windows Shortcuts to call GhostScript
 
-For practical reasons, the PostScript files are defined with a _".gs"_ extention which in turn is associated with the Ghostcript 
+For practical reasons, the _PostScript_ files are defined with a _".gs"_ extention which in turn is associated with the Ghostcript 
 application. In this way, the _".ps"_ can be processed by other applications.
 
 However, the use of shortcuts improves a lot the interactivity with GhostScript in Windows. When applicable, a pertinent shortcut 
@@ -64,13 +63,13 @@ In **Start in**, it should be typed this or the corresponding path of _Ghostscri
 **"C:\Program Files\gs\gs9.52\bin"**
 
 For simplicity, the chosen storage directory is **"C:\Users\Java\ExclamationIcon"** because only complete paths work
-in shortcuts and inside the PostScript code. This allows to have shorter paths and makes it easier to make the example work 
+in shortcuts and inside the _PostScript_ code. This allows to have shorter paths and makes it easier to make the example work 
 in any Windows machine.
 
 ## ExclamationIcon
 
-In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to Java. When in display mode the resulting
-graphics is proof the that the design is correct. Thus, the phase to convert to Java can start from that point. Please check
+In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to _Java_. When in display mode the resulting
+graphics is proof the that the design is correct. Thus, the phase to convert to _Java_ can start from that point. Please check
 the link below.
 
 
