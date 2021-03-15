@@ -26,7 +26,7 @@ to what is accomplished here with PostScript. This is an entirely different proj
 Transparency exists in Java, so this problem can easily be solved in Java itself, once the shape is converted to Java. But in doing 
 that one loses the advantage of defining everything in PostScript (which is a kind of a matrix, a substrate, a departing ground from where 
 the final code is obtained) and deriving the Java code automatically. Thus, the solution may be to use a pseudo language in PostScript
-to express the trsnsparency that may be visible in Java only, or displayed using GhostScript transparency capabilities.
+to express the trasnsparency that may be visible in Java only, or displayed using GhostScript transparency capabilities.
 
 Anyhow, the choice of using Ghostscript for the generation of code was adopted for its additional features like, for example, 
 trasnmitting information from the command line to the PostScript program. This has been done with the use of shortcuts in
