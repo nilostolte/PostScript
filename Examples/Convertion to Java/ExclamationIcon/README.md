@@ -1,7 +1,7 @@
 
 # ExclamationIcon
 
-![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111144000-db707d80-855c-11eb-8ff6-9491937cbb03.png)
+![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111200405-18a63100-8598-11eb-9bc3-f3d8d1572d2c.jpg)
 
 ## File ExclamationIcon.gs
 
@@ -37,25 +37,54 @@ generated, but never completely.
 
 ### Structuring The File
 
-Structuring the file was found to be much easier to accomplish these conversions, but at the start it might look is a bit harder 
+Structuring the file was found to be much easier to accomplish these conversions, but at the start it might look it is a bit harder 
 to code since it requires a lot of discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
 development of other conversions.
 
-The file is structured thanks to two functions: **"/psdefinitions"** and **/javadefinitions**. In both functions it is the function **/draw** that is called and that uses other functions to build the design. Some of these other functions are
-developed by the user because they have to do with the design. Other functions are **"libraries"** that these
-functions, or declaration statements outside of them, can use to build the design. In **"/psdefinitions"** all
-the commands for displaying the file in _PostScript_ are defined, whereas in **/javadefinitions** the commands to generate the _Java_ class
-with the design are defined.
+The file is structured thanks to two functions: **"/psdefinitions"** and **/javadefinitions**. In both functions it is the 
+function **/draw** that is called, and that uses other functions, to build the design. This function is the one that contains the
+command **showpage** that actually shows the page in _PostScript_ mode. In _Java_ it ressembles the function _main_, the entrypoint
+of the program. Some of these other functions are developed by the user because they have to do with the design. Other functions 
+are **"libraries"** that these functions, or declaration statements outside of them, can use to build the design. In 
+**"/psdefinitions"** all the commands for displaying the file in _PostScript_ are defined, whereas in **/javadefinitions** 
+the commands to generate the _Java_ class with the design are defined.
 
 Finally, the line:
 
 **ps //psdefinitions //javadefinitions ifelse**
 
-then chooses which definitions are to be used. If the value of **/ps** was initialized with **false**, as decribed above, it is
-the **/javadefinitions** that is executed, otherwise it **"/psdefinitions"**.
+Then chooses which definitions are to be used. If the value of **/ps** was initialized with **false**, as decribed above, it is
+the **/javadefinitions** that is executed, otherwise it **"/psdefinitions"**. Notice that one can apply this same trick for
+other uses. For example, when the value passed in the stack is **true** this might indicate to use _GhostScript_ transparency,
+since we know that a true is when we want to visulize the design, and we know that it was called by _GhostScript_ through the
+_shortcut_.  We can also use initial stack values as parameters to the program the same way the flags are used for calling programs 
+in command prompts.
 
 What follows next are basically declarations that are done this way to structure the information in a way that can be easily
 converted to _Java_ without the need of explicitly programming in _Java_.
 
-In this example an "external library" is presented to illustrate how one can program a function in _PostScript_ that actually can be used
-to define the same function in _Java_ automatically. 
+In this example, an _"external library"_ is presented to illustrate how one can program a function in _PostScript_ that actually can be 
+used to define shapes in _Java_ automatically. This library is composed by two functions that aproximate a circle using
+four cubic bezier curves (constant **k0** is part of the library and it is a kind of scale factor for the bezier control points). They
+receive as parameters: the coordinates of the left upper corner of the square containing the circle and the diameter of the circle. One function defines circles in a clockwise manner, another in anticlockwise manner. Their use here is to These functions can be called for 
+shape definitions and are conversible to _Java_ provided the metalanguage commands are used instead of _PostScript_ commands. The 
+functions, however, must be  declared with an explicit **def** command. This means that the function itself is to be used in _PostScript_ 
+but it will generate _Postscript_ or _Java_ definitions according to the context. In other words, once **/psdefinitions** or **/javadefinitions** is executed, everything that follows is valid for both languages **EXCEPT** explicit _PostScript_ commands which 
+are interpreted by the _PostScript_ interpreter on the fly.
+
+After this, what follows are _shape_ definitions, which are obviously defined by paths. Paths are the common ground between
+_PostScript_ vector paths and _Java_ vector paths. This is summarized in:
+
+https://github.com/nilostolte/ClockWidget#paths and https://github.com/nilostolte/ClockWidget#path-commands
+
+The first _shape_ to be defined is **white_circle**, which is the background white circle over which the icon is drawn. Notice
+the metalanguage **d** command used instead of **def**. Following it, we can find **color_ring** and **exclam**, which
+respectively define the outside icon ring and the exclamation point in the middle of the icon. Due to the simplicity of the
+design only these three shapes are defined. That's the reason this icon was chosen as an example, since most of the file is
+actually setting the programming environment.
+
+Following the shape definitions, we can find gradient definitions. Here 
+
+
+
+
