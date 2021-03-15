@@ -79,7 +79,7 @@ In this example, an _"external library"_ is presented to illustrate how one can 
 used to define shapes in _Java_ automatically. This library is composed by two functions that aproximate a circle using
 four cubic bezier curves (constant **k0** is part of the library and it is a kind of scale factor for the bezier control points). They
 receive as parameters: the coordinates of the left upper corner of the square containing the circle and the diameter of the circle. 
-One function defines circles in a clockwise manner, another in anticlockwise manner. Their use here is to These functions can be called 
+One function defines circles in a clockwise manner, another in anticlockwise manner. These functions can be called 
 for shape definitions and are conversible to _Java_ provided the metalanguage commands are used instead of _PostScript_ commands. The 
 functions, however, must be  declared with an explicit **def** command. This means that the function itself is to be used in _PostScript_ 
 but it will generate _Postscript_ or _Java_ definitions according to the context. In other words, once **/psdefinitions** or 
