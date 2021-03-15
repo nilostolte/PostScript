@@ -69,7 +69,10 @@ in any Windows machine.
 
 ## ExclamationIcon
 
-In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to Java.
+In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to Java. When in display mode the resulting
+graphics is proof the that the design is correct. Thus, the phase to convert to Java can start from that point. Please check
+the link below.
+
 
 ![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111082975-98bd8f80-84e1-11eb-8236-3de1841dba17.png)
 <br>_Figure 1: ExclamationIcon_
