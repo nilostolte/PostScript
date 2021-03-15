@@ -25,7 +25,7 @@ the following lines:
 ```
 count 1 eq {
 	dup type /booleantype eq { /ps exch def }
-	{<br>
+	{
 	   dup type /integertype eq { /sca exch def } if
 	} ifelse
 } if
