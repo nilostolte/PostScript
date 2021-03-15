@@ -44,8 +44,8 @@ generated, but never completely.
 
 ### Structuring The File
 
-Structuring the file was found to be much easier to accomplish these conversions, but at the start it might look it is a bit harder 
-to code since it requires a lot of discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
+It was found that the conversions here mentioned were much easier to be accomplished after structuring the file, but at the start it might look 
+it is a bit harder to code since it requires some discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
 development of other conversions.
 
 The file is structured thanks to two functions: **/psdefinition"** and **/javadefinitions**. In both functions it is the 
