@@ -1,7 +1,8 @@
 
 # ExclamationIcon
 
-![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111200405-18a63100-8598-11eb-9bc3-f3d8d1572d2c.jpg)
+![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111219512-83fafd80-85ae-11eb-9834-d4a4e6049c99.png)
+
 
 ## File ExclamationIcon.gs
 
@@ -66,10 +67,12 @@ converted to _Java_ without the need of explicitly programming in _Java_.
 In this example, an _"external library"_ is presented to illustrate how one can program a function in _PostScript_ that actually can be 
 used to define shapes in _Java_ automatically. This library is composed by two functions that aproximate a circle using
 four cubic bezier curves (constant **k0** is part of the library and it is a kind of scale factor for the bezier control points). They
-receive as parameters: the coordinates of the left upper corner of the square containing the circle and the diameter of the circle. One function defines circles in a clockwise manner, another in anticlockwise manner. Their use here is to These functions can be called for 
-shape definitions and are conversible to _Java_ provided the metalanguage commands are used instead of _PostScript_ commands. The 
+receive as parameters: the coordinates of the left upper corner of the square containing the circle and the diameter of the circle. 
+One function defines circles in a clockwise manner, another in anticlockwise manner. Their use here is to These functions can be called 
+for shape definitions and are conversible to _Java_ provided the metalanguage commands are used instead of _PostScript_ commands. The 
 functions, however, must be  declared with an explicit **def** command. This means that the function itself is to be used in _PostScript_ 
-but it will generate _Postscript_ or _Java_ definitions according to the context. In other words, once **/psdefinitions** or **/javadefinitions** is executed, everything that follows is valid for both languages **EXCEPT** explicit _PostScript_ commands which 
+but it will generate _Postscript_ or _Java_ definitions according to the context. In other words, once **/psdefinitions** or 
+**/javadefinitions** is executed, everything that follows is valid for both languages **EXCEPT** explicit _PostScript_ commands which 
 are interpreted by the _PostScript_ interpreter on the fly.
 
 After this, what follows are _shape_ definitions, which are obviously defined by paths. Paths are the common ground between
@@ -83,8 +86,11 @@ respectively define the outside icon ring and the exclamation point in the middl
 design only these three shapes are defined. That's the reason this icon was chosen as an example, since most of the file is
 actually setting the programming environment.
 
-Following the shape definitions, we can find gradient definitions. Here 
+After the shape definitions, we can find gradient definitions. Here a radial gradient is used for **color_ring**. The effect is subtle 
+and cannot be seen visualizing the supplied image files. The gradient is more noticiable when the supplied _ExclamationIcon.jar_
+is executed or if _ExclamationIcon.pdf_ is dowloaded and visualized (the pdf visualized supplied in GitHub doesn't show. The intesting aspect of this gradient is that it starts with an integer color 
 
 
+ 
 
 
