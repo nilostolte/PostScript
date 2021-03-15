@@ -29,7 +29,7 @@ the final code is obtained) and deriving the Java code automatically. Thus, the 
 to express the trasnsparency that may be visible in Java only, or displayed using GhostScript transparency capabilities.
 
 Anyhow, the choice of using Ghostscript for the generation of code was adopted for its additional features like, for example, 
-trasnmitting information from the command line to the PostScript program. This has been done with the use of shortcuts in
+transmitting information from the command line to the PostScript program. This has been done with the use of shortcuts in
 Windows, which allows converting the file simply double clicking the shortcut. This is explained next.
 
 ## Using Windows Shortcuts to call GhostScript
