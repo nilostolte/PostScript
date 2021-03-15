@@ -44,7 +44,7 @@ development of other conversions.
 The file is structured thanks to two functions: **"/psdefinitions"** and **/javadefinitions**. In both functions it is the function **/draw** that is called and that uses other functions to build the design. Some of these other functions are
 developed by the user because they have to do with the design. Other functions are **"libraries"** that these
 functions, or declaration statements outside of them, can use to build the design. In **"/psdefinitions"** all
-the commands for displaying the file in _PostScript_ are defined, whereas in **/javadefinitions** the commands to generate the java class
+the commands for displaying the file in _PostScript_ are defined, whereas in **/javadefinitions** the commands to generate the _Java_ class
 with the design are defined.
 
 Finally, the line:
