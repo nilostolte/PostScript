@@ -40,9 +40,9 @@ stack before the control is passed to the _PostScript_ program. Then the command
 the variable **"/ps"** will be initiallied with whatever was pushed on the stack. In this case it is with the boolean **false**. This 
 will indicate the program that what we want is to convert the design to _Java_. If the file is opened in another way (by double clicking the
 _PostScript_ file or opening it with a different application, for example), the design is displayed by _GhostScript_ or by another application 
-with which it was opened. Therefore it is this varibale that controls how the program is going to behave. The change can be done by hand in 
-other systems different then Windows. However, the shorcut method is far more faster when doing adjustments in the _Java_ version. Notice that 
-most of the _Java_ code is automatically generated, but never completely. 
+with which the _PostScript_ file was opened. Therefore it is this varibale that controls how the program is going to behave. The change can be 
+done by hand in other systems different then Windows. However, the shorcut method is far more faster when doing adjustments in the _Java_ version. 
+Notice that most of the _Java_ code is automatically generated, but never completely. 
 
 ### Structuring The File
 
