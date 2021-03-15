@@ -22,12 +22,14 @@ This file has a **very permissive licence but with some restrictions** as follow
 After the licence comment, the first two actual lines of the code set the variable **/ps** to true and **/sca** to 12. But then we find
 the following lines:
 
-**count 1 eq {<br>
-	dup type /booleantype eq { /ps exch def }<br>
+```
+count 1 eq {
+	dup type /booleantype eq { /ps exch def }
 	{<br>
-	   dup type /integertype eq { /sca exch def } if<br>
-	} ifelse<br>
-} if**
+	   dup type /integertype eq { /sca exch def } if
+	} ifelse
+} if
+```
 
 If the program is launched by clicking on the shortcut as stated in:
 
