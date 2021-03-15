@@ -57,7 +57,7 @@ _**Caution:**_ <br>
 by the correct path of your Ghostview applicaton._
 2. _**-dNOSAFER** is a flag that allows writting files in Ghostscript._
 3. _**-c false** pushes the boolean value **"false"** on the top of the stack._
-4. _**-Y** is a flg to indicate the end of all flags. It causes a warning, just ignore it._
+4. _**-Y** is a flag to indicate the end of all flags. It causes a warning, just ignore it._
 
 In **Start in**, it should be typed this or the corresponding path of Ghostscript in your system (**with the quotes**):
 
