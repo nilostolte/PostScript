@@ -115,12 +115,11 @@ The last item in the file is a call to **draw** function as it was explained pre
 ### Metalanguage
 
 The metalanguage is the collection of commands that are only valid in the context of the program and that can either be interpreted in terms
-of _PostScript_ commands, in order to be displayed, or in _Java_ commands, in order to be converted to _Java_. In other words, their definitions
+of _PostScript_ commands, in order to be displayed, or in _Java_ commands, for a conversion to _Java_. In other words, their definitions
 are accomplished in the function **/psdefinitions**, when they will function as PostScript commands, or in **/javadefinitions**, when they will
-generate the _Java_ class.
+generate the _Java_ class. Thus, the metalanguage commands are the ones that are defined in **/psdefinitions** and in **/javadefinitions**
 
-In the _PostScript_ case we can see in our example these commands:
-
+In the _PostScript_ case we can see these commands in our example:
 ```
 	/m { moveto } bind def
 	/l { lineto } bind def
@@ -134,8 +133,8 @@ In the _PostScript_ case we can see in our example these commands:
 	/g { def } def
 ```
 The commands **m**, **l**, **c**, **h**, etc. are commands of the metalanguage in PostScript. We can see that all these commands, are simply redefining prexisting _PostScript_ commands. The command **rad** (to create radial gradients) is actually a function that translates the internal
-radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript. The commands **np** and **rg** are
-just used internally.
+radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript. The commands **f**, **np** and **rg** are
+not part of the metalanguage, since they only exist inside **/psdefinitions**.
 
 On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them into a _Java_ class.
 
