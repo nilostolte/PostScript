@@ -238,7 +238,7 @@ For _Java_ class generation, the draw function is more verbose, but it just writ
 		(}\n) ws
 		outfile1 closefile
 	} def
-
+```
 Most of it is just boilerplate code like function prototype, setting **Graphics2D** variable **g**, setting antialiasing, defining a 
 transformation matrix (that is not even used in this case), and applying the scale. The only three important lines are just equivalent to the
 ones found in _PostScript_ with just some formatting for a better appearence in file **/outfile1**. The last command of the program is
