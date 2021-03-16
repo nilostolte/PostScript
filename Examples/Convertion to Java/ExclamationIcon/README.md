@@ -243,7 +243,7 @@ Most of it is just boilerplate code like function prototype, setting **Graphics2
 transformation matrix (that is not even used in this case), and applying the scale. The only three important lines are just equivalent to the
 ones found in _PostScript_ with just some formatting for a better appearence in file **/outfile1**. The last command of the program is
 **outfile1 closefile**, which closes **/outfile1**. This command is exactly equivalente to last command **showpage** in _PostScript_ since 
-one is required to close the file in oredr to the contents are actually saved in the file, in the same way that **showpage** is required
+one is required to close the file in order to the contents to be actually saved in the file, in the same way that **showpage** is required
 by _Ghostview_ to dispay the design.
 
 
