@@ -132,11 +132,10 @@ In the _PostScript_ case we can see in our example these commands:
 
 	/d { def } def
 	/g { def } def
-	/p { def } def
-	/t {translate} def
 ```
 The commands **m**, **l**, **c**, **h**, etc. are commands of the metalanguage in PostScript. We can see that all these commands, are simply redefining prexisting _PostScript_ commands. The command **rad** (to create radial gradients) is actually a function that translates the internal
-radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript.
+radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript. The commands **np** and **rg** are
+just used internally.
 
 On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them in a _Java_ class.
 
@@ -221,7 +220,7 @@ The third line just draws **exclam** (the exclamation point) and fills it with t
 
 Finally the fourth line is the _PostScript_ command **showpage**, which is required in _Ghostscript_.
 
-For _Java_ class generation, the draw function is more verbose:
+For _Java_ class generation, the draw function is more verbose, but it just writes the function **paintComponent** as commented earlier:
 
 ```
 	/draw {
@@ -229,7 +228,6 @@ For _Java_ class generation, the draw function is more verbose:
 		(      Graphics2D g = (Graphics2D) g1;\n) ws
 		(      g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);) ws
 		(      AffineTransform matrix;\n) ws
-		(      Paint pOrg = g.getPaint();\n) ws
 		(      matrix = g.getTransform();\n) ws
 		(      g.scale(sca, sca);\n) ws
 		(      ) (white_circle_path) (Color.white) drawpath
@@ -240,5 +238,12 @@ For _Java_ class generation, the draw function is more verbose:
 		(}\n) ws
 		outfile1 closefile
 	} def
-```
+
+Most of it is just boilerplate code like function prototype, setting **Graphics2D** variable **g**, setting antialiasing, defining a 
+transformation matrix (that is not even used in this case), and applying the scale. The only three important lines are just equivalent to the
+ones found in _PostScript_ with just some formatting for a better appearence in file **/outfile1**. The last command of the program is
+**outfile1 closefile**, which closes **/outfile1**. This command is exactly equivalente to last command **showpage** in _PostScript_ since 
+one is required to close the file in oredr to the contents are actually saved in the file, in the same way that **showpage** is required
+by _Ghostview_ to dispay the design.
+
 
