@@ -137,7 +137,7 @@ The commands **m**, **l**, **c**, **h**, etc. are commands of the metalanguage i
 radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript. The commands **np** and **rg** are
 just used internally.
 
-On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them in a _Java_ class.
+On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them into a _Java_ class.
 
 ```
 	/outfile1 (C:\\Users\\Java\\ExclamationIcon\\src\\com\\ExclamationIcon.java) (w) file def
