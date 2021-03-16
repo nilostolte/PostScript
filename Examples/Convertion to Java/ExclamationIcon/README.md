@@ -119,7 +119,7 @@ of _PostScript_ commands, in order to be displayed, or in _Java_ commands, for a
 are accomplished in the function **/psdefinitions**, when they will function as PostScript commands, or in **/javadefinitions**, when they will
 generate the _Java_ class. Thus, the metalanguage commands are the ones that are defined in **/psdefinitions** and in **/javadefinitions**
 
-In the _PostScript_ case we can see these commands in our example:
+In the case of **/psdefinitions** (_PostScript_) we can see these commands in our example:
 ```
 	/m { moveto } bind def
 	/l { lineto } bind def
@@ -136,7 +136,7 @@ The commands **m**, **l**, **c**, **h**, etc. are commands of the metalanguage i
 radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript. The commands **f**, **np** and **rg** are
 not part of the metalanguage, since they only exist inside **/psdefinitions**.
 
-On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them into a _Java_ class.
+On the other hand in **/javadefinitions** the same commands are defined in order to transform them into a _Java_ class:
 
 ```
 	/outfile1 (C:\\Users\\Java\\ExclamationIcon\\src\\com\\ExclamationIcon.java) (w) file def
@@ -181,7 +181,8 @@ On the other hand, for the conversion to _Java_ the same commands are defined in
 Here we can see that the basic functions **mo**, **li**, **cv**, and **cp**, actually only write **moveTo**, **lineTo**, **curveTo** and
 **closePath** for a given path **p** into the file **/outfile1**, by using the functions **/ws** and **/out**, respectively to write
 strings and numbers. These functions are directed mapped to the metalanguage commands **m**, **l**, **c**, and **h**, and they correspond 
-to the same commands used in _PostScript_. 
+to the same commands used in _PostScript_. The file **/outfile1** is opened for writting and it corresponds to the file _ExclamationIcon.java_,
+the converted _Java_ code that can be compiled and executed.
 
 Now the metalanguage command **d** corresponds to a function that actually writes a _Java_ function that returns the path **p** created by the
 basic functions above. The command **g** creates a  _Java_ array of gradients.
@@ -239,10 +240,24 @@ For _Java_ class generation, the draw function is more verbose, but it just writ
 	} def
 ```
 Most of it is just boilerplate code like function prototype, setting **Graphics2D** variable **g**, setting antialiasing, defining a 
-transformation matrix (that is not even used in this case), and applying the scale. The only three important lines are just equivalent to the
+transformation matrix (that is not even used in this example), and applying the scale. The only three important lines are just equivalent to the
 ones found in _PostScript_ with just some formatting for a better appearence in file **/outfile1**. The last command of the program is
 **outfile1 closefile**, which closes **/outfile1**. This command is exactly equivalente to last command **showpage** in _PostScript_ since 
 one is required to close the file in order to the contents to be actually saved in the file, in the same way that **showpage** is required
 by _Ghostview_ to dispay the design.
 
+### Initializations
+
+As mentioned earlier, **draw** is the last function to be executed. Following its definition a series of initializations appear either in
+**/psdefinitions** or in **/javadefinitions**.
+
+In the case of **/psdefinitions**, it is only about setting the page size, which is automatically done using the scale (**sca**) and the
+size of the drawing bounding box, and reversing the image on the _y_ direction (because in _PostScript_, the origin is in the page 
+lower left corner, whereas the design is supposed to be defined as if the origin would be in the upper left corner). Since in the case 
+of this example the _"drawing"_ is a circular shape, the values of the bounding box are the same for _x_ and _y_. In this example, both 
+values are 32, and they appear _hardcoded_ in the file, either in the definition of the variable **yoff** in the beginning of the file 
+(at line 22) or at the end of **/psdefinitions**, when defining the page size. **These values must be altered to match the bounding box 
+of a new design**.
+
+In the case of **/javadefinitions**, all the _Java_ declarations, starting with **package** and **imports**
 
