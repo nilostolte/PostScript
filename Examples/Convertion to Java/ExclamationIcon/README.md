@@ -273,8 +273,8 @@ be supplied to correctly compile the code and execute it. This executable is onl
 ## ExclamationIcon _Java_ Project
 
 The _Java_ project to display the _ExclamationIcon_ on the screen is the absolute goal of the conversion of the design to _Java_. However,
-to that the _ExclamationIcon.java_ must be compiled with the Java environment and other libraries to deal with the window. This is done by 
-through the file _Window.java_.
+to do that the _ExclamationIcon.java_ must be compiled with the Java environment and other libraries to deal with the window. This is done by 
+the file _Window.java_.
 
 ### Project Hierarchy
 
