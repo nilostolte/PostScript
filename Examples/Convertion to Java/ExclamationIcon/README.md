@@ -259,5 +259,9 @@ values are 32, and they appear _hardcoded_ in the file, either in the definition
 (at line 22) or at the end of **/psdefinitions**, when defining the page size. **These values must be altered to match the bounding box 
 of a new design**.
 
-In the case of **/javadefinitions**, all the _Java_ declarations, starting with **package** and **imports**
+In the case of **/javadefinitions**, all the _Java_ declarations, starting with **package** and **imports**, followed by class
+declaration, and variable declarations, are all written to _ExclamationIcon.java_ prior to everything else. **These items should be
+changed according to the design being converted**. The variables and their initializations should be quite obvious on simple
+inspection. They are just boilerplate code to map the generated definitions to their actual use in **paintComponent**, and they are 
+simply providing storage for these definitions.
 
