@@ -114,7 +114,7 @@ The last item in the file is a call to **draw** function as it was explained pre
 
 ### Metalanguage
 
-The metalanguage is the collection of commands that are only valid in the context of the program and that can either be interpreted in terms
+The metalanguage is the collection of commands that are only valid in the context of this file and that can either be interpreted in terms
 of _PostScript_ commands, in order to be displayed, or in _Java_ commands, for a conversion to _Java_. In other words, their definitions
 are accomplished in the function **/psdefinitions**, when they will function as PostScript commands, or in **/javadefinitions**, when they will
 generate the _Java_ class. Thus, the metalanguage commands are the ones that are defined in **/psdefinitions** and in **/javadefinitions**
