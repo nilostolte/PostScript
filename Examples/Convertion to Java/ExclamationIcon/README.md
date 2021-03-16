@@ -50,7 +50,7 @@ It was found that the conversions here mentioned were much easier to be accompli
 a bit harder to code since it requires some discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
 development of other conversions.
 
-The file is structured thanks to two functions: **/psdefinition** and **/javadefinitions**. In both functions it is the 
+The file is structured thanks to two functions: **/psdefinitions** and **/javadefinitions**. In both functions it is the 
 function **/draw** that is called, and that uses other functions, to build the design. This function is the one that contains the
 command **showpage** that actually shows the page in _PostScript_ mode. Using an analogy with _Java_, it ressembles the _main_ function, the entrypoint
 of the program. In the _Java_ converted class, **/draw** corresponds to the function **paintComponent**, since the class is inherited from **JPanel**.
@@ -107,12 +107,138 @@ interpreted in _Java_. However, mixing values types in the same color may lead t
 
 For simplicity it is assumed that all gradients are stored as arrays. This is done to facilitate menus items processing.
 
-Radial gradients are simply delared with an array with the initial color, the end color and an array two set of three coordinates:
+Radial gradients are simply delared with an array with the initial color, the end color and an array with two sets of three coordinates:
 the initial origin and radius followed the end origin and radius. This is what is shown in the code.
 
-The last item in the file is a call to **draw** function.
+The last item in the file is a call to **draw** function as it was explained previously.
+
+### Metalanguage
+
+The metalanguage is the collection of commands that are only valid in the context of the program and that can either be interpreted in terms
+of _PostScript_ commands, in order to be displayed, or in _Java_ commands, in order to be converted to _Java_. In other words, their definitions
+are accomplished in the function **/psdefinitions**, when they will function as PostScript commands, or in **/javadefinitions**, when they will
+generate the _Java_ class.
+
+In the _PostScript_ case we can see in our example these commands:
+
+```
+	/m { moveto } bind def
+	/l { lineto } bind def
+	/c { curveto } bind def
+	/h { closepath } bind def
+	/f { fill } bind def
+	/np {newpath} def
+	/rg { setrgbcolor } bind def
+
+	/d { def } def
+	/g { def } def
+	/p { def } def
+	/t {translate} def
+```
+The commands **m**, **l**, **c**, **h**, etc. are commands of the metalanguage in PostScript. We can see that all these commands, are simply redefining prexisting _PostScript_ commands. The command **rad** (to create radial gradients) is actually a function that translates the internal
+radial gradient definition (which is used for _Postscript_ and for _Java_) to a radial gradient in PostScript.
+
+On the other hand, for the conversion to _Java_ the same commands are defined in order to transform them in a _Java_ class.
+
+```
+	/outfile1 (C:\\Users\\Java\\ExclamationIcon\\src\\com\\ExclamationIcon.java) (w) file def
+	/st 50 string	def				% string used to convert numbers 
+	/ws { outfile1 exch writestring } def		% function to write strings
+	/out { outfile1 exch st cvs writestring }def	% function to write numbers
+	
+	/mo { (      p.moveTo\() ws exch out (f,) ws out (f\);\n) ws } def
+	/li { (      p.lineTo\() ws exch out (f,) ws out (f\);\n) ws } def
+	/cv { (      p.curveTo\() ws
+		6 -1 roll out (f,) ws 
+		5 -1 roll out (f,) ws 
+		4 -1 roll out (f,) ws 
+		3 -1 roll out (f,) ws 
+		exch out (f,) ws out (f\);\n) ws 
+	} def
+	
+	/cp { (      p.closePath\(\);\n) ws } def
+	
+	/m { mo } bind def
+	/l { li } bind def
+	/c { cv } bind def
+	/h { cp } bind def
+		
+	/d { % defines a path as a java function returning a path
+		 (   static private Path2D.Float ) ws exch ws 
+		 (\(\) {\n      Path2D.Float p = new Path2D.Float\(\);\n) ws
+		 exec % interprets path commands to output path commands in java
+		 (      return p;\n   }\n) ws
+	} def
+	
+	/g {
+		(   static private Paint ) ws 
+		exch ws ([] = {\n) ws
+		{
+			aload pop (      ) ws ws
+		} forall
+		(   };\n) ws
+	} def 
+```
+
+Here we can see that the basic functions **mo**, **li**, **cv**, and **cp**, actually only write **moveTo**, **lineTo**, **curveTo** and
+**closePath** for a given path **p** into the file **/outfile1**, by using the functions **/ws** and **/out**, respectively to write
+strings and numbers. These functions are directed mapped to the metalanguage commands **m**, **l**, **c**, and **h**, and they correspond 
+to the same commands used in _PostScript_. 
+
+Now the metalanguage command **d** corresponds to a function that actually writes a _Java_ function that returns the path **p** created by the
+basic functions above. The command **g** creates a  _Java_ array of gradients.
+
+As we can see, these are just libraries that are used to define the different aspects of the design.
 
 
- 
+### Programming the Design
 
+Once the structure of the files is explained, now it still remains to be seen how is the design programmed. As we have seen, some parts of it 
+were clearly defined with shapes and gradients declarations. It was also seen how external libraries (libraries defined to be called in PostScript
+that explicitly generates either _PostScript_ or _Java_ commands) can be used to define shapes. Now it is time to see how to manage specific 
+functions that work exclusively in _PostScript_ or _Java_. Some of them are internal libraries as the metalanguage commands explained above.
+
+The heart of the programming of the design is the function **/draw** as explained earlier. 
+
+In _PostScript_ this function is defined as:
+
+```
+	/draw {
+		(white_circle) userdict exch get exec 1 setgray f
+		0 (ring_shade) (color_ring) drawfillshade
+		(exclam) userdict exch get exec 0.8627 0.0784 0.2353 rg f
+		showpage
+	} def
+```
+
+The first line only draws **white_circle** and fills (**f**) it with white color (1 setgray. The code `userdict exch get exec` is just
+a boilerplate code to draw a shape giving the name under which it was defined.
+
+The second line is a bit more complex. It passes the index of the gradient, the gradient and the shape to the function **drawfillshade**
+that is a library function that actually fills the shape with the gradient.
+
+The third line just draws **exclam** (the exclamation point) and fills it with the RGB color with components 0.8627, 0.0784, and  0.2353.
+
+Finally the fourth line is the _PostScript_ command **showpage**, which is required in _Ghostscript_.
+
+For _Java_ class generation, the draw function is more verbose:
+
+```
+	/draw {
+		(   ) ws draw_type ws ( void paintComponent(Graphics g1) {\n) ws
+		(      Graphics2D g = (Graphics2D) g1;\n) ws
+		(      g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);) ws
+		(      AffineTransform matrix;\n) ws
+		(      Paint pOrg = g.getPaint();\n) ws
+		(      matrix = g.getTransform();\n) ws
+		(      g.scale(sca, sca);\n) ws
+		(      ) (white_circle_path) (Color.white) drawpath
+		(      ) (0) (ring_shade) (color_ring_path) drawfillshade
+		(      ) (exclam_path) (exclam_color) drawpath
+		(      g.setTransform(matrix);\n) ws
+		(   }\n) ws
+		(}\n) ws
+		outfile1 closefile
+	} def
+```
 
