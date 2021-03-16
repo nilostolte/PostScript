@@ -265,3 +265,7 @@ changed according to the design being converted**. The variables and their initi
 inspection. They are just boilerplate code to map the generated definitions to their actual use in **paintComponent**, and they are 
 simply providing storage for these definitions.
 
+## File ExclamationIcon.jar
+
+This is the _Java_ executable produced by the project in _Java_. When downloaded the code the whole hierarchy of files and directories will
+be supplied to correctly compile the code and execute it. This executable is only provided for testing and 
