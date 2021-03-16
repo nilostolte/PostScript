@@ -268,4 +268,59 @@ simply providing storage for these definitions.
 ## File ExclamationIcon.jar
 
 This is the _Java_ executable produced by the project in _Java_. When downloaded the code the whole hierarchy of files and directories will
-be supplied to correctly compile the code and execute it. This executable is only provided for testing and 
+be supplied to correctly compile the code and execute it. This executable is only provided for testing and for confort.
+
+## ExclamationIcon _Java_ Project
+
+The _Java_ project to display the _ExclamationIcon_ on the screen is the absolute goal of the conversion of the design to _Java_. However,
+to that the _ExclamationIcon.java_ must be compiled with the Java environment and other libraries to deal with the window. This is done by 
+through the file _Window.java_.
+
+### Project Hierarchy
+
+The project is structured in Eclipse fashion, that is, with _src_ and _bin_ directories. Here, the _bin_ directory is ommited because one cannot
+compile (yet) a project on GitHub. However, when the code is downloaded, it comes with the hierarchy at least with source files. The intention
+in this project is to keep it as simple as possible. In _Java_ it is necessary to explicitly write the directory where the source or compiled 
+code is located in the hierarchy form the _root_ of the project, which is normally the _src_ or _bin_ directory. This is done through the 
+declaration **package** in the source file. Following the **package** command, one should put all the directories separated by period (".") 
+from the _root_ until the directory where the source file is located. Thus, since _ExclamationIcon.java_ declares **package com;**, it must be
+sotred at the directory _com_ where just below _src_ directory. Source files in the same _package_ (in the same directory) don't need to be
+_"imported"_ to be able to share their definitions. Therefore, the file _Window.java_ is also the directory com. In more complex projects this
+is not always desirable because we normally group in the same directoriy only parts of the software that share common functionalities.
+
+### Creating and Running the Project
+
+For this project to integrate with the Postscript code conversion, and if creating a project with Eclipse, when opening Eclipse,
+it will be asked which _Workspace_ one is wanting to use. As exlained in this same window, a workspace is the directory where one
+want to store the project. One should type _C:\Users\Java\_ and click _Launch_.
+
+Probably the simplest way to create a project is to use Eclipse. This is done by clicking on _File > New > Java Project_. In the new window
+one can copy and paste _ExclamationIcon_ in the _Project Name_. Once this is done, one click on _Next_ and we uncheck the box
+_Create module-info.java file_. This is actually not needed. Then one should click on _Finish_. Right after, right clicking on _src_ in the 
+newly created project a menu appears and one should choose _New > Package_ and a new window appears where one should type _com_ in the
+box _Name:_. Right after that, one should right click on newly the created package _com_ and a new window appears where one should type
+(or copy and paste) _ExclamationIcon_ in the box _Name:_. This creates the file _ExclamationIcon.java_. By clicking twice in the file the 
+file opens for editing. Simply erase everything and paste the content of the file _ExclamationIcon.java_ supplied here. Repeat the operation for
+_Window.java_ and your project is ready. Just compile and run it (click green button with a white _play_ icon right above the project) and
+here we go your project show run perfectly.
+
+This is not the smartest way to construct a project, but it is by far the simplest.
+
+### Files ExclamationIcon.gs and PS2JavaExclamationIcon.lnk
+
+Once the project is created one should copy the file _ExclamationIcon.gs_ to the directory _C:\Users\Java\ExclamationIcon_. Now, one should
+create a shortcut to **ExclamationIcon.gs** as described in:
+
+https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Java/README.md#using-windows-shortcuts-to-call-ghostscript
+
+Here this shortcut was renamed _PS2JavaExclamationIcon.lnk_.
+
+Make sure GhostScript is istalled in your system and test file _ExclamationIcon.gs_ by making it opening always with _Ghostscript_. Double click
+file _ExclamationIcon.gs_ to test _Ghostscript_. The icon should be displayed by _Ghostscript_.
+
+Now the file _ExclamationIcon.java_ should be renamed to, for example, _ExclamationIcon.java.bak_. Once this done test the the shortcut 
+_PS2JavaExclamationIcon.lnk_ by clicking twice on it. Once _Ghostscript_ is run, a new _ExclamationIcon.java_ file will appear in
+the directory _C:\Users\Java\ExclamationIcon\src\com_. This is the _Java_ file produced by _Ghostscript_. Compile and run the project again
+and it should run fine.
+
+This completes the project. For another design, the same steps above should be repeated to create a new project. 
