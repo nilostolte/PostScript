@@ -100,8 +100,8 @@ actually setting the programming environment.
 After the shape definitions, we can find gradient definitions. Here a radial gradient is used for **color_ring**. The effect is subtle 
 and cannot be seen visualizing the supplied image files here in GitHub. The gradient is more noticiable when the supplied _ExclamationIcon.jar_
 is executed or if _ExclamationIcon.pdf_ or _ExclamationIcon.png_ is dowloaded and visualized. This gradient gives the impression
-that the disc with the warning sign is in relief against the color background. The intesting aspect of gradients here is that  
-colors can be defined with integer values, but then it is interpreted that the color values vary from 0 to 255. If the colors are given by 
+that the disc with the warning sign is in relief against the color background. The intesting aspect of gradients here is that colors can be 
+defined with integer values, but then it is interpreted that the color values vary from 0 to 255. If the colors are given by 
 floating point values, the values are assumed to vary between 0.0 to 1.0. This means that colors are interpreted in the way they are 
 interpreted in _Java_. However, mixing values types in the same color may lead to impredictable results.
 
