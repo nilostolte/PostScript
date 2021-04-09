@@ -22,7 +22,7 @@ This file has a **very permissive licence but with some restrictions** as follow
 After the licence comment, the first two actual lines of the code set the variable **/ps** to true and **/sca** to 12. But then we find
 the following lines:
 
-```
+```postscript
 count 1 eq {
 	dup type /booleantype eq { /ps exch def }
 	{
@@ -120,7 +120,7 @@ are accomplished in the function **/psdefinitions**, when they will function as 
 generate the _Java_ class. Thus, the metalanguage commands are the ones that are defined in **/psdefinitions** and in **/javadefinitions**
 
 In the case of **/psdefinitions** (_PostScript_) we can see these commands in our example:
-```
+```postscript
 	/m { moveto } bind def
 	/l { lineto } bind def
 	/c { curveto } bind def
@@ -138,7 +138,7 @@ not part of the metalanguage, since they only exist inside **/psdefinitions**.
 
 On the other hand in **/javadefinitions** the same commands are defined in order to transform them into a _Java_ class:
 
-```
+```postscript
 	/outfile1 (C:\\Users\\Java\\ExclamationIcon\\src\\com\\ExclamationIcon.java) (w) file def
 	/st 50 string	def				% string used to convert numbers 
 	/ws { outfile1 exch writestring } def		% function to write strings
@@ -201,7 +201,7 @@ The heart of the programming of the design is the function **/draw** as explaine
 
 In _PostScript_ this function is defined as:
 
-```
+```postscript
 	/draw {
 		(white_circle) userdict exch get exec 1 setgray f
 		0 (ring_shade) (color_ring) drawfillshade
@@ -222,7 +222,7 @@ Finally the fourth line is the _PostScript_ command **showpage**, which is requi
 
 For _Java_ class generation, the draw function is more verbose, but it just writes the function **paintComponent** as commented earlier:
 
-```
+```postscript
 	/draw {
 		(   ) ws draw_type ws ( void paintComponent(Graphics g1) {\n) ws
 		(      Graphics2D g = (Graphics2D) g1;\n) ws
