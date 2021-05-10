@@ -1,5 +1,14 @@
 # Conversion To _Java_
 
+## ExclamationIcon
+
+In this [example](https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java/ExclamationIcon), the icon displayed in _Figure 1_ is constructed in PostScript and converted to _Java_. When in display mode the resulting
+graphics is proof the that the design is correct. Thus, the phase to convert to _Java_ can start from that point. A detailed decription showing how to do the convertion and the code in PostScript is available [here](https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java/ExclamationIcon).
+
+![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111082975-98bd8f80-84e1-11eb-8236-3de1841dba17.png)
+<br>_Figure 1: ExclamationIcon_
+
+## Overview
 The examples here concentrate in **converting Postscript vector graphics into _Java_**. The general principle here is to define a vector
 graphics design in _PostScript_ and to automatically generate the code in _Java_ with the same vector graphics information. This is an original 
 approach that is quite powerful because the programming aspects of the design are switched to _PostScript_, which is a 2D graphics
@@ -66,14 +75,3 @@ For simplicity, the chosen storage directory is **"C:\Users\Java\ExclamationIcon
 in shortcuts and inside the _PostScript_ code. This allows to have shorter paths and makes it easier to make the example work 
 in any Windows machine.
 
-## ExclamationIcon
-
-In this example, the icon displayed in _Figure 1_ is constructed in Postsript and converted to _Java_. When in display mode the resulting
-graphics is proof the that the design is correct. Thus, the phase to convert to _Java_ can start from that point. Please check
-the link below.
-
-
-![ExclamationIcon](https://user-images.githubusercontent.com/80269251/111082975-98bd8f80-84e1-11eb-8236-3de1841dba17.png)
-<br>_Figure 1: ExclamationIcon_
-
-**Link: https://github.com/nilostolte/PostScript/tree/main/Examples/Convertion%20to%20Java/ExclamationIcon**
