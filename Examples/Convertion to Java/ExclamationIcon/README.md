@@ -31,9 +31,7 @@ count 1 eq {
 } if
 ```
 
-If the program is launched by clicking on the shortcut as stated [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Java/README.md#using-windows-shortcuts-to-call-ghostscript)
-
-And if the shortcut has a **-c false** as its first flag after **"-dNOSAFER"**, then the boolean **false** will be pushed to the 
+If the program is launched by clicking on the shortcut as stated [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Java/README.md#using-windows-shortcuts-to-call-ghostscript) and if the shortcut has a **-c false** as its first flag after **"-dNOSAFER"**, then the boolean **false** will be pushed to the 
 stack before the control is passed to the _PostScript_ program. Then the command **"count"** will return 1 and 
 the variable **"/ps"** will be initiallied with whatever was pushed on the stack. In this case it is with the boolean **false**. This 
 will indicate the program that what we want is to convert the design to _Java_. If the file is opened in another way (by double clicking the
@@ -44,9 +42,7 @@ Notice that most of the _Java_ code is automatically generated, but never comple
 
 ### Structuring The File
 
-It was found that the conversions here mentioned were much easier to be accomplished after structuring the file, but at the start it might look  
-a bit harder to code since it requires some discipline. Afterwards, though, the same structure is used again and again, thus simplifying the
-development of other conversions.
+It was found that the conversions here mentioned were much easier to be accomplished after structuring the file, but at the start it might look a bit harder to code since it requires some discipline. Afterwards, though, the same structure is used again and again, thus simplifying the development of other conversions.
 
 The file is structured thanks to two functions: **/psdefinitions** and **/javadefinitions**. In both functions it is the 
 function **/draw** that is called, and that uses other functions, to build the design. This function is the one that contains the
@@ -85,9 +81,7 @@ but it will generate _Postscript_ or _Java_ definitions according to the context
 are interpreted by the _PostScript_ interpreter on the fly.
 
 After this, what follows are _shape_ definitions, which are obviously defined by paths. Paths are the common ground between
-_PostScript_ vector paths and _Java_ vector paths. This is summarized in:
-
-https://github.com/nilostolte/ClockWidget#paths and https://github.com/nilostolte/ClockWidget#path-commands
+_PostScript_ vector paths and _Java_ vector paths. This is summarized [here](https://github.com/nilostolte/ClockWidget#paths) and [here](https://github.com/nilostolte/ClockWidget#path-commands).
 
 The first _shape_ to be defined is **white_circle**, which is the background white circle over which the icon is drawn. Notice
 the metalanguage **d** command used instead of **def**. Following it, we can find **color_ring** and **exclam**, which
