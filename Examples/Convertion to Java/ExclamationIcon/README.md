@@ -31,9 +31,7 @@ count 1 eq {
 } if
 ```
 
-If the program is launched by clicking on the shortcut as stated in:
-
-https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Java/README.md#using-windows-shortcuts-to-call-ghostscript
+If the program is launched by clicking on the shortcut as stated [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Convertion%20to%20Java/README.md#using-windows-shortcuts-to-call-ghostscript)
 
 And if the shortcut has a **-c false** as its first flag after **"-dNOSAFER"**, then the boolean **false** will be pushed to the 
 stack before the control is passed to the _PostScript_ program. Then the command **"count"** will return 1 and 
