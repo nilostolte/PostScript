@@ -21,7 +21,8 @@ a clear mathematical definition according to [Fritz Hügelschäffer](https://git
 the shape. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf) article for more details on the
 parameters and for a more complete formula for pyriform egg shapes.
 
-Here it is an image produced by this code on GhostScript:
+Below is an image produced by this code on GhostScript and [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf) the
+file converted to [PDF](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf).
 
 <kbd>
 <img src="https://github.com/nilostolte/PostScript/assets/80269251/a30ef840-5650-4f74-8d09-b6ca4b14ed83" width="683" height="589" >
