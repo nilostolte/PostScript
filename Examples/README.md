@@ -18,8 +18,13 @@ laid in four geometric figures: sphere, ellipsoid, ovoid, and pyriform (conical 
 a clear mathematical definition according to [Fritz Hügelschäffer](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf).
 
 [This](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) is the PostScript code implementing
-the shape. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf) article for more details on the
+the shape using Fritz Hügelschäffer formula. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf) article for more details on the
 parameters and for a more complete formula for pyriform egg shapes.
+
+Fritz Hügelschäffer formula:<br>
+<img src="https://github.com/nilostolte/PostScript/assets/80269251/515dd37c-e585-485c-b8d5-77e5805b7a56)" width="300" height="127" ><br>
+Where B is the egg maximum breadth (on the Y axis), L is the egg length (on the X axis), and w is the parameter (in the image w= 2.5) 
+that shows the distance between two vertical lines corresponding to the maximum breadth and the half length of the egg.
 
 Below is an image produced by this code on GhostScript and [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf) the
 file converted to [PDF](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf).
