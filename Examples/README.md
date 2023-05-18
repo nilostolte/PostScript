@@ -15,10 +15,10 @@ Egg as one of the most traditional food products has been attracting mathematici
 attention from analytical point of view since long ago. As a main operand in oomorphology, the shape of a bird’s
 egg has, to date, escaped a universally applicable mathematical formulation. Analysis of all egg shapes can be
 laid in four geometric figures: sphere, ellipsoid, ovoid, and pyriform (conical or pear-shaped). The first three have
-a clear mathematical definition according to [Fritz Hügelschäffer](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf).
+a clear mathematical definition according to [Fritz Hügelschäffer](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20article.pdf).
 
 [This](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) is the PostScript code implementing
-the shape using Fritz Hügelschäffer formula. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20shape.pdf) article for more details on the
+the shape using Fritz Hügelschäffer formula. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20article.pdf) article for more details on the
 parameters and for a more complete formula for pyriform egg shapes.
 
 Fritz Hügelschäffer formula:<br>
