@@ -133,7 +133,7 @@ load any **TrueType** font file. For example, type in the address bar of any Exp
 </kbd>
 </p><br>
 
-Then double-click on **Verdana**, drag **"Verdana Regular"** to Downloads, and now open **verdana.ttf** on **Glyph Inspector** (by clicking on **Choose File**, opening Downloads directory, typing **verdana.ttf** in "File name:" box, and clicking **Open*):
+Then double-click on **Verdana**, drag **"Verdana Regular"** to Downloads, and now open **verdana.ttf** on **Glyph Inspector** (by clicking on **Choose File**, opening Downloads directory, typing **verdana.ttf** in "File name:" box, and clicking **Open**):
 
 <p align="center">
 <kbd>
