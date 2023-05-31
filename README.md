@@ -21,7 +21,8 @@ by the user. Once triggered, the browser tab where it was run becomes an html te
 original Opentype font, but expressed in PostScript language. The file is not a PostScript font, but it has all elements to 
 display texts using the glyphs of the original OpenType font (actually a font like structure can be contructed with it, but that
 is out of the scope of this project). Copying the file to a text file and renaming it with a ".ps" becomes a PostScript
-program able to display any of the converted glyphs of the font.
+program able to display any of the converted glyphs of the font.<a name="verdana"></a>
+
 
 As an example, [verdana.ps](https://github.com/nilostolte/PostScript/blob/main/OpenType%20Fonts/verdana.ps) was obtained by
 loading **Verdana** font, converting it to PostScript, copying the resulting page to a text file, and adding the following 
