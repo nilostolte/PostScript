@@ -1,1 +1,84 @@
+% **OpenSans glyphs shown in PostScript**
+
+
+<< /PageSize [ 500 450 ]
+>> setpagedevice
+
+50 110 translate
+0.2 -0.2 scale
+
+
+/vsub {
+   3 -1 roll exch sub 3 -2 roll sub exch
+}def
+
+/vadd {
+   3 -1 roll add 3 -2 roll add exch
+}def
+
+/vmul {
+	/fact exch def
+	fact mul exch fact mul exch
+} def
+
+/quadto {
+	/P2 [ 4 -2 roll ] cvx def
+	/P1 [ 4 -2 roll ] cvx def
+	/P0 [ currentpoint ] cvx def
+	P1 P0 vsub 2 3 div vmul P0 vadd 
+	P1 P2 vsub 2 3 div vmul P2 vadd  
+	P2 curveto
+} def
+
+%OpenSans_Regular
+-12 385 moveto
+-106 385 -160 358 quadto
+-160 213 lineto
+-89 233 -12 233 quadto
+87 233 138.5 173 quadto
+190 113 190 0 quadto
+190 -1462 lineto
+360 -1462 lineto
+360 -14 lineto
+360 176 264 280.5 quadto
+168 385 -12 385 quadto
+
+fill
+
+%OpenSans Bold
+ 550 0 translate
+  31 430            moveto 
+  31 430            lineto 
+ -74 430 -152 408   quadto 
+-152 408            lineto 
+-152 150            lineto 
+ -72 170 -6 170     quadto 
+  -6 170            lineto 
+  96 170 140 106.5  quadto 
+ 184 43 184 -92     quadto 
+ 184 -92            lineto 
+ 184 -1462          lineto 
+ 494 -1462          lineto 
+ 494 -94            lineto 
+ 494 162 377 296    quadto 
+ 260 430 31 430     quadto 
+ fill
+ 
+%OpenSans Extra Bold
+650 0 translate
+43 459 moveto
+-65 459 -162 438 quadto
+-162 131 lineto
+-130 137 -94 144.5 quadto
+-58 152 -16 152 quadto
+82 152 124 93 quadto
+166 34 166 -109 quadto
+166 -1462 lineto
+563 -1462 lineto
+563 -143 lineto
+563 154 433 306.5 quadto
+303 459 43 459 quadto
+fill
+
+showpage
 
