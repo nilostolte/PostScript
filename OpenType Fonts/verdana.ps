@@ -1,0 +1,2971 @@
+%!PS-Adobe-2.0
+<< /PageSize [ 500 450 ]
+>> setpagedevice
+50 110 translate
+0.2 0.2 scale
+
+/vsub {
+3 -1 roll exch sub 3 -2 roll sub exch
+}def
+
+/vadd {
+3 -1 roll add 3 -2 roll add exch
+}def
+
+/vmul {
+/fact exch def
+fact mul exch fact mul exch
+} def
+
+/quadto {
+/P2 [ 4 -2 roll ] cvx def
+/P1 [ 4 -2 roll ] cvx def
+/P0 [ currentpoint ] cvx def
+P1 P0 vsub 2 3 div vmul P0 vadd
+P1 P2 vsub 2 3 div vmul P2 vadd
+P2 curveto
+} def
+
+/space {
+} def
+
+/exclam {
+291 1489 moveto
+515 1489 lineto
+489 410 lineto
+319 410 lineto
+291 1489 lineto
+closepath
+505 211 moveto
+505 0 lineto
+301 0 lineto
+301 211 lineto
+505 211 lineto
+closepath
+} def
+
+/quotedbl {
+554 1556 moveto
+772 1556 lineto
+729 977 lineto
+597 977 lineto
+554 1556 lineto
+closepath
+168 1556 moveto
+386 1556 lineto
+343 977 lineto
+211 977 lineto
+168 1556 lineto
+closepath
+} def
+
+/numbersign {
+1481 1067 moveto
+1481 932 lineto
+1148 932 lineto
+1056 556 lineto
+1364 556 lineto
+1364 421 lineto
+1021 421 lineto
+917 0 lineto
+788 0 lineto
+892 421 lineto
+622 421 lineto
+518 0 lineto
+389 0 lineto
+493 421 lineto
+195 421 lineto
+195 556 lineto
+528 556 lineto
+620 932 lineto
+312 932 lineto
+312 1067 lineto
+655 1067 lineto
+760 1489 lineto
+889 1489 lineto
+784 1067 lineto
+1054 1067 lineto
+1159 1489 lineto
+1288 1489 lineto
+1183 1067 lineto
+1481 1067 lineto
+closepath
+928 554 moveto
+1022 934 lineto
+748 934 lineto
+654 554 lineto
+928 554 lineto
+closepath
+} def
+
+/dollar {
+1160 380 moveto
+1160 380 lineto
+1160 225 1039 122.5 quadto
+918 20 722 1 quadto
+722 1 lineto
+722 -361 lineto
+604 -361 lineto
+604 -4 lineto
+472 -3 356 21.5 quadto
+240 46 155 85 quadto
+155 85 lineto
+155 283 lineto
+171 283 lineto
+190 269 239 242.5 quadto
+288 216 334 199 quadto
+334 199 lineto
+386 180 455.5 163.5 quadto
+525 147 604 144 quadto
+604 144 lineto
+604 577 lineto
+564 585 530 592.5 quadto
+496 600 467 608 quadto
+467 608 lineto
+304 649 233 731.5 quadto
+162 814 162 935 quadto
+162 935 lineto
+162 1083 278.5 1185 quadto
+395 1287 604 1304 quadto
+604 1304 lineto
+604 1576 lineto
+722 1576 lineto
+722 1306 lineto
+823 1304 929 1282 quadto
+1035 1260 1107 1231 quadto
+1107 1231 lineto
+1107 1035 lineto
+1093 1035 lineto
+1018 1081 936.5 1116.5 quadto
+855 1152 722 1161 quadto
+722 1161 lineto
+722 730 lineto
+752 725 787 716.5 quadto
+822 708 848 703 quadto
+848 703 lineto
+997 671 1078.5 593 quadto
+1160 515 1160 380 quadto
+closepath
+604 747 moveto
+604 747 lineto
+604 1160 lineto
+497 1152 424 1101.5 quadto
+351 1051 351 961 quadto
+351 961 lineto
+351 870 405 824 quadto
+459 778 604 747 quadto
+closepath
+971 354 moveto
+971 354 lineto
+971 448 912.5 491.5 quadto
+854 535 722 560 quadto
+722 560 lineto
+722 146 lineto
+842 158 906.5 207 quadto
+971 256 971 354 quadto
+closepath
+} def
+
+/percent {
+884 1076 moveto
+884 1076 lineto
+884 852 789.5 743 quadto
+695 634 517 634 quadto
+517 634 lineto
+335 634 242 743 quadto
+149 852 149 1075 quadto
+149 1075 lineto
+149 1299 244 1408 quadto
+339 1517 517 1517 quadto
+517 1517 lineto
+698 1517 791 1407 quadto
+884 1297 884 1076 quadto
+closepath
+1410 1489 moveto
+1575 1489 lineto
+795 0 lineto
+630 0 lineto
+1410 1489 lineto
+closepath
+2055 413 moveto
+2055 413 lineto
+2055 189 1960 80 quadto
+1865 -29 1687 -29 quadto
+1687 -29 lineto
+1506 -29 1413 81 quadto
+1320 191 1320 412 quadto
+1320 412 lineto
+1320 636 1414.5 745 quadto
+1509 854 1687 854 quadto
+1687 854 lineto
+1869 854 1962 745 quadto
+2055 636 2055 413 quadto
+closepath
+706 1076 moveto
+706 1076 lineto
+706 1248 661.5 1316 quadto
+617 1384 517 1384 quadto
+517 1384 lineto
+415 1384 371 1316 quadto
+327 1248 327 1075 quadto
+327 1075 lineto
+327 902 371 834.5 quadto
+415 767 517 767 quadto
+517 767 lineto
+617 767 661.5 834.5 quadto
+706 902 706 1076 quadto
+closepath
+1877 413 moveto
+1877 413 lineto
+1877 585 1832.5 653 quadto
+1788 721 1688 721 quadto
+1688 721 lineto
+1586 721 1542 653 quadto
+1498 585 1498 412 quadto
+1498 412 lineto
+1498 239 1542 171.5 quadto
+1586 104 1688 104 quadto
+1688 104 lineto
+1788 104 1832.5 171.5 quadto
+1877 239 1877 413 quadto
+closepath
+} def
+
+/ampersand {
+792 1191 moveto
+792 1191 lineto
+792 1286 735.5 1340.5 quadto
+679 1395 591 1395 quadto
+591 1395 lineto
+499 1395 441 1333.5 quadto
+383 1272 383 1183 quadto
+383 1183 lineto
+383 1108 422.5 1050 quadto
+462 992 593 913 quadto
+593 913 lineto
+691 948 741.5 1015.5 quadto
+792 1083 792 1191 quadto
+closepath
+986 315 moveto
+986 315 lineto
+508 781 lineto
+477 766 446 741.5 quadto
+415 717 384 675 quadto
+384 675 lineto
+356 636 338 581 quadto
+320 526 320 457 quadto
+320 457 lineto
+320 311 405.5 221.5 quadto
+491 132 648 132 quadto
+648 132 lineto
+741 132 832.5 177.5 quadto
+924 223 986 315 quadto
+closepath
+1092 909 moveto
+1287 909 lineto
+1287 813 lineto
+1287 717 1262 597 quadto
+1237 477 1177 368 quadto
+1177 368 lineto
+1555 0 lineto
+1309 0 lineto
+1080 224 lineto
+965 82 845 25.5 quadto
+725 -31 598 -31 quadto
+598 -31 lineto
+390 -31 252.5 90.5 quadto
+115 212 115 409 quadto
+115 409 lineto
+115 501 141 568 quadto
+167 635 202 684 quadto
+202 684 lineto
+237 731 289 772.5 quadto
+341 814 394 845 quadto
+394 845 lineto
+284 917 235.5 990 quadto
+187 1063 187 1174 quadto
+187 1174 lineto
+187 1241 213.5 1301.5 quadto
+240 1362 293 1412 quadto
+293 1412 lineto
+343 1460 423.5 1490 quadto
+504 1520 601 1520 quadto
+601 1520 lineto
+774 1520 881 1432.5 quadto
+988 1345 988 1211 quadto
+988 1211 lineto
+988 1167 976 1111.5 quadto
+964 1056 935 1012 quadto
+935 1012 lineto
+903 963 844 918 quadto
+785 873 691 841 quadto
+691 841 lineto
+1062 479 lineto
+1076 519 1083 567 quadto
+1090 615 1091 667 quadto
+1091 667 lineto
+1093 723 1092.5 792 quadto
+1092 861 1092 909 quadto
+1092 909 lineto
+closepath
+} def
+
+/quotesingle {
+164 1556 moveto
+386 1556 lineto
+343 977 lineto
+207 977 lineto
+164 1556 lineto
+closepath
+} def
+
+/parenleft {
+783 -402 moveto
+783 -412 lineto
+554 -412 lineto
+377 -209 279 31 quadto
+181 271 181 572 quadto
+181 572 lineto
+181 873 279 1113 quadto
+377 1353 554 1556 quadto
+554 1556 lineto
+783 1556 lineto
+783 1546 lineto
+702 1473 628.5 1377.5 quadto
+555 1282 492 1155 quadto
+492 1155 lineto
+432 1032 394.5 884 quadto
+357 736 357 572 quadto
+357 572 lineto
+357 401 393.5 259 quadto
+430 117 492 -11 quadto
+492 -11 lineto
+552 -134 629 -233.5 quadto
+706 -333 783 -402 quadto
+783 -402 lineto
+closepath
+} def
+
+/parenright {
+749 572 moveto
+749 572 lineto
+749 271 651 31 quadto
+553 -209 376 -412 quadto
+376 -412 lineto
+147 -412 lineto
+147 -402 lineto
+224 -333 301.5 -233.5 quadto
+379 -134 438 -11 quadto
+438 -11 lineto
+500 117 536.5 259 quadto
+573 401 573 572 quadto
+573 572 lineto
+573 736 536 884 quadto
+499 1032 438 1155 quadto
+438 1155 lineto
+375 1282 301.5 1377.5 quadto
+228 1473 147 1546 quadto
+147 1546 lineto
+147 1556 lineto
+376 1556 lineto
+553 1353 651 1113 quadto
+749 873 749 572 quadto
+closepath
+} def
+
+/asterisk {
+757 1094 moveto
+1137 887 lineto
+1073 777 lineto
+711 990 lineto
+717 630 lineto
+588 630 lineto
+593 990 lineto
+232 776 lineto
+167 886 lineto
+548 1093 lineto
+167 1300 lineto
+232 1410 lineto
+594 1197 lineto
+588 1556 lineto
+717 1556 lineto
+710 1197 lineto
+1073 1409 lineto
+1137 1299 lineto
+757 1094 lineto
+closepath
+} def
+
+/plus {
+1466 732 moveto
+1466 572 lineto
+921 572 lineto
+921 27 lineto
+755 27 lineto
+755 572 lineto
+210 572 lineto
+210 732 lineto
+755 732 lineto
+755 1277 lineto
+921 1277 lineto
+921 732 lineto
+1466 732 lineto
+closepath
+} def
+
+/comma {
+321 285 moveto
+575 285 lineto
+293 -370 lineto
+147 -370 lineto
+321 285 lineto
+closepath
+} def
+
+/hyphen {
+777 742 moveto
+777 561 lineto
+153 561 lineto
+153 742 lineto
+777 742 lineto
+closepath
+} def
+
+/period {
+492 285 moveto
+492 0 lineto
+253 0 lineto
+253 285 lineto
+492 285 lineto
+closepath
+} def
+
+/slash {
+684 1556 moveto
+860 1556 lineto
+143 -304 lineto
+-30 -304 lineto
+684 1556 lineto
+closepath
+} def
+
+/zero {
+1167 745 moveto
+1167 745 lineto
+1167 344 1041.5 156.5 quadto
+916 -31 652 -31 quadto
+652 -31 lineto
+384 -31 260.5 159 quadto
+137 349 137 743 quadto
+137 743 lineto
+137 1140 262 1329.5 quadto
+387 1519 652 1519 quadto
+652 1519 lineto
+920 1519 1043.5 1326.5 quadto
+1167 1134 1167 745 quadto
+closepath
+904 291 moveto
+904 291 lineto
+939 372 951.5 481.5 quadto
+964 591 964 745 quadto
+964 745 lineto
+964 897 951.5 1009 quadto
+939 1121 903 1199 quadto
+903 1199 lineto
+868 1276 807.5 1315 quadto
+747 1354 652 1354 quadto
+652 1354 lineto
+558 1354 496.5 1315 quadto
+435 1276 399 1197 quadto
+399 1197 lineto
+365 1123 352.5 1004 quadto
+340 885 340 743 quadto
+340 743 lineto
+340 587 351 482 quadto
+362 377 398 294 quadto
+398 294 lineto
+431 216 491.5 175 quadto
+552 134 652 134 quadto
+652 134 lineto
+746 134 808 173 quadto
+870 212 904 291 quadto
+closepath
+} def
+
+/one {
+1084 152 moveto
+1084 0 lineto
+278 0 lineto
+278 152 lineto
+588 152 lineto
+588 1150 lineto
+278 1150 lineto
+278 1286 lineto
+341 1286 413 1296.5 quadto
+485 1307 522 1327 quadto
+522 1327 lineto
+568 1352 594.5 1390.5 quadto
+621 1429 625 1494 quadto
+625 1494 lineto
+780 1494 lineto
+780 152 lineto
+1084 152 lineto
+closepath
+} def
+
+/two {
+1169 171 moveto
+1169 0 lineto
+161 0 lineto
+161 209 lineto
+266 299 371.5 389 quadto
+477 479 568 568 quadto
+568 568 lineto
+760 754 831 863.5 quadto
+902 973 902 1100 quadto
+902 1100 lineto
+902 1216 825.5 1281.5 quadto
+749 1347 612 1347 quadto
+612 1347 lineto
+521 1347 415 1315 quadto
+309 1283 208 1217 quadto
+208 1217 lineto
+198 1217 lineto
+198 1427 lineto
+269 1462 387.5 1491 quadto
+506 1520 617 1520 quadto
+617 1520 lineto
+846 1520 976 1409.5 quadto
+1106 1299 1106 1110 quadto
+1106 1110 lineto
+1106 1025 1084.5 951.5 quadto
+1063 878 1021 812 quadto
+1021 812 lineto
+982 750 929.5 690 quadto
+877 630 802 557 quadto
+802 557 lineto
+695 452 581 353.5 quadto
+467 255 368 171 quadto
+368 171 lineto
+1169 171 lineto
+closepath
+} def
+
+/three {
+1038 717 moveto
+1038 717 lineto
+1086 674 1117 609 quadto
+1148 544 1148 441 quadto
+1148 441 lineto
+1148 339 1111 254 quadto
+1074 169 1007 106 quadto
+1007 106 lineto
+932 36 830.5 2.5 quadto
+729 -31 608 -31 quadto
+608 -31 lineto
+484 -31 364 -1.5 quadto
+244 28 167 63 quadto
+167 63 lineto
+167 272 lineto
+182 272 lineto
+267 216 382 179 quadto
+497 142 604 142 quadto
+604 142 lineto
+667 142 738 163 quadto
+809 184 853 225 quadto
+853 225 lineto
+899 269 921.5 322 quadto
+944 375 944 456 quadto
+944 456 lineto
+944 536 918.5 588.5 quadto
+893 641 848 671 quadto
+848 671 lineto
+803 702 739 713.5 quadto
+675 725 601 725 quadto
+601 725 lineto
+511 725 lineto
+511 891 lineto
+581 891 lineto
+733 891 823.5 954.5 quadto
+914 1018 914 1140 quadto
+914 1140 lineto
+914 1194 891 1234.5 quadto
+868 1275 827 1301 quadto
+827 1301 lineto
+784 1327 735 1337 quadto
+686 1347 624 1347 quadto
+624 1347 lineto
+529 1347 422 1313 quadto
+315 1279 220 1217 quadto
+220 1217 lineto
+210 1217 lineto
+210 1426 lineto
+281 1461 399.5 1490.5 quadto
+518 1520 629 1520 quadto
+629 1520 lineto
+738 1520 821 1500 quadto
+904 1480 971 1436 quadto
+971 1436 lineto
+1043 1388 1080 1320 quadto
+1117 1252 1117 1161 quadto
+1117 1161 lineto
+1117 1037 1029.5 944.5 quadto
+942 852 823 828 quadto
+823 828 lineto
+823 814 lineto
+871 806 933 780.5 quadto
+995 755 1038 717 quadto
+closepath
+} def
+
+/four {
+1203 579 moveto
+1203 419 lineto
+982 419 lineto
+982 0 lineto
+790 0 lineto
+790 419 lineto
+77 419 lineto
+77 649 lineto
+798 1489 lineto
+982 1489 lineto
+982 579 lineto
+1203 579 lineto
+closepath
+213 579 moveto
+790 579 lineto
+790 1251 lineto
+213 579 lineto
+closepath
+} def
+
+/five {
+1157 473 moveto
+1157 473 lineto
+1157 369 1119 274 quadto
+1081 179 1015 114 quadto
+1015 114 lineto
+943 44 843.5 6.5 quadto
+744 -31 613 -31 quadto
+613 -31 lineto
+491 -31 378 -5.5 quadto
+265 20 187 56 quadto
+187 56 lineto
+187 267 lineto
+201 267 lineto
+283 215 393 178.5 quadto
+503 142 609 142 quadto
+609 142 lineto
+680 142 746.5 162 quadto
+813 182 865 232 quadto
+865 232 lineto
+909 275 931.5 335 quadto
+954 395 954 474 quadto
+954 474 lineto
+954 551 927.5 604 quadto
+901 657 854 689 quadto
+854 689 lineto
+802 727 727.5 742.5 quadto
+653 758 561 758 quadto
+561 758 lineto
+473 758 391.5 746 quadto
+310 734 251 722 quadto
+251 722 lineto
+251 1489 lineto
+1147 1489 lineto
+1147 1314 lineto
+444 1314 lineto
+444 918 lineto
+487 922 532 924 quadto
+577 926 610 926 quadto
+610 926 lineto
+731 926 822 905.5 quadto
+913 885 989 833 quadto
+989 833 lineto
+1069 778 1113 691 quadto
+1157 604 1157 473 quadto
+closepath
+} def
+
+/six {
+1191 483 moveto
+1191 483 lineto
+1191 256 1041.5 112.5 quadto
+892 -31 675 -31 quadto
+675 -31 lineto
+565 -31 475 3 quadto
+385 37 316 104 quadto
+316 104 lineto
+230 187 183.5 324 quadto
+137 461 137 654 quadto
+137 654 lineto
+137 852 179.5 1005 quadto
+222 1158 315 1277 quadto
+315 1277 lineto
+403 1390 542 1453.5 quadto
+681 1517 866 1517 quadto
+866 1517 lineto
+925 1517 965 1512 quadto
+1005 1507 1046 1494 quadto
+1046 1494 lineto
+1046 1303 lineto
+1036 1303 lineto
+1008 1318 951.5 1331.5 quadto
+895 1345 836 1345 quadto
+836 1345 lineto
+621 1345 493 1210.5 quadto
+365 1076 344 847 quadto
+344 847 lineto
+428 898 509.5 924.5 quadto
+591 951 698 951 quadto
+698 951 lineto
+793 951 865.5 933.5 quadto
+938 916 1014 863 quadto
+1014 863 lineto
+1102 802 1146.5 709 quadto
+1191 616 1191 483 quadto
+closepath
+988 475 moveto
+988 475 lineto
+988 568 960.5 629 quadto
+933 690 870 735 quadto
+870 735 lineto
+824 767 768 777 quadto
+712 787 651 787 quadto
+651 787 lineto
+566 787 493 767 quadto
+420 747 343 705 quadto
+343 705 lineto
+341 683 340 662.5 quadto
+339 642 339 611 quadto
+339 611 lineto
+339 453 371.5 361.5 quadto
+404 270 461 217 quadto
+461 217 lineto
+507 173 560.5 152.5 quadto
+614 132 677 132 quadto
+677 132 lineto
+822 132 905 220.5 quadto
+988 309 988 475 quadto
+closepath
+} def
+
+/seven {
+1173 1489 moveto
+1173 1266 lineto
+499 0 lineto
+285 0 lineto
+1002 1314 lineto
+154 1314 lineto
+154 1489 lineto
+1173 1489 lineto
+closepath
+} def
+
+/eight {
+1180 415 moveto
+1180 415 lineto
+1180 222 1029.5 94 quadto
+879 -34 651 -34 quadto
+651 -34 lineto
+409 -34 265.5 91 quadto
+122 216 122 411 quadto
+122 411 lineto
+122 535 194 635.5 quadto
+266 736 397 795 quadto
+397 795 lineto
+397 801 lineto
+277 865 219.5 941 quadto
+162 1017 162 1131 quadto
+162 1131 lineto
+162 1299 300 1411 quadto
+438 1523 651 1523 quadto
+651 1523 lineto
+874 1523 1007 1416 quadto
+1140 1309 1140 1144 quadto
+1140 1144 lineto
+1140 1043 1077 945.5 quadto
+1014 848 892 793 quadto
+892 793 lineto
+892 787 lineto
+1032 727 1106 639 quadto
+1180 551 1180 415 quadto
+closepath
+943 1142 moveto
+943 1142 lineto
+943 1249 860.5 1312.5 quadto
+778 1376 650 1376 quadto
+650 1376 lineto
+524 1376 443.5 1316 quadto
+363 1256 363 1154 quadto
+363 1154 lineto
+363 1082 403.5 1029.5 quadto
+444 977 526 936 quadto
+526 936 lineto
+563 918 632.5 889 quadto
+702 860 768 841 quadto
+768 841 lineto
+867 907 905 978 quadto
+943 1049 943 1142 quadto
+closepath
+974 396 moveto
+974 396 lineto
+974 488 933.5 543.5 quadto
+893 599 775 655 quadto
+775 655 lineto
+728 677 672 696 quadto
+616 715 523 749 quadto
+523 749 lineto
+433 700 378.5 616 quadto
+324 532 324 426 quadto
+324 426 lineto
+324 291 417 203 quadto
+510 115 653 115 quadto
+653 115 lineto
+799 115 886.5 190 quadto
+974 265 974 396 quadto
+closepath
+} def
+
+/nine {
+1167 834 moveto
+1167 834 lineto
+1167 639 1122.5 480 quadto
+1078 321 988 209 quadto
+988 209 lineto
+897 95 760 33 quadto
+623 -29 438 -29 quadto
+438 -29 lineto
+386 -29 340 -23.5 quadto
+294 -18 258 -6 quadto
+258 -6 lineto
+258 185 lineto
+268 185 lineto
+297 170 350 156.5 quadto
+403 143 468 143 quadto
+468 143 lineto
+689 143 814.5 275.5 quadto
+940 408 960 641 quadto
+960 641 lineto
+867 585 785 561 quadto
+703 537 606 537 quadto
+606 537 lineto
+514 537 439.5 555 quadto
+365 573 290 625 quadto
+290 625 lineto
+202 686 157.5 780 quadto
+113 874 113 1005 quadto
+113 1005 lineto
+113 1233 263 1376 quadto
+413 1519 629 1519 quadto
+629 1519 lineto
+737 1519 829 1485.5 quadto
+921 1452 990 1385 quadto
+990 1385 lineto
+1075 1302 1121 1171.5 quadto
+1167 1041 1167 834 quadto
+closepath
+965 877 moveto
+965 877 lineto
+965 1032 933 1126 quadto
+901 1220 845 1272 quadto
+845 1272 lineto
+798 1317 744 1336.5 quadto
+690 1356 627 1356 quadto
+627 1356 lineto
+483 1356 399.5 1266 quadto
+316 1176 316 1013 quadto
+316 1013 lineto
+316 918 343 858 quadto
+370 798 434 753 quadto
+434 753 lineto
+479 722 533 711.5 quadto
+587 701 653 701 quadto
+653 701 lineto
+731 701 811 722 quadto
+891 743 961 783 quadto
+961 783 lineto
+962 804 963.5 824.5 quadto
+965 845 965 877 quadto
+closepath
+} def
+
+/colon {
+585 1117 moveto
+585 832 lineto
+346 832 lineto
+346 1117 lineto
+585 1117 lineto
+closepath
+585 285 moveto
+585 0 lineto
+346 0 lineto
+346 285 lineto
+585 285 lineto
+closepath
+} def
+
+/semicolon {
+585 1117 moveto
+585 832 lineto
+346 832 lineto
+346 1117 lineto
+585 1117 lineto
+closepath
+404 285 moveto
+658 285 lineto
+376 -370 lineto
+230 -370 lineto
+404 285 lineto
+closepath
+} def
+
+/less {
+1408 257 moveto
+1408 77 lineto
+254 590 lineto
+254 714 lineto
+1408 1227 lineto
+1408 1047 lineto
+498 652 lineto
+1408 257 lineto
+closepath
+} def
+
+/equal {
+1431 942 moveto
+1431 782 lineto
+245 782 lineto
+245 942 lineto
+1431 942 lineto
+closepath
+1431 522 moveto
+1431 362 lineto
+245 362 lineto
+245 522 lineto
+1431 522 lineto
+closepath
+} def
+
+/greater {
+1422 714 moveto
+1422 590 lineto
+268 77 lineto
+268 257 lineto
+1178 652 lineto
+268 1047 lineto
+268 1227 lineto
+1422 714 lineto
+closepath
+} def
+
+/question {
+1005 1139 moveto
+1005 1139 lineto
+1005 1041 970 964.5 quadto
+935 888 878 829 quadto
+878 829 lineto
+822 772 749 722 quadto
+676 672 594 625 quadto
+594 625 lineto
+594 400 lineto
+415 400 lineto
+415 705 lineto
+480 742 555.5 786 quadto
+631 830 679 875 quadto
+679 875 lineto
+737 927 769 982.5 quadto
+801 1038 801 1124 quadto
+801 1124 lineto
+801 1237 724.5 1292.5 quadto
+648 1348 527 1348 quadto
+527 1348 lineto
+419 1348 322.5 1314 quadto
+226 1280 170 1245 quadto
+170 1245 lineto
+160 1245 lineto
+160 1449 lineto
+230 1476 337.5 1497.5 quadto
+445 1519 541 1519 quadto
+541 1519 lineto
+756 1519 880.5 1414.5 quadto
+1005 1310 1005 1139 quadto
+closepath
+610 211 moveto
+610 0 lineto
+406 0 lineto
+406 211 lineto
+610 211 lineto
+closepath
+} def
+
+/at {
+1870 663 moveto
+1870 663 lineto
+1870 524 1829.5 394 quadto
+1789 264 1714 157 quadto
+1714 157 lineto
+1274 157 lineto
+1247 273 lineto
+1173 213 1105 181 quadto
+1037 149 949 149 quadto
+949 149 lineto
+781 149 680.5 276 quadto
+580 403 580 631 quadto
+580 631 lineto
+580 858 703 993 quadto
+826 1128 997 1128 quadto
+997 1128 lineto
+1070 1128 1126 1111.5 quadto
+1182 1095 1247 1062 quadto
+1247 1062 lineto
+1247 1110 lineto
+1406 1110 lineto
+1406 268 lineto
+1649 268 lineto
+1691 343 1712.5 455.5 quadto
+1734 568 1734 657 quadto
+1734 657 lineto
+1734 821 1688.5 955 quadto
+1643 1089 1555 1185 quadto
+1555 1185 lineto
+1467 1281 1337 1332.5 quadto
+1207 1384 1042 1384 quadto
+1042 1384 lineto
+882 1384 749.5 1326 quadto
+617 1268 522 1170 quadto
+522 1170 lineto
+426 1072 371.5 935.5 quadto
+317 799 317 645 quadto
+317 645 lineto
+317 480 369 343.5 quadto
+421 207 516 110 quadto
+516 110 lineto
+615 9 748 -42.5 quadto
+881 -94 1038 -94 quadto
+1038 -94 lineto
+1124 -94 1215.5 -83 quadto
+1307 -72 1391 -48 quadto
+1391 -48 lineto
+1391 -190 lineto
+1294 -211 1210 -218.5 quadto
+1126 -226 1037 -226 quadto
+1037 -226 lineto
+851 -226 692 -162.5 quadto
+533 -99 419 15 quadto
+419 15 lineto
+304 130 240 291 quadto
+176 452 176 647 quadto
+176 647 lineto
+176 832 243 991.5 quadto
+310 1151 426 1268 quadto
+426 1268 lineto
+542 1385 701 1452 quadto
+860 1519 1041 1519 quadto
+1041 1519 lineto
+1237 1519 1391 1457 quadto
+1545 1395 1651 1283 quadto
+1651 1283 lineto
+1757 1171 1813.5 1013.5 quadto
+1870 856 1870 663 quadto
+closepath
+1245 408 moveto
+1245 408 lineto
+1245 926 lineto
+1182 955 1132 967.5 quadto
+1082 980 1025 980 quadto
+1025 980 lineto
+896 980 823 890 quadto
+750 800 750 634 quadto
+750 634 lineto
+750 471 808 387.5 quadto
+866 304 989 304 quadto
+989 304 lineto
+1056 304 1123 335 quadto
+1190 366 1245 408 quadto
+closepath
+} def
+
+/A {
+832 1489 moveto
+1374 0 lineto
+1163 0 lineto
+1017 415 lineto
+373 415 lineto
+227 0 lineto
+26 0 lineto
+568 1489 lineto
+832 1489 lineto
+closepath
+433 585 moveto
+956 585 lineto
+695 1316 lineto
+433 585 lineto
+closepath
+} def
+
+/B {
+1323 458 moveto
+1323 458 lineto
+1323 347 1281 262 quadto
+1239 177 1168 122 quadto
+1168 122 lineto
+1084 56 983.5 28 quadto
+883 0 728 0 quadto
+728 0 lineto
+200 0 lineto
+200 1489 lineto
+641 1489 lineto
+804 1489 885 1477 quadto
+966 1465 1040 1427 quadto
+1040 1427 lineto
+1122 1384 1159 1316.5 quadto
+1196 1249 1196 1155 quadto
+1196 1155 lineto
+1196 1049 1142 974.5 quadto
+1088 900 998 855 quadto
+998 855 lineto
+998 847 lineto
+1149 816 1236 714.5 quadto
+1323 613 1323 458 quadto
+closepath
+990 1129 moveto
+990 1129 lineto
+990 1183 972 1220 quadto
+954 1257 914 1280 quadto
+914 1280 lineto
+867 1307 800 1313.5 quadto
+733 1320 634 1320 quadto
+634 1320 lineto
+398 1320 lineto
+398 890 lineto
+654 890 lineto
+747 890 802 899.5 quadto
+857 909 904 939 quadto
+904 939 lineto
+951 969 970.5 1016.5 quadto
+990 1064 990 1129 quadto
+closepath
+1117 450 moveto
+1117 450 lineto
+1117 540 1090 593 quadto
+1063 646 992 683 quadto
+992 683 lineto
+944 708 875.5 715.5 quadto
+807 723 709 723 quadto
+709 723 lineto
+398 723 lineto
+398 169 lineto
+660 169 lineto
+790 169 873 182.5 quadto
+956 196 1009 232 quadto
+1009 232 lineto
+1065 271 1091 321 quadto
+1117 371 1117 450 quadto
+closepath
+} def
+
+/C {
+1350 340 moveto
+1350 108 lineto
+1295 84 1250.5 63 quadto
+1206 42 1134 19 quadto
+1134 19 lineto
+1073 0 1001.5 -13.5 quadto
+930 -27 844 -27 quadto
+844 -27 lineto
+682 -27 549.5 18.5 quadto
+417 64 319 161 quadto
+319 161 lineto
+223 256 169 402.5 quadto
+115 549 115 743 quadto
+115 743 lineto
+115 927 167 1072 quadto
+219 1217 317 1317 quadto
+317 1317 lineto
+412 1414 546.5 1465 quadto
+681 1516 845 1516 quadto
+845 1516 lineto
+965 1516 1084.5 1487 quadto
+1204 1458 1350 1385 quadto
+1350 1385 lineto
+1350 1150 lineto
+1335 1150 lineto
+1212 1253 1091 1300 quadto
+970 1347 832 1347 quadto
+832 1347 lineto
+719 1347 628.5 1310.5 quadto
+538 1274 467 1197 quadto
+467 1197 lineto
+398 1122 359.5 1007.5 quadto
+321 893 321 743 quadto
+321 743 lineto
+321 586 363.5 473 quadto
+406 360 473 289 quadto
+473 289 lineto
+543 215 636.5 179.5 quadto
+730 144 834 144 quadto
+834 144 lineto
+977 144 1102 193 quadto
+1227 242 1336 340 quadto
+1336 340 lineto
+1350 340 lineto
+closepath
+} def
+
+/D {
+1458 743 moveto
+1458 743 lineto
+1458 540 1369.5 375 quadto
+1281 210 1134 119 quadto
+1134 119 lineto
+1032 56 906.5 28 quadto
+781 0 576 0 quadto
+576 0 lineto
+200 0 lineto
+200 1489 lineto
+572 1489 lineto
+790 1489 918.5 1457.5 quadto
+1047 1426 1136 1371 quadto
+1136 1371 lineto
+1288 1276 1373 1118 quadto
+1458 960 1458 743 quadto
+closepath
+1251 746 moveto
+1251 746 lineto
+1251 921 1190 1041 quadto
+1129 1161 1008 1230 quadto
+1008 1230 lineto
+920 1280 821 1299.5 quadto
+722 1319 584 1319 quadto
+584 1319 lineto
+398 1319 lineto
+398 170 lineto
+584 170 lineto
+727 170 833.5 191 quadto
+940 212 1029 269 quadto
+1029 269 lineto
+1140 340 1195.5 456 quadto
+1251 572 1251 746 quadto
+closepath
+} def
+
+/E {
+1181 176 moveto
+1181 0 lineto
+200 0 lineto
+200 1489 lineto
+1181 1489 lineto
+1181 1313 lineto
+398 1313 lineto
+398 905 lineto
+1181 905 lineto
+1181 729 lineto
+398 729 lineto
+398 176 lineto
+1181 176 lineto
+closepath
+} def
+
+/F {
+1151 1489 moveto
+1151 1313 lineto
+398 1313 lineto
+398 893 lineto
+1045 893 lineto
+1045 717 lineto
+398 717 lineto
+398 0 lineto
+200 0 lineto
+200 1489 lineto
+1151 1489 lineto
+closepath
+} def
+
+/G {
+1442 749 moveto
+1442 110 lineto
+1320 54 1175.5 12.5 quadto
+1031 -29 896 -29 quadto
+896 -29 lineto
+722 -29 577 19 quadto
+432 67 330 163 quadto
+330 163 lineto
+227 260 171 405.5 quadto
+115 551 115 746 quadto
+115 746 lineto
+115 1103 323.5 1309.5 quadto
+532 1516 896 1516 quadto
+896 1516 lineto
+1023 1516 1155.5 1485.5 quadto
+1288 1455 1441 1382 quadto
+1441 1382 lineto
+1441 1147 lineto
+1423 1147 lineto
+1392 1171 1333 1210 quadto
+1274 1249 1217 1275 quadto
+1217 1275 lineto
+1148 1306 1060.5 1326.5 quadto
+973 1347 862 1347 quadto
+862 1347 lineto
+612 1347 466.5 1186.5 quadto
+321 1026 321 752 quadto
+321 752 lineto
+321 463 473 302.5 quadto
+625 142 887 142 quadto
+887 142 lineto
+983 142 1078.5 161 quadto
+1174 180 1246 210 quadto
+1246 210 lineto
+1246 575 lineto
+847 575 lineto
+847 749 lineto
+1442 749 lineto
+closepath
+} def
+
+/H {
+1339 1489 moveto
+1339 0 lineto
+1141 0 lineto
+1141 729 lineto
+398 729 lineto
+398 0 lineto
+200 0 lineto
+200 1489 lineto
+398 1489 lineto
+398 905 lineto
+1141 905 lineto
+1141 1489 lineto
+1339 1489 lineto
+closepath
+} def
+
+/I {
+725 152 moveto
+725 0 lineto
+137 0 lineto
+137 152 lineto
+332 152 lineto
+332 1337 lineto
+137 1337 lineto
+137 1489 lineto
+725 1489 lineto
+725 1337 lineto
+530 1337 lineto
+530 152 lineto
+725 152 lineto
+closepath
+} def
+
+/J {
+746 1489 moveto
+746 387 lineto
+746 191 626.5 85 quadto
+507 -21 306 -21 quadto
+306 -21 lineto
+258 -21 178 -12.5 quadto
+98 -4 44 8 quadto
+44 8 lineto
+44 193 lineto
+55 193 lineto
+96 179 156 164 quadto
+216 149 279 149 quadto
+279 149 lineto
+371 149 425.5 170 quadto
+480 191 506 230 quadto
+506 230 lineto
+533 270 540.5 328 quadto
+548 386 548 462 quadto
+548 462 lineto
+548 1331 lineto
+233 1331 lineto
+233 1489 lineto
+746 1489 lineto
+closepath
+} def
+
+/K {
+701 789 moveto
+1397 0 lineto
+1140 0 lineto
+551 663 lineto
+403 505 lineto
+403 0 lineto
+205 0 lineto
+205 1489 lineto
+403 1489 lineto
+403 712 lineto
+1126 1489 lineto
+1366 1489 lineto
+701 789 lineto
+closepath
+} def
+
+/L {
+1142 176 moveto
+1142 0 lineto
+200 0 lineto
+200 1489 lineto
+398 1489 lineto
+398 176 lineto
+1142 176 lineto
+closepath
+} def
+
+/M {
+1526 1489 moveto
+1526 0 lineto
+1328 0 lineto
+1328 1283 lineto
+914 410 lineto
+796 410 lineto
+385 1283 lineto
+385 0 lineto
+200 0 lineto
+200 1489 lineto
+470 1489 lineto
+867 660 lineto
+1251 1489 lineto
+1526 1489 lineto
+closepath
+} def
+
+/N {
+1336 1489 moveto
+1336 0 lineto
+1091 0 lineto
+385 1332 lineto
+385 0 lineto
+200 0 lineto
+200 1489 lineto
+507 1489 lineto
+1151 273 lineto
+1151 1489 lineto
+1336 1489 lineto
+closepath
+} def
+
+/O {
+1310 1318 moveto
+1310 1318 lineto
+1401 1218 1449.5 1073 quadto
+1498 928 1498 744 quadto
+1498 744 lineto
+1498 560 1448.5 414.5 quadto
+1399 269 1310 172 quadto
+1310 172 lineto
+1218 71 1092.5 20 quadto
+967 -31 806 -31 quadto
+806 -31 lineto
+649 -31 520.5 21 quadto
+392 73 302 172 quadto
+302 172 lineto
+212 271 163.5 415 quadto
+115 559 115 744 quadto
+115 744 lineto
+115 926 163 1070.5 quadto
+211 1215 303 1318 quadto
+303 1318 lineto
+391 1416 521.5 1468 quadto
+652 1520 806 1520 quadto
+806 1520 lineto
+966 1520 1093.5 1467.5 quadto
+1221 1415 1310 1318 quadto
+closepath
+1292 744 moveto
+1292 744 lineto
+1292 1034 1162 1191.5 quadto
+1032 1349 807 1349 quadto
+807 1349 lineto
+580 1349 450.5 1191.5 quadto
+321 1034 321 744 quadto
+321 744 lineto
+321 451 453 295.5 quadto
+585 140 807 140 quadto
+807 140 lineto
+1029 140 1160.5 295.5 quadto
+1292 451 1292 744 quadto
+closepath
+} def
+
+/P {
+1174 1039 moveto
+1174 1039 lineto
+1174 940 1139.5 855.5 quadto
+1105 771 1043 709 quadto
+1043 709 lineto
+966 632 861 593.5 quadto
+756 555 596 555 quadto
+596 555 lineto
+398 555 lineto
+398 0 lineto
+200 0 lineto
+200 1489 lineto
+604 1489 lineto
+738 1489 831 1466.5 quadto
+924 1444 996 1396 quadto
+996 1396 lineto
+1081 1339 1127.5 1254 quadto
+1174 1169 1174 1039 quadto
+closepath
+968 1034 moveto
+968 1034 lineto
+968 1111 941 1168 quadto
+914 1225 859 1261 quadto
+859 1261 lineto
+811 1292 749.5 1305.5 quadto
+688 1319 594 1319 quadto
+594 1319 lineto
+398 1319 lineto
+398 724 lineto
+565 724 lineto
+685 724 760 745.5 quadto
+835 767 882 814 quadto
+882 814 lineto
+929 862 948.5 915 quadto
+968 968 968 1034 quadto
+closepath
+} def
+
+/Q {
+1528 -183 moveto
+1528 -365 lineto
+1468 -380 1409.5 -386.5 quadto
+1351 -393 1290 -393 quadto
+1290 -393 lineto
+1116 -393 1010.5 -297.5 quadto
+905 -202 896 -24 quadto
+896 -24 lineto
+872 -28 849.5 -29.5 quadto
+827 -31 806 -31 quadto
+806 -31 lineto
+649 -31 520.5 21 quadto
+392 73 302 172 quadto
+302 172 lineto
+212 271 163.5 415 quadto
+115 559 115 744 quadto
+115 744 lineto
+115 926 163 1070.5 quadto
+211 1215 303 1318 quadto
+303 1318 lineto
+391 1416 521.5 1468 quadto
+652 1520 806 1520 quadto
+806 1520 lineto
+966 1520 1093.5 1467.5 quadto
+1221 1415 1310 1318 quadto
+1310 1318 lineto
+1401 1218 1449.5 1073 quadto
+1498 928 1498 744 quadto
+1498 744 lineto
+1498 471 1386.5 284 quadto
+1275 97 1087 22 quadto
+1087 22 lineto
+1091 -92 1141 -155 quadto
+1191 -218 1323 -218 quadto
+1323 -218 lineto
+1364 -218 1420.5 -205.5 quadto
+1477 -193 1501 -183 quadto
+1501 -183 lineto
+1528 -183 lineto
+closepath
+1292 744 moveto
+1292 744 lineto
+1292 1034 1162 1191.5 quadto
+1032 1349 807 1349 quadto
+807 1349 lineto
+580 1349 450.5 1191.5 quadto
+321 1034 321 744 quadto
+321 744 lineto
+321 451 453 295.5 quadto
+585 140 807 140 quadto
+807 140 lineto
+1029 140 1160.5 295.5 quadto
+1292 451 1292 744 quadto
+closepath
+} def
+
+/R {
+872 651 moveto
+1432 0 lineto
+1175 0 lineto
+677 592 lineto
+398 592 lineto
+398 0 lineto
+200 0 lineto
+200 1489 lineto
+617 1489 lineto
+752 1489 842 1471.5 quadto
+932 1454 1004 1409 quadto
+1004 1409 lineto
+1085 1358 1130.5 1280.5 quadto
+1176 1203 1176 1084 quadto
+1176 1084 lineto
+1176 923 1095 814.5 quadto
+1014 706 872 651 quadto
+872 651 lineto
+closepath
+969 1070 moveto
+969 1070 lineto
+969 1134 946.5 1183.5 quadto
+924 1233 872 1267 quadto
+872 1267 lineto
+829 1296 770 1307.5 quadto
+711 1319 631 1319 quadto
+631 1319 lineto
+398 1319 lineto
+398 757 lineto
+598 757 lineto
+692 757 762 773.5 quadto
+832 790 881 835 quadto
+881 835 lineto
+926 877 947.5 931.5 quadto
+969 986 969 1070 quadto
+closepath
+} def
+
+/S {
+1282 425 moveto
+1282 425 lineto
+1282 338 1241.5 253 quadto
+1201 168 1128 109 quadto
+1128 109 lineto
+1048 45 941.5 9 quadto
+835 -27 685 -27 quadto
+685 -27 lineto
+524 -27 395.5 3 quadto
+267 33 134 92 quadto
+134 92 lineto
+134 340 lineto
+148 340 lineto
+261 246 409 195 quadto
+557 144 687 144 quadto
+687 144 lineto
+871 144 973.5 213 quadto
+1076 282 1076 397 quadto
+1076 397 lineto
+1076 496 1027.5 543 quadto
+979 590 880 616 quadto
+880 616 lineto
+805 636 717.5 649 quadto
+630 662 532 682 quadto
+532 682 lineto
+334 724 238.5 825.5 quadto
+143 927 143 1090 quadto
+143 1090 lineto
+143 1277 301 1396.5 quadto
+459 1516 702 1516 quadto
+702 1516 lineto
+859 1516 990 1486 quadto
+1121 1456 1222 1412 quadto
+1222 1412 lineto
+1222 1178 lineto
+1208 1178 lineto
+1123 1250 984.5 1297.5 quadto
+846 1345 701 1345 quadto
+701 1345 lineto
+542 1345 445.5 1279 quadto
+349 1213 349 1109 quadto
+349 1109 lineto
+349 1016 397 963 quadto
+445 910 566 882 quadto
+566 882 lineto
+630 868 748 848 quadto
+866 828 948 807 quadto
+948 807 lineto
+1114 763 1198 674 quadto
+1282 585 1282 425 quadto
+closepath
+} def
+
+/T {
+1262 1489 moveto
+1262 1313 lineto
+730 1313 lineto
+730 0 lineto
+532 0 lineto
+532 1313 lineto
+0 1313 lineto
+0 1489 lineto
+1262 1489 lineto
+closepath
+} def
+
+/U {
+1321 1489 moveto
+1321 598 lineto
+1321 436 1285.5 315.5 quadto
+1250 195 1169 115 quadto
+1169 115 lineto
+1092 39 989 4 quadto
+886 -31 749 -31 quadto
+749 -31 lineto
+609 -31 505 6 quadto
+401 43 330 115 quadto
+330 115 lineto
+249 197 213.5 313 quadto
+178 429 178 598 quadto
+178 598 lineto
+178 1489 lineto
+376 1489 lineto
+376 588 lineto
+376 467 392.5 397 quadto
+409 327 448 270 quadto
+448 270 lineto
+492 205 567.5 172 quadto
+643 139 749 139 quadto
+749 139 lineto
+856 139 931 171.5 quadto
+1006 204 1051 270 quadto
+1051 270 lineto
+1090 327 1106.5 400.5 quadto
+1123 474 1123 583 quadto
+1123 583 lineto
+1123 1489 lineto
+1321 1489 lineto
+closepath
+} def
+
+/V {
+1172 1489 moveto
+1374 1489 lineto
+832 0 lineto
+568 0 lineto
+26 1489 lineto
+238 1489 lineto
+705 179 lineto
+1172 1489 lineto
+closepath
+} def
+
+/W {
+1739 1489 moveto
+1933 1489 lineto
+1546 0 lineto
+1323 0 lineto
+1010 1236 lineto
+704 0 lineto
+486 0 lineto
+92 1489 lineto
+295 1489 lineto
+608 251 lineto
+916 1489 lineto
+1117 1489 lineto
+1428 239 lineto
+1739 1489 lineto
+closepath
+} def
+
+/X {
+1119 1489 moveto
+1336 1489 lineto
+822 753 lineto
+1335 0 lineto
+1106 0 lineto
+700 613 lineto
+284 0 lineto
+68 0 lineto
+587 744 lineto
+80 1489 lineto
+308 1489 lineto
+709 884 lineto
+1119 1489 lineto
+closepath
+} def
+
+/Y {
+1043 1489 moveto
+1254 1489 lineto
+730 653 lineto
+730 0 lineto
+532 0 lineto
+532 632 lineto
+6 1489 lineto
+225 1489 lineto
+632 823 lineto
+1043 1489 lineto
+closepath
+} def
+
+/Z {
+1288 176 moveto
+1288 0 lineto
+126 0 lineto
+126 184 lineto
+1039 1313 lineto
+160 1313 lineto
+160 1489 lineto
+1266 1489 lineto
+1266 1310 lineto
+344 176 lineto
+1288 176 lineto
+closepath
+} def
+
+/bracketleft {
+759 -249 moveto
+759 -392 lineto
+239 -392 lineto
+239 1556 lineto
+759 1556 lineto
+759 1413 lineto
+413 1413 lineto
+413 -249 lineto
+759 -249 lineto
+closepath
+} def
+
+/backslash {
+246 1556 moveto
+960 -304 lineto
+787 -304 lineto
+70 1556 lineto
+246 1556 lineto
+closepath
+} def
+
+/bracketright {
+691 1556 moveto
+691 -392 lineto
+171 -392 lineto
+171 -249 lineto
+517 -249 lineto
+517 1413 lineto
+171 1413 lineto
+171 1556 lineto
+691 1556 lineto
+closepath
+} def
+
+/asciicircum {
+901 1489 moveto
+1490 684 lineto
+1292 684 lineto
+837 1311 lineto
+383 682 lineto
+186 682 lineto
+775 1489 lineto
+901 1489 lineto
+closepath
+} def
+
+/underscore {
+1306 -180 moveto
+1306 -300 lineto
+-4 -300 lineto
+-4 -180 lineto
+1306 -180 lineto
+closepath
+} def
+
+/grave {
+583 1676 moveto
+762 1302 lineto
+613 1302 lineto
+340 1676 lineto
+583 1676 lineto
+closepath
+} def
+
+/a {
+1053 758 moveto
+1053 0 lineto
+866 0 lineto
+866 119 lineto
+841 102 798.5 71.5 quadto
+756 41 716 23 quadto
+716 23 lineto
+669 0 608 -15.5 quadto
+547 -31 465 -31 quadto
+465 -31 lineto
+314 -31 209 69 quadto
+104 169 104 324 quadto
+104 324 lineto
+104 451 158.5 529.5 quadto
+213 608 314 653 quadto
+314 653 lineto
+416 698 559 714 quadto
+702 730 866 738 quadto
+866 738 lineto
+866 767 lineto
+866 831 843.5 873 quadto
+821 915 779 939 quadto
+779 939 lineto
+739 962 683 970 quadto
+627 978 566 978 quadto
+566 978 lineto
+492 978 401 958.5 quadto
+310 939 213 902 quadto
+213 902 lineto
+203 902 lineto
+203 1093 lineto
+258 1108 362 1126 quadto
+466 1144 567 1144 quadto
+567 1144 lineto
+685 1144 772.5 1124.5 quadto
+860 1105 924 1058 quadto
+924 1058 lineto
+987 1012 1020 939 quadto
+1053 866 1053 758 quadto
+1053 758 lineto
+closepath
+866 275 moveto
+866 275 lineto
+866 586 lineto
+780 581 663.5 571 quadto
+547 561 479 542 quadto
+479 542 lineto
+398 519 348 470.5 quadto
+298 422 298 337 quadto
+298 337 lineto
+298 241 356 192.5 quadto
+414 144 533 144 quadto
+533 144 lineto
+632 144 714 182.5 quadto
+796 221 866 275 quadto
+closepath
+} def
+
+/b {
+1168 567 moveto
+1168 567 lineto
+1168 427 1128.5 315 quadto
+1089 203 1022 127 quadto
+1022 127 lineto
+951 48 866 8.5 quadto
+781 -31 679 -31 quadto
+679 -31 lineto
+584 -31 513 -8.5 quadto
+442 14 373 52 quadto
+373 52 lineto
+361 0 lineto
+185 0 lineto
+185 1556 lineto
+373 1556 lineto
+373 1000 lineto
+452 1065 541 1106.5 quadto
+630 1148 741 1148 quadto
+741 1148 lineto
+939 1148 1053.5 996 quadto
+1168 844 1168 567 quadto
+closepath
+974 562 moveto
+974 562 lineto
+974 762 908 865.5 quadto
+842 969 695 969 quadto
+695 969 lineto
+613 969 529 933.5 quadto
+445 898 373 842 quadto
+373 842 lineto
+373 202 lineto
+453 166 510.5 152 quadto
+568 138 641 138 quadto
+641 138 lineto
+797 138 885.5 240.5 quadto
+974 343 974 562 quadto
+closepath
+} def
+
+/c {
+1011 277 moveto
+1011 70 lineto
+917 25 832.5 0 quadto
+748 -25 653 -25 quadto
+653 -25 lineto
+532 -25 431 10.5 quadto
+330 46 258 118 quadto
+258 118 lineto
+185 190 145 300 quadto
+105 410 105 557 quadto
+105 557 lineto
+105 831 255.5 987 quadto
+406 1143 653 1143 quadto
+653 1143 lineto
+749 1143 841.5 1116 quadto
+934 1089 1011 1050 quadto
+1011 1050 lineto
+1011 841 lineto
+1001 841 lineto
+915 908 823.5 944 quadto
+732 980 645 980 quadto
+645 980 lineto
+485 980 392.5 872.5 quadto
+300 765 300 557 quadto
+300 557 lineto
+300 355 390.5 246.5 quadto
+481 138 645 138 quadto
+645 138 lineto
+702 138 761 153 quadto
+820 168 867 192 quadto
+867 192 lineto
+908 213 944 236.5 quadto
+980 260 1001 277 quadto
+1001 277 lineto
+1011 277 lineto
+closepath
+} def
+
+/d {
+1091 1556 moveto
+1091 0 lineto
+903 0 lineto
+903 117 lineto
+822 47 734 8 quadto
+646 -31 543 -31 quadto
+543 -31 lineto
+343 -31 225.5 123 quadto
+108 277 108 550 quadto
+108 550 lineto
+108 692 148.5 803 quadto
+189 914 258 992 quadto
+258 992 lineto
+326 1068 416.5 1108 quadto
+507 1148 604 1148 quadto
+604 1148 lineto
+692 1148 760 1129.5 quadto
+828 1111 903 1072 quadto
+903 1072 lineto
+903 1556 lineto
+1091 1556 lineto
+closepath
+903 275 moveto
+903 275 lineto
+903 916 lineto
+827 950 767 963 quadto
+707 976 636 976 quadto
+636 976 lineto
+478 976 390 866 quadto
+302 756 302 554 quadto
+302 554 lineto
+302 355 370 251.5 quadto
+438 148 588 148 quadto
+588 148 lineto
+668 148 750 183.5 quadto
+832 219 903 275 quadto
+closepath
+} def
+
+/e {
+1120 641 moveto
+1120 539 lineto
+297 539 lineto
+297 436 328 359.5 quadto
+359 283 413 234 quadto
+413 234 lineto
+465 186 536.5 162 quadto
+608 138 694 138 quadto
+694 138 lineto
+808 138 923.5 183.5 quadto
+1039 229 1088 273 quadto
+1088 273 lineto
+1098 273 lineto
+1098 68 lineto
+1003 28 904 1 quadto
+805 -26 696 -26 quadto
+696 -26 lineto
+418 -26 262 124.5 quadto
+106 275 106 552 quadto
+106 552 lineto
+106 826 255.5 987 quadto
+405 1148 649 1148 quadto
+649 1148 lineto
+875 1148 997.5 1016 quadto
+1120 884 1120 641 quadto
+1120 641 lineto
+closepath
+297 683 moveto
+937 683 lineto
+936 831 862.5 912 quadto
+789 993 639 993 quadto
+639 993 lineto
+488 993 398.5 904 quadto
+309 815 297 683 quadto
+297 683 lineto
+closepath
+} def
+
+/f {
+786 1546 moveto
+786 1374 lineto
+776 1374 lineto
+745 1383 695 1392.5 quadto
+645 1402 607 1402 quadto
+607 1402 lineto
+486 1402 431.5 1348.5 quadto
+377 1295 377 1155 quadto
+377 1155 lineto
+377 1117 lineto
+716 1117 lineto
+716 959 lineto
+383 959 lineto
+383 0 lineto
+195 0 lineto
+195 959 lineto
+68 959 lineto
+68 1117 lineto
+195 1117 lineto
+195 1154 lineto
+195 1353 294 1459.5 quadto
+393 1566 580 1566 quadto
+580 1566 lineto
+643 1566 693.5 1560 quadto
+744 1554 786 1546 quadto
+786 1546 lineto
+closepath
+} def
+
+/g {
+1091 1117 moveto
+1091 127 lineto
+1091 -157 962 -290 quadto
+833 -423 565 -423 quadto
+565 -423 lineto
+476 -423 391.5 -410.5 quadto
+307 -398 225 -375 quadto
+225 -375 lineto
+225 -183 lineto
+235 -183 lineto
+281 -201 381 -227.5 quadto
+481 -254 581 -254 quadto
+581 -254 lineto
+677 -254 740 -231 quadto
+803 -208 838 -167 quadto
+838 -167 lineto
+873 -128 888 -73 quadto
+903 -18 903 50 quadto
+903 50 lineto
+903 152 lineto
+818 84 740.5 50.5 quadto
+663 17 543 17 quadto
+543 17 lineto
+343 17 225.5 161.5 quadto
+108 306 108 569 quadto
+108 569 lineto
+108 713 148.5 817.5 quadto
+189 922 259 998 quadto
+259 998 lineto
+324 1069 417 1108.5 quadto
+510 1148 602 1148 quadto
+602 1148 lineto
+699 1148 764.5 1128.5 quadto
+830 1109 903 1069 quadto
+903 1069 lineto
+915 1117 lineto
+1091 1117 lineto
+closepath
+903 307 moveto
+903 307 lineto
+903 916 lineto
+828 950 763.5 964.5 quadto
+699 979 635 979 quadto
+635 979 lineto
+480 979 391 875 quadto
+302 771 302 573 quadto
+302 573 lineto
+302 385 368 288 quadto
+434 191 587 191 quadto
+587 191 lineto
+669 191 751.5 222.5 quadto
+834 254 903 307 quadto
+closepath
+} def
+
+/h {
+1119 725 moveto
+1119 0 lineto
+931 0 lineto
+931 636 lineto
+931 713 922 780.5 quadto
+913 848 889 886 quadto
+889 886 lineto
+864 928 817 948.5 quadto
+770 969 695 969 quadto
+695 969 lineto
+618 969 534 931 quadto
+450 893 373 834 quadto
+373 834 lineto
+373 0 lineto
+185 0 lineto
+185 1556 lineto
+373 1556 lineto
+373 993 lineto
+461 1066 555 1107 quadto
+649 1148 748 1148 quadto
+748 1148 lineto
+929 1148 1024 1039 quadto
+1119 930 1119 725 quadto
+1119 725 lineto
+closepath
+} def
+
+/i {
+387 1499 moveto
+387 1304 lineto
+175 1304 lineto
+175 1499 lineto
+387 1499 lineto
+closepath
+375 1117 moveto
+375 0 lineto
+187 0 lineto
+187 1117 lineto
+375 1117 lineto
+closepath
+} def
+
+/j {
+533 1499 moveto
+533 1304 lineto
+321 1304 lineto
+321 1499 lineto
+533 1499 lineto
+closepath
+521 1117 moveto
+521 -27 lineto
+521 -223 421 -323 quadto
+321 -423 153 -423 quadto
+153 -423 lineto
+113 -423 47.5 -415 quadto
+-18 -407 -62 -395 quadto
+-62 -395 lineto
+-62 -216 lineto
+-52 -216 lineto
+-24 -227 23.5 -241 quadto
+71 -255 116 -255 quadto
+116 -255 lineto
+188 -255 232 -235 quadto
+276 -215 298 -175 quadto
+298 -175 lineto
+320 -135 326.5 -78.5 quadto
+333 -22 333 59 quadto
+333 59 lineto
+333 959 lineto
+100 959 lineto
+100 1117 lineto
+521 1117 lineto
+closepath
+} def
+
+/k {
+642 601 moveto
+1199 0 lineto
+951 0 lineto
+503 489 lineto
+381 373 lineto
+381 0 lineto
+193 0 lineto
+193 1556 lineto
+381 1556 lineto
+381 558 lineto
+924 1117 lineto
+1161 1117 lineto
+642 601 lineto
+closepath
+} def
+
+/l {
+375 1556 moveto
+375 0 lineto
+187 0 lineto
+187 1556 lineto
+375 1556 lineto
+closepath
+} def
+
+/m {
+1815 725 moveto
+1815 0 lineto
+1627 0 lineto
+1627 636 lineto
+1627 708 1620.5 775 quadto
+1614 842 1593 882 quadto
+1593 882 lineto
+1570 925 1527 947 quadto
+1484 969 1403 969 quadto
+1403 969 lineto
+1324 969 1245 929.5 quadto
+1166 890 1087 829 quadto
+1087 829 lineto
+1090 806 1092 775.5 quadto
+1094 745 1094 715 quadto
+1094 715 lineto
+1094 0 lineto
+906 0 lineto
+906 636 lineto
+906 710 899.5 776.5 quadto
+893 843 872 883 quadto
+872 883 lineto
+849 926 806 947.5 quadto
+763 969 682 969 quadto
+682 969 lineto
+605 969 527.5 931 quadto
+450 893 373 834 quadto
+373 834 lineto
+373 0 lineto
+185 0 lineto
+185 1117 lineto
+373 1117 lineto
+373 993 lineto
+461 1066 548.5 1107 quadto
+636 1148 735 1148 quadto
+735 1148 lineto
+849 1148 928.5 1100 quadto
+1008 1052 1047 967 quadto
+1047 967 lineto
+1161 1063 1255 1105.5 quadto
+1349 1148 1456 1148 quadto
+1456 1148 lineto
+1640 1148 1727.5 1036.5 quadto
+1815 925 1815 725 quadto
+1815 725 lineto
+closepath
+} def
+
+/n {
+1119 725 moveto
+1119 0 lineto
+931 0 lineto
+931 636 lineto
+931 713 922 780.5 quadto
+913 848 889 886 quadto
+889 886 lineto
+864 928 817 948.5 quadto
+770 969 695 969 quadto
+695 969 lineto
+618 969 534 931 quadto
+450 893 373 834 quadto
+373 834 lineto
+373 0 lineto
+185 0 lineto
+185 1117 lineto
+373 1117 lineto
+373 993 lineto
+461 1066 555 1107 quadto
+649 1148 748 1148 quadto
+748 1148 lineto
+929 1148 1024 1039 quadto
+1119 930 1119 725 quadto
+1119 725 lineto
+closepath
+} def
+
+/o {
+1137 558 moveto
+1137 558 lineto
+1137 285 997 127 quadto
+857 -31 622 -31 quadto
+622 -31 lineto
+385 -31 245.5 127 quadto
+106 285 106 558 quadto
+106 558 lineto
+106 831 245.5 989.5 quadto
+385 1148 622 1148 quadto
+622 1148 lineto
+857 1148 997 989.5 quadto
+1137 831 1137 558 quadto
+closepath
+943 558 moveto
+943 558 lineto
+943 775 858 880.5 quadto
+773 986 622 986 quadto
+622 986 lineto
+469 986 384.5 880.5 quadto
+300 775 300 558 quadto
+300 558 lineto
+300 348 385 239.5 quadto
+470 131 622 131 quadto
+622 131 lineto
+772 131 857.5 238.5 quadto
+943 346 943 558 quadto
+closepath
+} def
+
+/p {
+1168 572 moveto
+1168 572 lineto
+1168 436 1129 323.5 quadto
+1090 211 1019 133 quadto
+1019 133 lineto
+953 59 863.5 18.5 quadto
+774 -22 674 -22 quadto
+674 -22 lineto
+587 -22 516.5 -3 quadto
+446 16 373 56 quadto
+373 56 lineto
+373 -412 lineto
+185 -412 lineto
+185 1117 lineto
+373 1117 lineto
+373 1000 lineto
+448 1063 541.5 1105.5 quadto
+635 1148 741 1148 quadto
+741 1148 lineto
+943 1148 1055.5 995.5 quadto
+1168 843 1168 572 quadto
+closepath
+974 567 moveto
+974 567 lineto
+974 769 905 869 quadto
+836 969 693 969 quadto
+693 969 lineto
+612 969 530 934 quadto
+448 899 373 842 quadto
+373 842 lineto
+373 209 lineto
+453 173 510.5 160 quadto
+568 147 641 147 quadto
+641 147 lineto
+798 147 886 253 quadto
+974 359 974 567 quadto
+closepath
+} def
+
+/q {
+1091 1117 moveto
+1091 -412 lineto
+903 -412 lineto
+903 126 lineto
+816 51 730 14.5 quadto
+644 -22 544 -22 quadto
+544 -22 lineto
+345 -22 226.5 131.5 quadto
+108 285 108 555 quadto
+108 555 lineto
+108 699 149.5 809.5 quadto
+191 920 259 995 quadto
+259 995 lineto
+325 1068 414 1108 quadto
+503 1148 602 1148 quadto
+602 1148 lineto
+692 1148 761.5 1128 quadto
+831 1108 903 1069 quadto
+903 1069 lineto
+915 1117 lineto
+1091 1117 lineto
+closepath
+903 284 moveto
+903 284 lineto
+903 916 lineto
+825 951 765 965 quadto
+705 979 635 979 quadto
+635 979 lineto
+472 979 387 868.5 quadto
+302 758 302 564 quadto
+302 564 lineto
+302 368 370.5 262.5 quadto
+439 157 586 157 quadto
+586 157 lineto
+668 157 750 192.5 quadto
+832 228 903 284 quadto
+closepath
+} def
+
+/r {
+882 1105 moveto
+882 912 lineto
+872 912 lineto
+830 922 790.5 926.5 quadto
+751 931 697 931 quadto
+697 931 lineto
+610 931 529 892.5 quadto
+448 854 373 793 quadto
+373 793 lineto
+373 0 lineto
+185 0 lineto
+185 1117 lineto
+373 1117 lineto
+373 952 lineto
+485 1042 570.5 1079.5 quadto
+656 1117 745 1117 quadto
+745 1117 lineto
+794 1117 816 1114.5 quadto
+838 1112 882 1105 quadto
+882 1105 lineto
+closepath
+} def
+
+/s {
+983 322 moveto
+983 322 lineto
+983 169 856.5 71 quadto
+730 -27 511 -27 quadto
+511 -27 lineto
+387 -27 283.5 2.5 quadto
+180 32 110 67 quadto
+110 67 lineto
+110 278 lineto
+120 278 lineto
+209 211 318 171.5 quadto
+427 132 527 132 quadto
+527 132 lineto
+651 132 721 172 quadto
+791 212 791 298 quadto
+791 298 lineto
+791 364 753 398 quadto
+753 398 lineto
+715 432 607 456 quadto
+607 456 lineto
+567 465 502.5 477 quadto
+438 489 385 503 quadto
+385 503 lineto
+238 542 176.5 617.5 quadto
+115 693 115 803 quadto
+115 803 lineto
+115 872 143.5 933 quadto
+172 994 230 1042 quadto
+230 1042 lineto
+286 1089 372.5 1116.5 quadto
+459 1144 566 1144 quadto
+566 1144 lineto
+666 1144 768.5 1119.5 quadto
+871 1095 939 1060 quadto
+939 1060 lineto
+939 859 lineto
+929 859 lineto
+857 912 754 948.5 quadto
+651 985 552 985 quadto
+552 985 lineto
+449 985 378 945.5 quadto
+307 906 307 828 quadto
+307 828 lineto
+307 759 350 724 quadto
+350 724 lineto
+392 689 486 667 quadto
+486 667 lineto
+538 655 602.5 643 quadto
+667 631 710 621 quadto
+710 621 lineto
+841 591 912 518 quadto
+912 518 lineto
+983 444 983 322 quadto
+closepath
+} def
+
+/t {
+765 179 moveto
+765 10 lineto
+712 -4 649.5 -13 quadto
+587 -22 538 -22 quadto
+538 -22 lineto
+367 -22 278 70 quadto
+189 162 189 365 quadto
+189 365 lineto
+189 959 lineto
+62 959 lineto
+62 1117 lineto
+189 1117 lineto
+189 1438 lineto
+377 1438 lineto
+377 1117 lineto
+765 1117 lineto
+765 959 lineto
+377 959 lineto
+377 450 lineto
+377 362 381 312.5 quadto
+385 263 409 220 quadto
+409 220 lineto
+431 180 469.5 161.5 quadto
+508 143 587 143 quadto
+587 143 lineto
+633 143 683 156.5 quadto
+733 170 755 179 quadto
+755 179 lineto
+765 179 lineto
+closepath
+} def
+
+/u {
+1111 1117 moveto
+1111 0 lineto
+923 0 lineto
+923 124 lineto
+828 49 741 9 quadto
+654 -31 549 -31 quadto
+549 -31 lineto
+373 -31 275 76.5 quadto
+177 184 177 392 quadto
+177 392 lineto
+177 1117 lineto
+365 1117 lineto
+365 481 lineto
+365 396 373 335.5 quadto
+381 275 407 232 quadto
+407 232 lineto
+434 188 477 168 quadto
+520 148 602 148 quadto
+602 148 lineto
+675 148 761.5 186 quadto
+848 224 923 283 quadto
+923 283 lineto
+923 1117 lineto
+1111 1117 lineto
+closepath
+} def
+
+/v {
+954 1117 moveto
+1151 1117 lineto
+699 0 lineto
+510 0 lineto
+61 1117 lineto
+265 1117 lineto
+611 228 lineto
+954 1117 lineto
+closepath
+} def
+
+/w {
+1401 1117 moveto
+1590 1117 lineto
+1299 0 lineto
+1125 0 lineto
+838 861 lineto
+553 0 lineto
+380 0 lineto
+86 1117 lineto
+282 1117 lineto
+487 252 lineto
+766 1117 lineto
+921 1117 lineto
+1207 252 lineto
+1401 1117 lineto
+closepath
+} def
+
+/x {
+713 567 moveto
+1152 0 lineto
+915 0 lineto
+598 429 lineto
+279 0 lineto
+60 0 lineto
+496 557 lineto
+64 1117 lineto
+301 1117 lineto
+616 695 lineto
+932 1117 lineto
+1152 1117 lineto
+713 567 lineto
+closepath
+} def
+
+/y {
+954 1117 moveto
+1151 1117 lineto
+499 -412 lineto
+298 -412 lineto
+506 54 lineto
+61 1117 lineto
+265 1117 lineto
+608 289 lineto
+954 1117 lineto
+closepath
+} def
+
+/z {
+995 159 moveto
+995 0 lineto
+93 0 lineto
+93 139 lineto
+744 960 lineto
+107 960 lineto
+107 1117 lineto
+978 1117 lineto
+978 983 lineto
+324 159 lineto
+995 159 lineto
+closepath
+} def
+
+/braceleft {
+1113 -254 moveto
+1113 -392 lineto
+963 -392 lineto
+784 -392 672.5 -292.5 quadto
+561 -193 561 -5 quadto
+561 -5 lineto
+561 144 lineto
+561 313 478 408.5 quadto
+395 504 224 504 quadto
+224 504 lineto
+173 504 lineto
+173 660 lineto
+224 660 lineto
+395 660 478 755.5 quadto
+561 851 561 1020 quadto
+561 1020 lineto
+561 1169 lineto
+561 1357 672.5 1456.5 quadto
+784 1556 963 1556 quadto
+963 1556 lineto
+1113 1556 lineto
+1113 1418 lineto
+999 1418 lineto
+863 1418 801.5 1355 quadto
+740 1292 740 1152 quadto
+740 1152 lineto
+740 977 lineto
+740 838 663 743.5 quadto
+586 649 449 594 quadto
+449 594 lineto
+449 570 lineto
+586 515 663 420.5 quadto
+740 326 740 187 quadto
+740 187 lineto
+740 12 lineto
+740 -128 801.5 -191 quadto
+863 -254 999 -254 quadto
+999 -254 lineto
+1113 -254 lineto
+closepath
+} def
+
+/bar {
+552 1556 moveto
+552 -392 lineto
+378 -392 lineto
+378 1556 lineto
+552 1556 lineto
+closepath
+} def
+
+/braceright {
+1127 660 moveto
+1127 504 lineto
+1076 504 lineto
+905 504 822 408.5 quadto
+739 313 739 144 quadto
+739 144 lineto
+739 -5 lineto
+739 -193 627.5 -292.5 quadto
+516 -392 337 -392 quadto
+337 -392 lineto
+187 -392 lineto
+187 -254 lineto
+301 -254 lineto
+437 -254 498.5 -191 quadto
+560 -128 560 12 quadto
+560 12 lineto
+560 187 lineto
+560 326 637 420.5 quadto
+714 515 851 570 quadto
+851 570 lineto
+851 594 lineto
+714 649 637 743.5 quadto
+560 838 560 977 quadto
+560 977 lineto
+560 1152 lineto
+560 1292 498.5 1355 quadto
+437 1418 301 1418 quadto
+301 1418 lineto
+187 1418 lineto
+187 1556 lineto
+337 1556 lineto
+516 1556 627.5 1456.5 quadto
+739 1357 739 1169 quadto
+739 1169 lineto
+739 1020 lineto
+739 851 822 755.5 quadto
+905 660 1076 660 quadto
+1076 660 lineto
+1127 660 lineto
+closepath
+} def
+
+/kern [
+[ [ ( ) ] ]
+[ [ (!) ] ]
+[ [ (") ] ]
+[ [ (#) ] ]
+[ [ ($) ] ]
+[ [ (%) ] ]
+[ [ (&) ] ]
+[ [ (') ] [ (A) -100 ] ]
+[ [ (\() ] ]
+[ [ (\)) ] ]
+[ [ (*) ] ]
+[ [ (+) ] ]
+[ [ (,) ] ]
+[ [ (-) ] [ (A) -50 ] [ (I) -30 ] [ (J) -100 ] [ (S) -20 ] [ (T) -150 ] [ (V) -50 ] [ (W) -50 ] [ (X) -80 ] [ (Y) -140 ] [ (Z) -30 ] [ (a) -20 ] [ (v) -40 ] [ (w) -20 ] [ (x) -50 ] [ (y) -40 ] [ (z) -40 ] ]
+[ [ (.) ] [ (,) -130 ] [ (-) -160 ] ]
+[ [ (/) ] ]
+[ [ (0) ] ]
+[ [ (1) ] ]
+[ [ (2) ] ]
+[ [ (3) ] ]
+[ [ (4) ] ]
+[ [ (5) ] ]
+[ [ (6) ] ]
+[ [ (7) ] ]
+[ [ (8) ] ]
+[ [ (9) ] ]
+[ [ (:) ] ]
+[ [ (;) ] ]
+[ [ (<) ] ]
+[ [ (=) ] ]
+[ [ (>) ] ]
+[ [ (?) ] ]
+[ [ (@) ] ]
+[ [ (A) ] [ (-) -50 ] [ (S) -10 ] [ (T) -120 ] [ (U) -10 ] [ (V) -60 ] [ (W) -50 ] [ (Y) -80 ] [ (t) -20 ] [ (u) -10 ] [ (v) -50 ] [ (w) -30 ] [ (y) -50 ] ]
+[ [ (B) ] [ (,) -20 ] [ (-) 10 ] [ (.) -20 ] [ (T) -60 ] ]
+[ [ (C) ] [ (-) -50 ] ]
+[ [ (D) ] [ (,) -50 ] [ (.) -50 ] [ (T) -50 ] [ (W) -20 ] [ (X) -10 ] [ (Y) -20 ] [ (Z) -20 ] ]
+[ [ (E) ] ]
+[ [ (F) ] [ (,) -300 ] [ (.) -300 ] [ (:) -60 ] [ (;) -60 ] [ (?) 60 ] [ (A) -100 ] [ (T) 30 ] [ (a) -100 ] [ (e) -50 ] [ (o) -50 ] ]
+[ [ (G) ] ]
+[ [ (H) ] ]
+[ [ (I) ] [ (-) -30 ] ]
+[ [ (J) ] [ (,) -20 ] [ (.) -20 ] [ (A) -10 ] ]
+[ [ (K) ] [ (-) -110 ] [ (O) -20 ] [ (a) -60 ] [ (e) -70 ] [ (o) -70 ] [ (u) -50 ] [ (v) -80 ] [ (w) -70 ] [ (y) -80 ] ]
+[ [ (L) ] [ (') -120 ] [ (-) -160 ] [ (C) -20 ] [ (G) -20 ] [ (J) 100 ] [ (O) -20 ] [ (T) -170 ] [ (V) -110 ] [ (W) -100 ] [ (Y) -160 ] [ (v) -110 ] [ (y) -110 ] ]
+[ [ (M) ] ]
+[ [ (N) ] ]
+[ [ (O) ] [ (,) -30 ] [ (.) -30 ] [ (T) -50 ] [ (X) -10 ] [ (Y) -20 ] [ (Z) -20 ] ]
+[ [ (P) ] [ (,) -300 ] [ (.) -300 ] [ (A) -50 ] [ (Y) 20 ] [ (a) -50 ] [ (e) -50 ] [ (o) -50 ] ]
+[ [ (Q) ] [ (,) -30 ] [ (.) -30 ] ]
+[ [ (R) ] [ (-) -100 ] [ (T) -60 ] [ (Y) -20 ] [ (a) -40 ] [ (e) -50 ] [ (o) -50 ] [ (u) -20 ] [ (y) -55 ] ]
+[ [ (S) ] [ (,) -20 ] [ (.) -20 ] [ (A) -20 ] [ (S) -22 ] [ (v) -30 ] [ (w) -20 ] [ (y) -30 ] ]
+[ [ (T) ] [ (,) -290 ] [ (-) -150 ] [ (.) -290 ] [ (:) -200 ] [ (;) -200 ] [ (?) 60 ] [ (A) -120 ] [ (C) -40 ] [ (G) -40 ] [ (O) -50 ] [ (S) -12 ] [ (T) -70 ] [ (a) -240 ] [ (c) -220 ] [ (e) -220 ] [ (g) -210 ] [ (o) -220 ] [ (r) -200 ] [ (s) -180 ] [ (u) -200 ] [ (v) -200 ] [ (w) -200 ] [ (y) -200 ] [ (z) -170 ] ]
+[ [ (U) ] [ (,) -20 ] [ (.) -20 ] [ (A) -10 ] ]
+[ [ (V) ] [ (,) -290 ] [ (-) -50 ] [ (.) -290 ] [ (:) -80 ] [ (;) -80 ] [ (A) -60 ] [ (a) -100 ] [ (e) -100 ] [ (o) -100 ] [ (u) -60 ] [ (y) -65 ] ]
+[ [ (W) ] [ (,) -290 ] [ (-) -50 ] [ (.) -220 ] [ (:) -80 ] [ (;) -80 ] [ (A) -50 ] [ (a) -100 ] [ (e) -100 ] [ (o) -100 ] [ (r) -60 ] [ (u) -60 ] [ (y) -65 ] ]
+[ [ (X) ] [ (-) -80 ] [ (C) -10 ] [ (G) -10 ] [ (O) -10 ] [ (a) -50 ] [ (e) -60 ] [ (o) -60 ] [ (u) -30 ] [ (y) -80 ] ]
+[ [ (Y) ] [ (,) -290 ] [ (-) -140 ] [ (.) -290 ] [ (:) -200 ] [ (;) -200 ] [ (A) -80 ] [ (O) -20 ] [ (a) -140 ] [ (d) -120 ] [ (e) -130 ] [ (g) -130 ] [ (m) -100 ] [ (n) -100 ] [ (o) -130 ] [ (p) -100 ] [ (q) -130 ] [ (r) -100 ] [ (s) -110 ] [ (u) -110 ] [ (v) -100 ] ]
+[ [ (Z) ] [ (-) -60 ] [ (C) -20 ] [ (G) -20 ] [ (O) -20 ] [ (Z) -10 ] [ (a) -50 ] [ (e) -60 ] [ (o) -60 ] [ (w) -40 ] [ (y) -65 ] ]
+[ [ ([) ] ]
+[ [ (\\) ] ]
+[ [ (]) ] ]
+[ [ (^) ] ]
+[ [ (_) ] ]
+[ [ (`) ] ]
+[ [ (a) ] [ (v) -16 ] [ (w) -10 ] [ (y) -16 ] ]
+[ [ (b) ] [ (,) -30 ] [ (.) -20 ] [ (y) -5 ] ]
+[ [ (c) ] [ (-) -20 ] [ (T) -60 ] ]
+[ [ (d) ] ]
+[ [ (e) ] [ (T) -140 ] ]
+[ [ (f) ] [ (") 60 ] [ (') 60 ] [ (\)) 100 ] [ (*) 50 ] [ (,) -130 ] [ (-) -50 ] [ (.) -120 ] [ (?) 110 ] [ (\\) 100 ] [ (]) 100 ] [ (y) -10 ] [ (}) 100 ] ]
+[ [ (g) ] ]
+[ [ (h) ] [ (v) -20 ] [ (w) -10 ] [ (y) -20 ] ]
+[ [ (i) ] ]
+[ [ (j) ] ]
+[ [ (k) ] [ (-) -100 ] [ (e) -20 ] [ (o) -20 ] ]
+[ [ (l) ] ]
+[ [ (m) ] [ (v) -20 ] [ (w) -10 ] [ (y) -20 ] ]
+[ [ (n) ] [ (v) -20 ] [ (w) -10 ] [ (y) -20 ] ]
+[ [ (o) ] [ (,) -30 ] [ (.) -20 ] [ (v) -15 ] [ (x) -20 ] [ (y) -15 ] ]
+[ [ (p) ] [ (,) -30 ] [ (.) -20 ] [ (y) -5 ] ]
+[ [ (q) ] ]
+[ [ (r) ] [ (,) -290 ] [ (-) -20 ] [ (.) -290 ] [ (a) -36 ] ]
+[ [ (s) ] ]
+[ [ (t) ] [ (-) -40 ] [ (y) -10 ] ]
+[ [ (u) ] ]
+[ [ (v) ] [ (,) -180 ] [ (-) -40 ] [ (.) -180 ] [ (a) -40 ] [ (e) -18 ] [ (o) -18 ] ]
+[ [ (w) ] [ (,) -70 ] [ (-) -20 ] [ (.) -70 ] [ (a) -20 ] ]
+[ [ (x) ] [ (-) -50 ] [ (c) -20 ] [ (d) -10 ] [ (e) -24 ] [ (g) -10 ] [ (o) -24 ] ]
+[ [ (y) ] [ (,) -190 ] [ (-) -40 ] [ (.) -190 ] [ (a) -40 ] [ (c) -18 ] [ (d) -10 ] [ (e) -18 ] [ (g) -10 ] [ (o) -18 ] [ (q) -10 ] ]
+[ [ (z) ] [ (-) -20 ] [ (c) -10 ] [ (d) -10 ] [ (e) -12 ] [ (g) -10 ] [ (o) -12 ] [ (q) -10 ] ]
+[ [ ({) ] ]
+[ [ (|) ] ]
+[ [ (}) ] ]
+] def
+/lens [
+720
+806
+940
+1676
+1302
+2204
+1488
+550
+930
+930
+1302
+1676
+745
+930
+745
+930
+1302
+1302
+1302
+1302
+1302
+1302
+1302
+1302
+1302
+1302
+930
+930
+1676
+1676
+1676
+1117
+2048
+1400
+1404
+1430
+1578
+1295
+1177
+1588
+1539
+862
+931
+1419
+1140
+1726
+1532
+1612
+1235
+1612
+1424
+1400
+1262
+1499
+1400
+2025
+1403
+1260
+1403
+930
+930
+930
+1676
+1302
+1302
+1230
+1276
+1067
+1276
+1220
+720
+1276
+1296
+562
+705
+1212
+562
+1992
+1296
+1243
+1276
+1276
+874
+1067
+807
+1296
+1212
+1676
+1212
+1212
+1076
+1300
+930
+1300
+] def
+
+two
+fill
+showpage
+
