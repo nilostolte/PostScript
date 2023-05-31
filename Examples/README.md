@@ -63,7 +63,8 @@ with quadratic Bezier curves.
 ### Quadratic Bezier curves in PostScript
 
 And this bring us to the heart of the problem this example is addressing: **PostScript only allows cubic Bezier curves**, not
-quadratic. This is rather logical because quadric Bezier curves can be considered as a particular case of Bezier curves.
+quadratic. This is rather logical because quadratic Bezier curves can be considered as a particular case of cubic
+Bezier curves.
 
 Mathematically, this is explained by 
 [these formulations](https://fontforge.org/docs/techref/bezier.html#converting-truetype-to-postscript):
@@ -74,31 +75,72 @@ Mathematically, this is explained by
 
 Cubic curves (**C** above) have 4 control points (P0, P1, P2 and P3), whereas quadratic curves (**Q** above) have only 3 (P0, P1 and P2). 
 Therefore, one can use this method to convert curves with 4 control points to 3 control points. This is done
-[here](https://github.com/nilostolte/PostScript/blob/main/Examples/Quadratic%20Bezier%20curves/quadto.ps).
+[here](https://github.com/nilostolte/PostScript/blob/main/Examples/Quadratic%20Bezier%20curves/quadto.ps). Notice that
+technically the beginning and end points of are not usually considered "control points", but just **CP1** and **CP2**, or **QP1**,
+are formally "control points."
 
-As can be seen in this example, instead of using the Postscript command **curveto**, which requires 4 control points
-(the **currentpoint** and 3 points explicitly given before the command), one uses a function called **quadto**, which
-requires only 3 control points (the **currentpoint** and 2 points explicitly given before the function call).
-behind the scenes (inside the quadto function), quadto only converts the 3 control points into 4 control points
-and calls **curveto** command. The function actually implements the method shown above.
+As can be seen in this [example](https://github.com/nilostolte/PostScript/blob/main/Examples/Quadratic%20Bezier%20curves/quadto.ps),
+the conversion is done by this code:
+
+```PostScript
+/vsub {
+   3 -1 roll exch sub 3 -2 roll sub exch
+}def
+
+/vadd {
+   3 -1 roll add 3 -2 roll add exch
+}def
+
+/vmul {
+	/fact exch def
+	fact mul exch fact mul exch
+} def
+
+/quadto {
+	/P2 [ 4 -2 roll ] cvx def
+	/P1 [ 4 -2 roll ] cvx def
+	/P0 [ currentpoint ] cvx def
+	P1 P0 vsub 2 3 div vmul P0 vadd 
+	P1 P2 vsub 2 3 div vmul P2 vadd  
+	P2 curveto
+} def
+``` 
+Instead of using the Postscript command **curveto**, which requires 4 control points (the **currentpoint** and 3 points
+explicitly given before the command), one uses a function called **quadto**, which requires only 3 control points 
+(the **currentpoint** and 2 points explicitly given before the function call). Behind the scenes (inside the quadto function), 
+quadto only converts the 3 control points into 4 control points and calls **curveto** command. The function actually implements
+the method shown above.
+
+Notice in the code above that 3 functions simplify the conversion: **vsub**, **vadd**, and  **vmul**. These are the implementation
+of **vector** subtraction, addition as well as the multiplication of a vector by a scalar, respectively. In **quadto** function
+P0, P1 and P2 are arrays containing x and y coordinates of the points, based on the input as well as the **currentpoint**. In 
+other words they are **QP0**, **QP1** and **QP2** represented as vectors. Notice that these arrays are converted to "executable" 
+using the command **cvx**. In this way, their names actually call the procedure that pushes both coordinates to the stack. After 
+all these operations are executed what remains in the stack is **CP1**, **CP2** and **CP3**, the arguments for the command **curveto**.
 
 ### Obtaining **TrueType** Glyphs
 
 As shown in the above example, **TrueType** Glyphs were already given as is in the program. But where can we get them
-from? Enters [**Glyph Inspector**](https://opentype.js.org/glyph-inspector.html).
+from? Enters [**Glyph Inspector**](https://github.com/nilostolte/PostScript/tree/main/OpenType%20Fonts).
 
-**Glyph Inspector** allows to examine glyphs and extract its different commands. Here one needs to
-load any **TrueType** font from your machine. For example, type in the address bar of any Explorer window on Windows: 
+**Glyph Inspector** allows to examine glyphs of a font and convert the information to PostScript. Here one needs to
+load any **TrueType** font file. For example, type in the address bar of any Explorer window on Windows: 
 **C:\Windows\Fonts**:
 
 <p align="center">
+<kbd>
 <img src="https://github.com/nilostolte/PostScript/assets/80269251/9225f5fa-e23a-482a-baa2-b2d0163591b6" width="683" height="501" >
-</p>
+</kbd>
+</p><br>
 
-Then double-click on **Verdana**, drag **"Verdana Regular"** to Downloads, and now open **verdana.ttf** on **Glyph Inspector**:
+Then double-click on **Verdana**, drag **"Verdana Regular"** to Downloads, and now open **verdana.ttf** on **Glyph Inspector** (by clicking on **Choose File**, opening Downloads directory, typing **verdana.ttf** in "File name:" box, and clicking **Open*):
 
-<!-- 
 <p align="center">
-<img src="https://github.com/nilostolte/PostScript/assets/80269251/151c2847-0175-4561-8541-1b4b2da2074c" width="683" height="384" >
-</p>
--->
+<kbd>
+<img src="https://github.com/nilostolte/PostScript/assets/80269251/c3280f80-3cf5-4aac-bbb7-d970d1af60dd" width="683" height="384" >
+</kbd>
+</p><br>
+
+By clicking on **PostScript** button the font is converted to PostScript. This is the procedure to obtain the example
+[**verdana.ps**](https://github.com/nilostolte/PostScript#verdana).
+
