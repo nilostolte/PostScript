@@ -14,7 +14,7 @@ This [directory](https://github.com/nilostolte/PostScript/tree/main/Examples) co
 
 <p align="center">
 <kbd>
-<img src="https://github.com/nilostolte/PostScript/assets/80269251/79b45b71-5ed2-410e-95e1-933fe495ce7b" width="683" height="471" >
+<img src="https://github.com/nilostolte/PostScript/assets/80269251/07208f36-c34a-4599-ab8d-802d9f0af7bd" width="683" height="471" >
 </kbd>
 </p>
 
