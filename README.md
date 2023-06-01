@@ -23,6 +23,16 @@ This [project](https://github.com/nilostolte/PostScript/tree/main/OpenType%20Fon
 glyphs (all ASCII printable characters, in fact) and other information (width table - len array-, and kerning 
 pairs table - kern array -) of the font file read with the program.
 
+**EASY DOWNLOAD**: download raw 
+[**glyph-inspector.html**](https://github.com/nilostolte/PostScript/blob/main/OpenType%20Fonts/glyph-inspector.html),
+[**site.css**](https://github.com/nilostolte/PostScript/blob/main/OpenType%20Fonts/site.css), and 
+[**opentype.js**](https://github.com/nilostolte/PostScript/blob/main/OpenType%20Fonts/dist/opentype.js). Notice
+that **opentype.js** must be in a local **dist** directory as shown in this 
+[directory](https://github.com/nilostolte/PostScript/tree/main/OpenType%20Fonts). The other files appearing in
+**dist** directory [here](https://github.com/nilostolte/PostScript/tree/main/OpenType%20Fonts/dist) are just optional versions
+of **opentype.js**.
+
+
 The program was written in JavaScript and it was added a button that triggers the convertion of the Opentype font file loaded
 by the user. Once triggered, the browser tab where it was run becomes an html text file containing the font information of the
 original Opentype font, but expressed in PostScript language. The file is not a PostScript font, but it has all elements to 
