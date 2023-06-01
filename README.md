@@ -12,6 +12,12 @@ This [directory](https://github.com/nilostolte/PostScript/tree/main/Examples) co
 <a name="verdana"></a>
 ## Opentype Fonts in PostScript
 
+<p align="center">
+<kbd>
+<img src="https://github.com/nilostolte/PostScript/assets/80269251/79b45b71-5ed2-410e-95e1-933fe495ce7b" width="683" height="471" >
+</kbd>
+</p>
+
 This [project](https://github.com/nilostolte/PostScript/tree/main/OpenType%20Fonts) is a modification of 
 [**Glyph Inspector**](https://opentype.js.org/glyph-inspector.html) that generates a PostScript file with all
 glyphs (all ASCII printable characters, in fact) and other information (width table - len array-, and kerning 
