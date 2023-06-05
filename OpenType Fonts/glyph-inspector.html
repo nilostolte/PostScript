@@ -12,8 +12,8 @@
     <div class="container">
         <h1>opentype.js</h1>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="font-inspector.html">Font Inspector</a>
+            <a href="https://opentype.js.org/">Home</a>
+            <a href="https://opentype.js.org/font-inspector.html">Font Inspector</a>
             <a href="glyph-inspector.html">Glyph Inspector</a>
         </nav>
         <nav class="right">
@@ -28,16 +28,21 @@
         <h1>Glyph Inspector</h1>
         <small>opentype.js is an OpenType and TrueType font parser. Here you can inspect the raw glyph data.</small>
 		<br>
-		<small>
-		Click here to translate it to PostScript:
-		<input id="peep" type="button" value="PostScript" onclick="msg()" style="font-size : 11px; width: 70px; height: 18px;" >
+		<div style ="position: relative; top: 5px;"><small>
+		Click to generate the below chosen glyph range to 
+		<input id="peep" type="button" value="PostScript" onclick="generatePS()" style="font-size : 11px; width: 70px; height: 18px;" ><br>
+		
+		<div style ="position: relative; top: 5px;">Unicode index range:</div><div style ="position: relative;left: 150px;top: -16px;">Lower: <input placeholder="" name="umin" id="umin" onchange="minUpdate(this.value)" style="font-size : 11px; width: 50px; height: 12px;"/>&nbsp;&nbsp; Higher: <input placeholder="" name="umax" id="umax" onchange="umaxUpdate(this.value)" style="font-size : 11px; width: 50px; height: 12px;"/> &nbsp;&nbsp; <input type="checkbox" id="uniGlyphs" onclick="uniGlyphs()" checked style="position: relative; top: 3px;"></div>
+		
+		<div style ="position: relative; top: -11px;">Font index range:</div><div style ="position: relative;left: 150px; top: -33px;">Lower: <input placeholder="" name="fmin" id="fmin" onchange="fminUpdate(this.value)" style="font-size : 11px; width: 50px; height: 12px;"/>&nbsp;&nbsp; Higher: <input placeholder="" name="fmax" id="fmax" onchange="fmaxUpdate(this.value)" style="font-size : 11px; width: 50px; height: 12px;"/> &nbsp;&nbsp; <input type="checkbox" id="fntGlyphs" onclick="fntGlyphs()" style="position: relative; top: 3px;" ></div>
 		</small>
+		</div>
 
 
     </div>
 
     <input id="file" type="file">
-    <span class="info" id="font-name">Roboto-Black</span>
+    <span class="info" id="font-name">No file loaded</span>
     <div id="message"></div>
 
     <hr>
@@ -69,6 +74,13 @@
 
 
 <script>
+
+var GlyphsEncoding = true; // true -> Unicode index, false -> Font index
+var umin = 32;
+var umax = 255;
+var fmin = 3;
+var fmax = 200;
+
 const names = [
 	"space", "exclam", "quotedbl", "numbersign", "dollar", "percent", "ampersand", 
 	"quotesingle", "parenleft", "parenright", "asterisk", "plus", "comma", "hyphen", 
@@ -136,10 +148,7 @@ function download(strData, strFileName, strMimeType) {
 }
 
 function quadto_function(nl) {
-	var text = "<< /PageSize [ 500 450 ]"+ nl +
-	">> setpagedevice"+ nl +
-	"50 110 translate"+ nl +
-	"0.2 0.2 scale"+ nl + nl +
+	var text = 
 	"/vsub {"+ nl +
 	"  3 -1 roll exch sub 3 -2 roll sub exch"+ nl +
 	"}def"+ nl + nl +
@@ -186,15 +195,36 @@ function pathCommandToPSString(cmd) {
     return str;
 }
 
+
 function getPSGlyphs( nl ) {
 	var chars = font.tables.cmap.glyphIndexMap;
 	var glyph, path;
-	var i, j, size;
+	var i, j, size, index;
 	var text = "";
-	for ( i = 32, text = ""; i < 126; i++ ) { 
-		glyph = font.glyphs.get(chars[i]);
+	for ( i = umin; i <= max; i++ ) {
+		index = chars[i];
+		if (index == undefined ) { console.log(i); continue; }<!-- skip undefined -->
+		glyph = font.glyphs.get(index);
 		<!-- text += "static Path2D.Float " + glyph.name + "() {" + nl  -->
-		text += "/" + names[i-32] + " {" + nl; 
+		text += "/" + ((i >= names.length)? "U"+i.toString(16) : names[i-32]) + " {" + nl; 
+		path = glyph.path;
+		size = path.commands.length;
+		for ( j= 0; j < size; j++ ) 
+			text += pathCommandToPSString(path.commands[j]) + nl;
+			<!-- text += JSON.stringify(path.commands[j]) + nl; -->
+		text +=  "} def" + nl + nl;
+	}
+	return text;
+}
+
+function getFontPSGlyphs( nl ) {
+	var glyph, path;
+	var i, j, size, index;
+	var text = "";
+	for ( i = fmin; i <= fmax; i++ ) {
+		glyph = font.glyphs.get(i);
+		<!-- text += "static Path2D.Float " + glyph.name + "() {" + nl  -->
+		text += "/" + "X"+ (i.toString(16)) + " {" + nl; 
 		path = glyph.path;
 		size = path.commands.length;
 		for ( j= 0; j < size; j++ ) 
@@ -208,14 +238,24 @@ function getPSGlyphs( nl ) {
 function getPSKerningArray( nl ) {
 	var chars = font.tables.cmap.glyphIndexMap;
 	var g1,g2;
-	var i, j, kern;
+	var i, j, kern, index;
 	var text = "/kern [" + nl;
-	for ( i = 32; i < 126; i++ ) { 
+	for ( i = umin; i <= umax; i++ ) { 
+		index = chars[i];
+		if (index == undefined ) {
+			text += "[ [ () ] ]"  + nl; <!-- glyph doesn't exist -->
+			console.log(i); 
+			continue;
+		}
 		g1 = font.glyphs.get(chars[i]);
 		text += "[ [ (" + 
 		(( i == 40 || i == 41 || i == 92) ? "\\" + ((i == 92) ? "\\": String.fromCharCode(i)) : String.fromCharCode(i) )+
 		") ]";
-		for ( j = 32; j < 126; j++ ) {
+		for ( j = umin; j <= umax; j++ ) {
+			index = chars[j];
+			if (index == undefined ) {
+			  continue;
+		    } <!-- skip undefined -->
 			g2 = font.glyphs.get(chars[j]);
 			if ( (kern = font.getKerningValue(g1,g2)) !== 0 ) {
 				text += " [ (" +
@@ -228,18 +268,45 @@ function getPSKerningArray( nl ) {
 	return text + "] def" + nl;
 }
 
-function getPSWidthsArray( nl ) {
-	var chars = font.tables.cmap.glyphIndexMap;
-	<!-- var glyph; -->
-	var text = "/lens [" + nl;
-	for ( i = 32; i < 126; i++ ) { 
-		text += (font.glyphs.get(chars[i])).advanceWidth + nl;
+function getFontPSKerningArray( nl ) {
+	var g1,g2;
+	var i, j, kern, index;
+	var text = "/kern [" + nl;
+	for ( i = fmin; i <= fmax; i++ ) { 
+		g1 = font.glyphs.get(i);
+		text += "[ [ " + i + " ]";
+		for ( j = fmin; j <= fmax; j++ ) {
+			g2 = font.glyphs.get(j);
+			if ( (kern = font.getKerningValue(g1,g2)) !== 0 ) {
+				text += " [ " + j + " " + kern + " ]";
+			}
+		}
+		text += " ]" + nl;
 	}
 	return text + "] def" + nl;
 }
 
+function getPSWidthsArray( nl ) {
+	var chars = font.tables.cmap.glyphIndexMap;
+	<!-- var glyph; -->
+	var index;
+	var text = "/lens [" + nl;
+	for ( i = min; i <= max; i++ ) {
+		index = chars[i];
+		text += ((index == undefined)? "0" : (font.glyphs.get(index)).advanceWidth) + nl;
+	}
+	return text + "] def" + nl;
+}
 
-function msg() {
+function getFontPSWidthsArray( nl ) {
+	var text = "/lens [" + nl;
+	for ( i = fmin; i <= fmax; i++ ) {
+		text += (font.glyphs.get(i)).advanceWidth + nl;
+	}
+	return text + "] def" + nl;
+}
+
+function generatePS() {
 	if (!font) { 
 		alert("Please load a font by clicking the button <Choose File> below");
 		return; 
@@ -251,12 +318,19 @@ function msg() {
 	<!-- indoc: true -> writes in html in this page, otherwise writes to a file -->
 	const indoc = true;
 	const nl = (indoc) ? "<br>" : "\n";
-	var text = "%!PS-Adobe-2.0" + nl;
+	var text = "%!PS-Adobe-2.0" + nl + "<< /PageSize [ 500 450 ]"+ nl + ">> setpagedevice"+ nl + nl;
 	text 	+= quadto_function( nl );
-	text 	+= getPSGlyphs( nl );
-	text 	+= getPSKerningArray( nl );
-	text 	+= getPSWidthsArray( nl );
-
+	if (GlyphsEncoding) {
+		text 	+= getPSGlyphs( nl );
+		text 	+= getPSKerningArray( nl );
+		text 	+= getPSWidthsArray( nl );
+	}
+	else {
+		text 	+= getFontPSGlyphs( nl );
+		text 	+= getFontPSKerningArray( nl );
+		text 	+= getFontPSWidthsArray( nl );
+	}
+	text 	+=  nl + "50 110 translate"+ nl + "0.2 0.2 scale"+ nl + nl;
 	if (indoc) document.write(text);
 	else download(text, 'filename.txt', 'text/plain');
 
@@ -304,6 +378,9 @@ function contourToString(contour) {
 }
 
 
+function intUnicode(unicode) {
+	return unicode;
+}
 
 function formatUnicode(unicode) {
     unicode = unicode.toString(16);
@@ -320,6 +397,7 @@ function displayGlyphData(glyphIndex) {
         container.innerHTML = '';
         return;
     }
+	console.log("displayGlyphData" + glyphIndex);
     var glyph = font.glyphs.get(glyphIndex),
         html = '<dl>';
     html += '<dt>name</dt><dd>'+glyph.name+'</dd>';
@@ -327,7 +405,8 @@ function displayGlyphData(glyphIndex) {
 	/*download(glyph.path.commands.map(pathCommandToJavaString), 'filename.txt', 'text/plain');*/
 
     if (glyph.unicodes.length > 0) {
-        html += '<dt>unicode</dt><dd>'+ glyph.unicodes.map(formatUnicode).join(', ') +'</dd>';
+        html += '<dt>unicode</dt><dd>'+ glyph.unicodes.map(formatUnicode).join(', ') + ' (' +
+		glyph.unicodes.map(intUnicode).join(', ') + ') ' + '</dd>';
     }
     html += '<dt>index</dt><dd>'+glyph.index+'</dd>';
 
@@ -566,11 +645,16 @@ function onFontLoaded(font) {
     displayGlyphPage(0);
     displayGlyph(-1);
     displayGlyphData(-1);
+	var ind = fontFileName.lastIndexOf('\\');
+	if (ind == -1) ind = fontFileName.lastIndexOf('/');
+
+	document.getElementById('font-name').innerHTML = (ind != -1) ? fontFileName.substr(ind+1): fontFileName;
 }
 
 function onReadFile(e) {
     document.getElementById('font-name').innerHTML = '';
     var file = e.target.files[0];
+	fontFileName = e.target.value;
     var reader = new FileReader();
     reader.onload = function(e) {
         try {
@@ -617,15 +701,57 @@ function prepareGlyphList() {
 }
 
 var fontFileName = 'fonts/Roboto-Black.ttf';
-document.getElementById('font-name').innerHTML = fontFileName.split('/')[1];
+/*document.getElementById('font-name').innerHTML = fontFileName.split('/')[1];*/
 
 var fileButton = document.getElementById('file');
 fileButton.addEventListener('change', onReadFile, false);
+
+/*document.getElementsByName("email")[0].value="";*/
+document.getElementsByName("umin")[0].placeholder= umin;
+document.getElementsByName("umax")[0].placeholder= umax;
+document.getElementsByName("fmin")[0].placeholder= fmin;
+document.getElementsByName("fmax")[0].placeholder= fmax;
+
+function umaxUpdate(value) {
+	if (!font) { 
+		alert("Please load a font by clicking the button <Choose File> below");
+		document.getElementById("umax").value = umax;
+		return; 
+	}
+	umax = parseInt(value);
+}
+
+function uminUpdate(value) {
+	if (!font) { 
+		alert("Please load a font by clicking the button <Choose File> below");
+		document.getElementById("umin").value = umin;
+		return; 
+	}
+	umin = parseInt(value);
+}
+function fmaxUpdate(value) {
+	if (!font) { 
+		alert("Please load a font by clicking the button <Choose File> below");
+		document.getElementById("fmax").value = fmax;
+		return; 
+	}
+	fmax = parseInt(value);
+}
+
+function fminUpdate(value) {
+	if (!font) { 
+		alert("Please load a font by clicking the button <Choose File> below");
+		document.getElementById("fmin").value = fmin;
+		return; 
+	}
+	fmin = parseInt(value);
+}
 
 enableHighDPICanvas('glyph-bg');
 enableHighDPICanvas('glyph');
 
 prepareGlyphList();
+/*
 opentype.load(fontFileName, function(err, font) {
     var amount, glyph, ctx, x, y, fontSize;
     if (err) {
@@ -634,6 +760,27 @@ opentype.load(fontFileName, function(err, font) {
     }
     onFontLoaded(font);
 }, {lowMemory:true});
+*/
+/*
+	document.getElementById("min_text").innerHTML =', that correspond to the following indexes in font:&nbsp; Lower: ';
+	document.getElementById("max_text").innerHTML ='&nbsp;&nbsp; Higher: ';
+
+	var font_indexes = font.tables.cmap.glyphIndexMap;
+	document.getElementById("min_index").innerHTML = font_indexes[min];
+	document.getElementById("max_index").innerHTML = font_indexes[max];
+*/
+
+function uniGlyphs() {
+  var checkBox = document.getElementById("uniGlyphs");
+  document.getElementById("fntGlyphs").checked = !checkBox.checked;
+  GlyphsEncoding = checkBox.checked ;
+}
+function fntGlyphs() {
+  var checkBox = document.getElementById("fntGlyphs");
+  document.getElementById("uniGlyphs").checked = !checkBox.checked;
+  GlyphsEncoding = !GlyphsEncoding ;
+}
+
 </script>
 </body>
 </html>
