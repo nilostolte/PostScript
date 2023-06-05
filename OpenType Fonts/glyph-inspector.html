@@ -201,7 +201,7 @@ function getPSGlyphs( nl ) {
 	var glyph, path;
 	var i, j, size, index;
 	var text = "";
-	for ( i = umin; i <= max; i++ ) {
+	for ( i = umin; i <= umax; i++ ) {
 		index = chars[i];
 		if (index == undefined ) { console.log(i); continue; }<!-- skip undefined -->
 		glyph = font.glyphs.get(index);
@@ -243,24 +243,20 @@ function getPSKerningArray( nl ) {
 	for ( i = umin; i <= umax; i++ ) { 
 		index = chars[i];
 		if (index == undefined ) {
-			text += "[ [ () ] ]"  + nl; <!-- glyph doesn't exist -->
-			console.log(i); 
+			text += "[ [ 0 ] ]"  + nl; <!-- glyph doesn't exist -->
+			/* console.log(i); */
 			continue;
 		}
 		g1 = font.glyphs.get(chars[i]);
-		text += "[ [ (" + 
-		(( i == 40 || i == 41 || i == 92) ? "\\" + ((i == 92) ? "\\": String.fromCharCode(i)) : String.fromCharCode(i) )+
-		") ]";
+		text += "[ [ " + i + " ]";
 		for ( j = umin; j <= umax; j++ ) {
 			index = chars[j];
 			if (index == undefined ) {
 			  continue;
 		    } <!-- skip undefined -->
-			g2 = font.glyphs.get(chars[j]);
+			g2 = font.glyphs.get(index );
 			if ( (kern = font.getKerningValue(g1,g2)) !== 0 ) {
-				text += " [ (" +
-				(( j == 40 || j == 41|| j == 92) ? "\\" + ((j == 92) ? "\\": String.fromCharCode(j)) : String.fromCharCode(j) )+
-				") " + kern + " ]";
+				text += " [" + j + " " + kern + " ]";
 			}
 		}
 		text += " ]" + nl;
@@ -291,7 +287,7 @@ function getPSWidthsArray( nl ) {
 	<!-- var glyph; -->
 	var index;
 	var text = "/lens [" + nl;
-	for ( i = min; i <= max; i++ ) {
+	for ( i = umin; i <= umax; i++ ) {
 		index = chars[i];
 		text += ((index == undefined)? "0" : (font.glyphs.get(index)).advanceWidth) + nl;
 	}
@@ -302,6 +298,14 @@ function getFontPSWidthsArray( nl ) {
 	var text = "/lens [" + nl;
 	for ( i = fmin; i <= fmax; i++ ) {
 		text += (font.glyphs.get(i)).advanceWidth + nl;
+	}
+	return text + "] def" + nl;
+}
+
+function getPSNamesArray( nl ) {
+	var text = "/names [" + nl;
+	for ( i = 0; i < names.length; i++ ) {
+		text += names[i]+ nl;
 	}
 	return text + "] def" + nl;
 }
@@ -324,6 +328,7 @@ function generatePS() {
 		text 	+= getPSGlyphs( nl );
 		text 	+= getPSKerningArray( nl );
 		text 	+= getPSWidthsArray( nl );
+		text	+= getPSNamesArray( nl );
 	}
 	else {
 		text 	+= getFontPSGlyphs( nl );
