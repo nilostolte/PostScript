@@ -56,7 +56,7 @@ This code simply displays the Verdana glyph for the number 2. Notice the reserve
 the glyph instead of stroking (use **stroke** to stroke only), and **showpage** that displays the page (necessary because it's not
 an EPS file).
 
-Notice that in the beginning of the file these commands respectivelly translates and scales the glyph:
+Notice that the commands right before the new typed commands translates and scales the glyph, respectivelly:
 
 ```PostScript
 50 110 translate
