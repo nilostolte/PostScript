@@ -305,7 +305,7 @@ function getFontPSWidthsArray( nl ) {
 function getPSNamesArray( nl ) {
 	var text = "/names [" + nl;
 	for ( i = 0; i < names.length; i++ ) {
-		text += names[i]+ nl;
+		text += "/" + names[i]+ nl;
 	}
 	return text + "] def" + nl;
 }
