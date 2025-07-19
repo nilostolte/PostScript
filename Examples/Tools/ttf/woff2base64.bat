@@ -1,0 +1,1 @@
+[System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\Users\Administrator\Downloads\FranklinGothic-Book.woff2")) | Set-Content "C:\Users\Administrator\Downloads\yourfont.woff.base64"

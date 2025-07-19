@@ -1,0 +1,2 @@
+"C:\Program Files\gs\gs10.5.1.0\bin\gswin64c.exe" -dNOSAFER -dGraphicsAlphaBits=4 -dTextAlphaBits=4 ttf.ps
+

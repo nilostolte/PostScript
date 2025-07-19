@@ -1,0 +1,772 @@
+%!PS
+/sca 1 def
+/PageSize [595.28  841.89] def %A4 size
+<< /PageSize [ PageSize aload pop sca mul exch sca mul exch ]>> setpagedevice
+sca dup scale
+
+/tx 315 def
+/str 20 string def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%&%%%%
+%                                                                           %
+%    Convert a byte into 2 hexadecimal values with two ascii characters     %
+%                                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%&%%%%
+/2chars 2 string def  % buffer to store the two ascii characters
+/hexascii {% byte
+  dup -4 bitshift
+  %hexasc
+  dup 10 ge { 7 add }if 48 add
+  2chars 0 3 -1 roll put
+  16#0F and 
+  %hexasc
+  dup 10 ge { 7 add }if 48 add
+  2chars 1 3 -1 roll put
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%&%%%%
+%                                                                           %
+%   This function moves characters from "string2" into "string1" starting   %
+%   at "position" in string1. It keeps moving the characters until a \000   %
+%   is found in "string2" or until all its characters were moved. If the    %
+%   last position of "string1" was filled the move also stops to avoid a    %
+%   runtime exception. When the function exits all positions of "string2"   %
+%   will contain \000. The function also removes all the input parameters   %
+%   as well as all internal variables, leaving in the stack only the total  %
+%   length of the text moved to "string1", which is its return value.       %
+%                                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/move {% string1 string2 position
+   0 {
+     2 index length 1 index le { exit } if
+     3 index length 2 index le { exit } if
+     2 index 1 index get
+     dup 0 eq { pop 1 add exit } if
+     4 index exch 3 index exch put
+     2 index 1 index 0 put
+     1 add exch 1 add exch
+   } loop
+   exch 4 1 roll
+   1 2 index length 1 sub {
+      1 index exch 0 put
+   } for
+   pop pop
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                   %
+%   This function copies all characters of "string2" to "string1"   %
+%   starting at "position" in string1 and returns in the stack the  %
+%   index to the position right after the last character copied.    %
+%                                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/copyall {% string1 string2 position
+   0 {
+     2 index length 1 index le { exit } if
+     3 index length 2 index le { exit } if
+     2 index 1 index get
+     4 index exch 3 index exch put
+     1 add exch 1 add exch
+   } loop
+   4 2 roll pop pop pop
+} def
+
+/d 512 string def % buffer for d attribute for the SVG path
+
+/dreset{ /di 0 def } def
+/dinc { % increment
+  di add  /di exch def
+} def
+
+/xs 20 string def  % buffer for converting x coordinates to string
+/ys 20 string def  % buffer for converting y coordinates to string
+/num 20 string def % buffer for converting a number to string
+/n1 20 string def
+/n2 20 string def
+
+/Helvetica-Isolatin2 << % reencode Helvetica in Isolatin1
+  /Encoding ISOLatin1Encoding  
+  /Lato-Regular findfont {} forall
+>> definefont pop
+
+/pr 3 def
+
+% for interactive use
+/q {quit} def 
+
+/color { 0 0.3 0.6 setrgbcolor} def
+/red { 1 0 0 setrgbcolor} def
+/green { 0 1 0 setrgbcolor } def
+/mygreen { 0 0.6 0.2 setrgbcolor } def
+/mag { 1 0 1 setrgbcolor } def
+
+/a 1.00005519 def
+/c 0.55342686 def
+/b 0.99873585 def
+
+/set-radius { % radius
+  /r exch def
+  /ra r a mul def
+  /rb r b mul def
+  /rc r c mul def
+} def
+
+%                                                               %
+% constructs an executable array to draw a circle with radius r %
+%                                                               %
+/circle-factory { % x-left-coordinate y-lower-coordinate
+  [  3 -1 roll r add 3 -1 roll r add dup 3 1 roll
+     ra sub /moveto cvx
+     2 index rc add 4 index rb sub 
+     4 index rb add 6 index rc sub
+     6 index ra add 9 -1 roll /curveto cvx
+     4 index 2 index rc add 
+     8 index 4 index rb add
+     13 index 6 index ra add /curveto cvx
+     2 index rc sub 4 index 
+     4 index rb sub 8 index
+     6 index ra sub 13 index /curveto cvx
+     4 index 18 index 
+     8 index 22 index
+     13 index 6 index ra sub /curveto cvx
+     /closepath cvx
+  ]
+} def
+
+/circle-vectors { % circle-executable-array
+  0 7 21 {
+    1 index 1 index get
+    2 index 2 index 1 add get
+    3 index 3 index 3 add get
+    4 index 4 index 4 add get
+    4 copy moveto lineto stroke
+    5 -1 roll 2 sub dup 0 lt { -4 add 5 index length add }if
+    5 index 1 index get 6 index 3 -1 roll 1 add get
+    2 copy 7 index 7 index moveto lineto stroke
+    gsave 2 { red pr 0 360 arc fill } repeat grestore
+    pr 0 360 arc fill
+  } for
+  pop
+} def
+
+% linearizes circle vectors PostScript code and transform it in
+% a simple array
+/circle-vect-array { % circle-executable-array
+  [ exch
+  0 7 21 {
+    1 index 1 index get
+    2 index 2 index 1 add get
+    3 index 3 index 3 add get
+    4 index 4 index 4 add get
+    4 copy /moveto cvx /lineto cvx /stroke cvx 13 -6 roll 
+    5 -1 roll 2 sub dup 0 lt { -4 add 5 index length add }if
+    5 index 1 index get 6 index 3 -1 roll 1 add get
+    2 copy 7 index 7 index /moveto cvx /lineto cvx /stroke cvx
+    /gsave cvx 2 { //red aload pop pr 0 360 /arc cvx /fill cvx} repeat 
+    /grestore cvx
+    pr 0 360 /arc cvx /fill cvx 39 -1 roll
+  } for
+  pop
+  ]
+} def
+
+%                                                                        %
+% constructs an executable array to draw a round-rectangle with radius r %
+%                                                                        %
+/round-rectangle-factory { % inside-width inside-height x-left-coordinate y-low-coordinate
+  [  3 -1 roll r add 3 -1 roll r add dup 5 -1 roll
+     add 2 index 6 -1 roll add 2 index ra sub /moveto cvx
+     2 index rc add 5 index rb sub
+     4 index rb add 7 index rc sub
+     6 index ra add 9 index /curveto cvx
+     2 index 12 -1 roll /lineto cvx
+     7 index  2 index rc add
+     11 index 4 index rb add
+     16 index 6 index ra add /curveto cvx
+     22 -1 roll 2 index /lineto cvx 
+     2 index rc sub 7 index
+     4 index rb sub 11 index
+     6 index ra sub 16 index /curveto cvx 
+     2 index 32 -1 roll /lineto cvx 
+     12 index rb sub 2 index rc sub
+     14 index rc sub 4 index rb sub
+     16 index 6 index ra sub /curveto cvx
+     /closepath cvx
+  ]
+} def
+
+/round-rectangle-vectors { % round-rectangle-executable-array
+  -5 10 25 {
+    dup dup 0 lt { -1 add 2 index length add }if
+    2 index 1 index get
+    3 index 2 index 1 add get
+    4 index 3 index 2 add get
+    5 index 5 -1 roll 3 add get
+    4 copy moveto lineto stroke
+    5 index 5 index 5 add get
+    6 index 6 index 6 add get
+    7 index 7 index 8 add get
+    8 index 9 -1 roll 9 add get
+    4 copy moveto lineto stroke
+    gsave red pr 0 360 arc fill  grestore
+    2 { pr 0 360 arc fill } repeat
+    gsave red pr 0 360 arc fill  grestore
+  } for
+  pop
+} def
+
+% linearizes rrect vectors PostScript code and transform it in
+% a simple array
+/rrect-vect-array { % round-rectangle-executable-array
+   [ exch
+  -5 10 25 {
+    dup dup 0 lt { -1 add 2 index length add }if
+    2 index 1 index get
+    3 index 2 index 1 add get
+    4 index 3 index 2 add get
+    5 index 5 -1 roll 3 add get
+    4 copy /moveto cvx /lineto cvx /stroke cvx 13 -6 roll 
+    5 index 5 index 5 add get
+    6 index 6 index 6 add get
+    7 index 7 index 8 add get
+    8 index 9 -1 roll 9 add get
+    4 copy /moveto cvx 14 3 roll /lineto cvx /stroke cvx 
+    /gsave cvx //red aload pop pr 0 360 /arc cvx /fill cvx  /grestore cvx
+    2 { pr 0 360 /arc cvx /fill cvx } repeat
+    /gsave cvx //red aload pop pr 0 360 /arc cvx /fill cvx /grestore cvx 45 -1 roll
+  } for
+  pop
+  ]
+} def
+
+/draw-radius { % x-index y-index executable-array radius
+  /r exch def
+  /Helvetica-Isolatin2 findfont 15 scalefont setfont
+  /rs r str cvs def
+  /rw (r = ) stringwidth pop rs stringwidth pop add 2 div def
+  dup 
+  4 -1 roll get exch 3 -1 roll get 2 copy moveto
+  0.5 setlinewidth
+  r 0.5 mul 3 sqrt mul  r 0.5 mul rlineto stroke
+  2 copy pr 0 360 arc fill
+  r 0.25 mul add rw 0.7 mul add exch r 0.25 mul 3 sqrt mul add  
+  rw sub exch moveto
+  (r = ) show rs show
+} def
+
+/draw-height { % x-index y-index executable-array
+  0.5 setlinewidth
+  dup
+  4 -1 roll get exch 3 -1 roll get 2 copy 
+  exch 16 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave
+    /Helvetica-Isolatin2 findfont 15 scalefont setfont
+    pr 1 sub  0 360 arc fill 
+    10 sub moveto 0 rc 0.48 mul rlineto currentpoint stroke
+    6 add exch -8 add exch moveto 
+    (r) show <B7> show 1 0 rmoveto 
+    % currentpoint exch pop
+    % gsave 
+       % 0 -6 rmoveto /Symbol findfont 25 scalefont setfont <D6> show currentpoint pop
+       % gsave <D6> true charpath pathbbox grestore
+       % 4 1 roll pop pop 1.958 sub exch 0.2 sub moveto
+       % 0.75 setlinewidth
+       % 76 0 rlineto stroke
+    % grestore
+    % exch moveto 
+    % (\(a) show 1 0 rmoveto
+    % (-) show  1 0 rmoveto  
+    % (b) show 0.3 0 rmoveto 
+    % (\)) show 0.4 0 rmoveto 
+    % <B2> show ( + ) show 
+    (c) show %0.5 0 rmoveto <B2> show
+  grestore 
+  10 0 rlineto stroke
+  %2 copy rc add exch 10 add exch moveto
+  rc add exch 16 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave  pr 1 sub  0 360 arc fill grestore 
+  10 0 rlineto stroke
+  10 add moveto 0 rc -0.48 mul rlineto stroke
+} def
+
+/show-points {
+  /Helvetica-Isolatin2 findfont 15 scalefont setfont
+  2 copy get 25 sub 2 index 2 index 1 add get moveto
+  mygreen
+  (P) show -1.3 -3 rmoveto 
+  gsave 0.6 0.6 scale (1) show grestore
+  2 copy 3 add get 5 sub 2 index 2 index 4 add get 10 add moveto
+  red
+  (P) show -1 -3 rmoveto
+  gsave 0.6 0.6 scale (2) show grestore
+  2 copy 5 add get 10 add 2 index 2 index 6 add get 5 sub moveto
+  red
+  (P) show -1 -3 rmoveto
+  gsave 0.6 0.6 scale (3) show grestore
+  2 copy 7 add get 5 sub 2 index 2 index 8 add get 20 sub moveto
+  mygreen
+  (P) show -1.5 -3 rmoveto
+  gsave 0.6 0.6 scale (4) show grestore
+  pop pop
+} def
+
+/make-circle {
+  /circle-radius 100 def
+  circle-radius set-radius
+  45 570 circle-factory 
+  dup /circle-array exch def
+  /circle exch cvx def
+} def
+
+/draw-circle { %
+  color
+  circle-array
+  0 8 2 index circle-radius draw-radius
+  7 8 2 index draw-height
+  dup 7 show-points
+  2 setlinewidth
+  color
+  circle stroke
+  1 setlinewidth
+  mygreen
+  circle-vectors
+} def
+
+/make-round-rectangle { %
+  /rrect-radius 90 def
+  rrect-radius set-radius
+  222 99 45 250 round-rectangle-factory 
+  dup /rrect exch cvx def
+  /rrect-array exch def
+} def
+
+/draw-round-rectangle { %
+  color
+  rrect-array
+  0 11 2 index rrect-radius draw-radius
+  2 setlinewidth
+  rrect stroke
+  1 setlinewidth
+  mygreen
+  round-rectangle-vectors
+} def
+
+/title { %
+  color
+  /Helvetica-Isolatin2 findfont 20 scalefont setfont
+  tx 775 moveto (Approximating circles with) show
+  tx 753 moveto (cubic B) show <e9> show (zier curves) show
+  /Helvetica-Isolatin2 findfont 16 scalefont setfont
+  tx 728 moveto (For a circle centered at the origin:) show
+  tx 700 moveto
+  mygreen
+  (P) show -1.3 -3 rmoveto 
+  gsave 0.6 0.6 scale (1) show grestore 9.3 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (a, 0\)) show
+  tx 679 moveto
+  red
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (2) show grestore 9 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (b, r) show 
+  <B7> show 1 0 rmoveto (c\)) show
+  tx 658 moveto
+  red
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (3) show grestore 9 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (c, r) show 
+  <B7> show 1 0 rmoveto (b\)) show
+  tx 637 moveto 
+  mygreen
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (4) show grestore 9 3 rmoveto
+  color (= \(0, r) show 
+  <B7> show 1 0 rmoveto (a\)) show 
+  tx 610 moveto (a = 1.00005519) show
+  tx 590 moveto (b = 0.99873585) show
+  tx 570 moveto (c = 0.55342686) show
+} def
+
+/make-frame {
+  PageSize 0 get r 2 mul sub 8 sub
+  PageSize 1 get r 2 mul sub 8 sub
+  200 sub
+  4 200 round-rectangle-factory 
+  dup /frame exch cvx def
+  /frame-array exch def
+} def
+
+/draw-frame { %
+  color
+  4 setlinewidth
+  frame stroke
+} def
+
+/make-objects {
+  make-circle
+  make-round-rectangle
+  make-frame
+} def
+
+/main { %
+  title
+  draw-circle
+  draw-round-rectangle
+  draw-frame
+} def
+
+
+
+/commands <<
+  /x  systemdict /exch get
+  /&  systemdict /and get
+  /+  systemdict /add get
+  /++ { 1 + }
+  /*  systemdict /dup get
+  /e  systemdict /exec get
+  /~  systemdict /ne get
+  /t  systemdict /type get
+  /?  systemdict /ifelse get
+  /s  systemdict /store get
+  /arc { 
+    p 0 eq {
+      360 eq x 0 eq & {
+        d (" )
+        d 5 -1 roll neg y add ys cvs
+        d (" cy=") 
+        d 9 -1 roll xs cvs
+        d (" cx=") 
+        d 12 -1 roll num cvs
+        d (<circle r=") 0
+        7 { copyall } repeat
+        /p x s
+      }
+      { 6 {pop} repeat } ifelse
+    }
+    { 6 {pop} repeat } ifelse
+  }
+  /closepath { d p (Z) putinterval /p p ++ s}
+  /curveto {
+    6 -2 roll (C) cxy
+    4 -2 roll ( ) cxy
+    ( ) cxy
+  }
+  /cxy { % x y char
+    d p 3 -1 roll putinterval
+    exch xs cvs d exch p ++ move
+    d 1 index (,) putinterval ++
+    exch neg y add ys cvs d exch 3 -1 roll move
+    /p x s
+  }
+  /dup  systemdict /dup  get
+  /exch systemdict /exch get
+  /fill { 
+    p 0 gt {
+       d 0 get 77 eq {
+          (**ERROR: filled paths not implemented!) =
+          quit
+       }
+       {
+         d ("/>)
+         d [currentrgbcolor] hexcolor 6chars
+         d (fill="#)
+         p copyall
+         copyall
+         copyall
+         string dup d 0 copyall pop =
+         /p 0 s
+       } ifelse
+    } if
+  }
+  /forall   systemdict /forall   get
+  /grestore systemdict /grestore get
+  /gsave    systemdict /gsave    get
+  /if       systemdict /if       get
+  /ifelse   systemdict /ifelse   get
+  /lineto  { (L) cxy }
+  /moveto  { (M) cxy }
+  /ne       systemdict /ne       get
+  /setrgbcolor systemdict /setrgbcolor get
+  % /nst 0
+  /stroke {
+     % nst 0 ne { sp qqq } if
+     % /nst nst 1 add store
+     d ("/>) 
+     d p string dup d 0 copyall pop
+     d (" d=") 
+     d [currentrgbcolor] hexcolor 6chars 
+     d (" stroke="#) 
+     d currentlinewidth xs cvs 
+     d (<path fill="none" stroke-width=") 0
+     7 { copyall } repeat
+     string dup d 0 copyall pop =
+     /p 0 s
+     % nst 0 ne { sp qqq } if
+     % /nst nst 1 add store 
+  }
+  /type systemdict /type get
+>> def
+
+/SVG { % position array
+  commands begin
+  x /p x s
+  {
+    * t 
+    * /integertype ~ x
+    /realtype ~ & 
+    { e } if
+  } forall
+  p
+  end
+} def
+
+/path { % string
+  d exch d (<path ) 0 copyall
+  copyall
+} def
+
+/6chars 6 string def % buffer for converting hexadecimal to ascii
+/hexcolor {% array
+   dup 0 get 255 mul cvi
+   hexascii 
+   6chars 0 2chars putinterval
+   dup 1 get 255 mul cvi
+   hexascii 
+   6chars 2 2chars putinterval
+   2 get 255 mul cvi
+   hexascii 
+   6chars 4 2chars putinterval
+} def
+
+/SVG-text { % x y string font-size 6chars string
+  d (</text>)
+  d 4 -1 roll
+  d (">)
+  d 8 -1 roll
+  d (" fill="#)
+  d 12 -1 roll num cvs
+  d (" font-size=")
+  d 16 -1 roll 
+  d (" font-family=")
+  d 20 -1 roll neg y add ys cvs
+  d (" y=")
+  d 24 -1 roll xs cvs
+  d (<text x=") 0 
+  13 { copyall } repeat
+  SVG-print
+} def
+
+% <line 
+%   x1="10"  y1="10" 
+%   x2="130" y2="130" 
+%   stroke="green" stroke-width="3" opacity="0.3"/>
+
+/SVG-line { % 6chars stroke-width x1 y1 x2 y2
+  d ("/>)
+  d  8 -1 roll num cvs
+  d (" stroke-width=")
+  d 12 -1 roll
+  d (" stroke="#)
+  d 12 -1 roll neg y add ys cvs
+  d (" y2=")
+  d 16 -1 roll xs cvs
+  d (" x2=")
+  d 20 -1 roll neg y add n2 cvs
+  d (" y1=")
+  d 24 -1 roll n1 cvs
+  d (<line x1=") 0
+  13 { copyall } repeat
+  SVG-print
+} def
+
+/SVG-circle {% color-string x y r
+  9 { d } repeat (<circle r=") 0 copyall
+  10 -1 roll str cvs exch copyall
+  (" cx=") exch copyall
+  9 -1 roll str cvs exch copyall
+  (" cy=") exch copyall
+  6 -1 roll neg y add str cvs exch copyall
+  (" fill="#) exch copyall
+  4 -1 roll exch copyall
+  ("/>) exch copyall
+  SVG-print
+} def
+
+/SVG-point {% color-string x y 
+  9 { d } repeat (<circle r=") 0 copyall
+  pr str cvs exch copyall
+  (" cx=") exch copyall
+  9 -1 roll str cvs exch copyall
+  (" cy=") exch copyall
+  6 -1 roll neg y add str cvs exch copyall
+  (" fill="#) exch copyall
+  4 -1 roll exch copyall
+  ("/>) exch copyall
+  SVG-print
+} def
+ 
+/SVG-print {% number-of-characters
+  string dup d 0 copyall pop =
+} def
+
+/SVG-stroke-path { % command-array color-array stroke-width
+   xs cvs
+   d (<path fill="none" stroke-width=") 0 copyall
+   d 3 1 roll copyall
+   d (" stroke="#) 3 -1 roll copyall
+   exch hexcolor
+   d 6chars 3 -1 roll copyall
+   d (" d=") 3 -1 roll copyall
+   exch SVG
+   d ("/>) 3 -1 roll copyall
+  SVG-print
+} def
+
+/SVG-start {
+   ys cvs exch xs cvs
+   d (<?xml version="1.0" encoding="UTF-8"?>\r\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ) 0 copyall
+   d 3 1 roll copyall
+   dup d exch 32 put 1 add
+   d 3 1 roll copyall
+   d (" overflow="visible">) 3 -1 roll copyall
+   SVG-print
+} def
+
+/SVG-circle-vectors { %
+   % create multipaths for rrect vectors
+  1 setlinewidth % use PS graphics state
+  mygreen        % for SVG attributes
+  % convert circle-array into linearized circle vectors array 
+  circle-array circle-vect-array
+  0 exch SVG
+  pop
+} def
+
+/SVG-rrect-vectors { %
+  % create multipaths for rrect vectors
+  1 setlinewidth % use PS graphics state
+  mygreen        % for SVG attributes
+  % convert rrect-array into linearized rrect vectors array
+  rrect-array rrect-vect-array
+  % convert linearized rrect vectors array into multiple SVG paths
+  0 exch SVG
+  pop
+} def
+
+/SVG-title { % string-with-6-chars 
+  tx 775 (Arial) 20 4 index (Approximating circles with) SVG-text
+  tx 753 (Arial) 20 4 index (cubic Bézier curves) SVG-text
+  tx 728 (Arial) 16 4 index (For a circle centered at the origin:) SVG-text
+  tx 18 add 700 (Arial) 16 4 index (= \(r·a, 0\)) SVG-text
+  tx 18 add 679 (Arial) 16 4 index (= \(r·b, r·c\)) SVG-text
+  tx 18 add 658 (Arial) 16 4 index (= \(r·c, r·b\)) SVG-text
+  tx 18 add 637 (Arial) 16 4 index (= \(0, r·a\)) SVG-text
+  tx 700 (Arial) 16 //mygreen hexcolor 6chars (P) SVG-text
+  tx 9 add 700 3 sub (Arial) 9.6 6chars (1) SVG-text
+  tx 679 (Arial) 16 //red hexcolor 6chars (P) SVG-text
+  tx 9.5 add  679 3 sub (Arial) 9.6 6chars (2) SVG-text
+  tx 658 (Arial) 16 6chars (P) SVG-text
+  tx 9.5 add 658 3 sub (Arial) 9.6 6chars (3) SVG-text
+  tx 637 (Arial) 16 //mygreen hexcolor 6chars (P) SVG-text
+  tx 8.5 add 637 3 sub (Arial) 9.6 6chars (4) SVG-text
+  tx 610 (Arial) 16 4 index (a = 1.00005519) SVG-text
+  tx 590 (Arial) 16 4 index (b = 0.99873585) SVG-text
+  tx 570 (Arial) 16 4 index (c = 0.55342686) SVG-text
+  pop
+} def
+
+/SVG-circle-points {
+  circle-array dup 0 get exch 8 get
+  1 index circle-radius add 20 sub 1 index 
+  2 copy (Arial) 15 //mygreen hexcolor 6chars (P) SVG-text
+  2.8125 sub exch 8.44 add exch (Arial) 9 6chars (1) SVG-text
+  1 index circle-radius add 7 sub 1 index c circle-radius mul add 9 add
+  2 copy (Arial) 15 //red hexcolor 6chars (P) SVG-text
+  2.8125 sub exch 8.9 add exch (Arial) 9 6chars (2) SVG-text
+  1 index c circle-radius mul add 7 add 1 index circle-radius add 5 sub
+  2 copy (Arial) 15 6chars (P) SVG-text
+  2.8125 sub exch 8.9 add exch (Arial) 9 6chars (3) SVG-text
+  1 index 5 sub 1 index circle-radius add 20 sub 
+  2 copy (Arial) 15 //mygreen hexcolor 6chars (P) SVG-text
+  2.8125 sub exch 8 add exch (Arial) 9 6chars (4) SVG-text
+  pop pop
+} def
+
+/SVG-circle-height {
+  circle-array dup 0 get circle-radius add 16 add exch 8 get
+  //color hexcolor 6chars 0.5 3 index 3 index 1 index 20 add 1 index SVG-line
+  6chars 0.5 3 index 3 index circle-radius c mul add 1 index 20 add 1 index SVG-line
+  6chars 2 index 10 add 2 index pr 1 sub SVG-circle
+  6chars 2 index 10 add 2 index circle-radius c mul add pr 1 sub SVG-circle
+  6chars 0.5 3 index 10 add 3 index circle-radius c mul add 10 add 1 index 5 index
+  circle-radius c mul 15 add 0.5 mul add SVG-line
+  6chars 0.5 3 index 10 add 3 index 10 sub 1 index 5 index circle-radius c mul 15 sub 0.5 mul add SVG-line
+  exch 2.5 add exch
+  circle-radius c mul 15 sub 0.5 mul add 2 add (Arial) 15 6chars (r·c) SVG-text
+} def
+
+/func2 { 100 400 moveto 100 700 lineto } def
+/func { gsave 0.5 0.3 0 setrgbcolor func2 500 700 lineto stroke }def
+
+
+/generate-SVG {
+  % y for reversing coordinates
+  /y PageSize 1 get 6 sub def
+  frame-array 7 get 2 add y frame-array 1 get 2 sub sub
+  SVG-start
+  %
+  % Convert circle, rrect, their vectors and frame to SVG
+  %
+  circle-array //color 2 SVG-stroke-path
+  rrect-array  //color 2 SVG-stroke-path
+  frame-array  //color 4 SVG-stroke-path
+  SVG-circle-vectors
+  SVG-rrect-vectors
+  % create circle center
+  //color hexcolor
+  6chars circle-array dup 0 get exch 8 get SVG-point
+  % write circle radius
+  circle-array dup 
+  0 get circle-radius 0.15 mul add exch 
+  8 get circle-radius 0.4 mul add
+  (Arial) 15 6chars circle-radius str cvs dup length 4 add string dup 0 (r = )
+  putinterval dup 4 4 -1 roll putinterval SVG-text
+  %create line indicating circle radius
+  6chars 1 circle-array dup 0 get exch 8 get 
+  1 index circle-radius 0.5 mul 3 sqrt mul add
+  1 index circle-radius 0.5 mul add SVG-line
+  %create rrect center
+  6chars rrect-array dup 0 get exch 11 get SVG-point
+  % write rrect-array radius
+  rrect-array dup
+  0 get rrect-radius 0.15 mul add exch
+  11 get rrect-radius 0.4 mul add
+  (Arial) 15 6chars rrect-radius str cvs dup length 4 add string dup 0 (r = )
+  putinterval dup 4 4 -1 roll putinterval SVG-text  
+  %create line indicating rrect radius
+  6chars 1 rrect-array dup 0 get exch 11 get 
+  1 index rrect-radius 0.5 mul 3 sqrt mul add
+  1 index rrect-radius 0.5 mul add SVG-line
+  6 string dup 6chars 0 copyall pop SVG-title
+  SVG-circle-points
+  SVG-circle-height
+  (</svg>) =
+  0 //func SVG pop kkk
+} def
+
+
+/ps false def
+
+/job {
+  make-objects
+  ps { 
+    main
+    showpage
+  }
+  { generate-SVG
+    quit
+  } ifelse
+} def
+
+job

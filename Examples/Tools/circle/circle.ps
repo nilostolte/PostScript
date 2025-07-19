@@ -1,0 +1,165 @@
+%!PS
+
+/Helvetica-Isolatin2
+<< %start a new dict
+/Encoding ISOLatin1Encoding % change encoding vector
+/Helvetica findfont {} forall % copy old font
+>> definefont pop
+
+
+
+/pr 3 def
+
+% for interactive use
+/q {quit} def 
+/sq { 
+   dup pr sub 2 index pr sub exch moveto
+   dup pr sub 2 index pr add r r add add exch lineto
+   dup r r add add pr add 2 index r r add add pr add exch lineto
+   dup r r add add pr add 2 index pr sub exch lineto
+   closepath
+} def
+
+% <80 03001C 0100 000000000000 0200 001F26666666 0200 001F4CCCCCCC> token pop exch pop
+% <80 03001C 0100 000000000000 0200 001F26666666 0200 001F4CCCCCCC 0600 FFFF0000009D> token pop exch pop
+/color { 0 0.3 0.6 setrgbcolor} def
+/red { 1 0 0 setrgbcolor} def
+/green { 0 1 0 setrgbcolor } def
+/mag { 1 0 1 setrgbcolor } def
+
+/c 0.55191502449 def
+/r 100 def
+/mc r c mul def
+
+/p1 { 1 index r add 1 index } def
+/p2 { 1 index r r add add 1 index r add } def
+/p3 { 1 index r add 1 index r r add add } def
+/p4 { 1 index 1 index r add } def
+
+/cp1 { mc 0 r r mc sub r r } def
+/cp2 { 0 mc  mc r sub r  r neg r } def
+/cp3 { mc neg  0  r neg mc r sub  r neg r neg } def
+/cp4 { 0 mc neg  r mc sub r neg  r r neg } def
+
+
+/round-rect {
+  1 index mc add 1 index moveto
+  1 index r add mc sub 1 index lineto
+  mc 0 r r mc sub r r rcurveto 
+} def
+
+/circle {
+  p1 moveto
+  cp1 rcurveto
+  cp2 rcurveto
+  cp3 rcurveto
+  cp4 rcurveto 
+  closepath
+  pop pop
+} def
+
+/round-rect {
+  p1 moveto
+  3 index 0 rlineto
+  cp1 rcurveto
+  0 3 index rlineto
+  cp2 rcurveto
+  3 index neg 0 rlineto
+  cp3 rcurveto
+  0 3 index neg rlineto
+  cp4 rcurveto 
+  closepath
+  pop pop pop pop
+} def
+
+/vectors {
+  {
+    4 1 roll 3 -1 roll add exch 2 copy 4 index add
+    2 copy moveto
+    2 copy mc add lineto stroke
+    2 copy pr 0 360 arc fill
+    mc add gsave red pr 0 360 arc fill grestore
+    2 copy 2 copy moveto
+    mc sub 2 copy lineto stroke
+    gsave red pr 0 360 arc fill grestore
+    3 -1 roll 0 ne { pr 0 360 arc fill } { pop pop } ifelse
+  }
+  { 
+    exch 4 1 roll add exch 2 copy 4 index add
+    2 copy exch moveto 
+    2 copy mc add exch lineto stroke
+    2 copy exch pr 0 360 arc fill
+    mc add exch gsave red pr 0 360 arc fill grestore
+    2 copy 2 copy exch moveto
+    mc sub 2 copy exch lineto stroke
+    gsave red exch pr 0 360 arc fill grestore
+    3 -1 roll 0 ne { exch pr 0 360 arc fill } { pop pop } ifelse
+  }
+  4 -2 roll
+  p1 7 index 0 6 index exec
+  p2 7 index 7 index 7 index exec
+  p3 8 -1 roll 7 index 7 -1 roll exec
+  p4 0 7 -1 roll 7 -1 roll exec
+  pop pop
+} def
+
+/refresh {
+  gsave
+    1 setgray
+    100 500 sq fill
+    pop pop
+  grestore
+} def
+
+/main {
+  { 2 copy r add exch r add exch } % circle center
+  50 580   % circle left lower corner coordinates
+  color
+  /Helvetica-Isolatin2 findfont 20 scalefont setfont
+  320 770 moveto (Approximating circles with) show
+  320 750 moveto (cubic B) show <e9> show (zier curves) show
+  
+  
+  2 setlinewidth
+  % draw circle
+  2 copy circle stroke
+  1 setlinewidth
+  2 copy 0 0 4 2 roll vectors
+  % draw radius
+  0.5 setlinewidth
+  2 index exec moveto
+  r 0.5 mul 3 sqrt mul  r 0.5 mul rlineto stroke
+  % draw center point
+  2 index exec pr 1 sub 0 360 arc fill
+  % write "r"
+  2 index exec r 0.25 mul add 5 add exch r 0.25 mul 3 sqrt mul add -8 add exch moveto
+  /Helvetica findfont 15 scalefont setfont
+  (r) show
+  % 
+  2 copy p2 exch 10 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave 
+    pr 1 sub  0 360 arc fill 
+    10 sub moveto 0 mc 0.5 mul rlineto currentpoint stroke
+    6 add exch -10.5 add exch moveto (c) show 0.5 0 rmoveto <b4> show 1.75 0 rmoveto (r) show
+  grestore 
+  10 0 rlineto stroke
+  2 copy p2 mc add exch 10 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave 
+    pr 1 sub  0 360 arc fill grestore 10 0 rlineto stroke
+    10 add moveto 0 mc -0.5 mul rlineto stroke
+  pop pop
+  /r 90 def
+  /mc r c mul def
+  50 270   % left lower corner coordinates
+  2 setlinewidth
+  2 copy 220 100 4 2 roll round-rect stroke
+  1 setlinewidth
+  2 copy 220 100 4 2 roll vectors
+  pop pop
+} def
+
+main
+
+showpage

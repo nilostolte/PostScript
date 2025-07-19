@@ -1,0 +1,44 @@
+%!PS
+
+% This is not really a bug but normal behavior of cvrs, since cvrs does not 
+% really create a new string, but a slice pointing to buffer area but with
+% the correct length
+
+/str 20 string def
+/s [ 8 {20 string} repeat ] def 
+/float <8A 3E AA AA AA> def
+
+/fprint1 { 
+   1 1 4 { 1 index exch get dup
+           -4 bitshift 16 str cvrs exch
+           16#0F and 16 str cvrs 3 -1 roll
+         } for
+   pop
+   8 string 6 -2 0 {
+      1 index 1 index 1 add 5 -1 roll putinterval
+      1 index exch 4 -1 roll putinterval
+   } for
+}def
+
+/fprint { 
+   1 1 4 { dup 1 sub dup add exch 2 index exch get dup
+           -4 bitshift 16 s 4 index get cvrs exch
+           16#0F and 16 s 5 -1 roll 1 add get cvrs 3 -1 roll
+         } for
+   pop
+   8 string 6 -2 0 {
+      1 index 1 index 1 add 5 -1 roll putinterval
+      1 index exch 4 -1 roll putinterval
+   } for
+}def
+
+/Helvetica findfont 30 scalefont setfont
+
+100 530 moveto
+float token pop exch pop str cvs show
+100 500 moveto
+float fprint1 show
+100 470 moveto
+float fprint show
+
+showpage

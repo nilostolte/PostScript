@@ -1,0 +1,21 @@
+%!PS
+/Helvetica findfont 30 scalefont setfont
+100 100 moveto
+/str 20 string def              % To convert the floating point to string
+/float <8A 3E AA AA AA> def     % PostScript token for a IEEE float 3.33333
+/char 1 string def              % String to convert hexadecimal to ASCII
+
+/hexasc { dup 10 ge { 7 add }if 48 add } def
+/fprint { 
+   1 1 4 { char 0 3 index 4 -1 roll get char 0 2 index
+           -4 bitshift hexasc put char show 
+           16#0F and hexasc put char show
+         } for
+   pop
+}def
+
+100 500 moveto
+float token pop str cvs show
+100 470 moveto
+float fprint
+showpage

@@ -1,0 +1,8 @@
+x(t) = ax t^3 + bx t^2 + cx t + x0
+y(t) = ay t^3 + by t^2 + cy t + y0
+
+
+B(t) = (1-t)^3 P0 + 3 t(1-t)^2 P1 + 3t^2 (1-t) P2 + t^3 P3
+
+
+      

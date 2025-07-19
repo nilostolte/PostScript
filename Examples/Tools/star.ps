@@ -1,0 +1,20 @@
+%!PS-Adobe-3.0
+0 1 1 0 setcmykcolor
+
+/starside { 
+   200 0 lineto 
+   currentpoint translate
+  -144 rotate 
+} def
+
+/star { 
+   moveto
+   currentpoint translate
+   4 {starside} repeat
+   closepath fill
+} def
+gsave
+10 130 star
+grestore
+
+showpage

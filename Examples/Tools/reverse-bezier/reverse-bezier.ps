@@ -1,0 +1,134 @@
+%!PS
+% functions to recover original commands
+/real-moveto { moveto } bind def
+/real-curveto { curveto } bind def
+/real-stroke { stroke } bind def
+
+% functions for interactivity
+/q { quit } def
+
+/d {
+  /moveto { real-moveto } def
+  /curveto { real-curveto } def
+  /stroke { real-stroke  } def  
+} def
+
+/r {
+  /moveto { [ 3 1 roll } def
+  /curveto { } def
+  /stroke{ 
+     ] reverse-bezier
+  } def
+} def
+
+/s { showpage } def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    real program starts here     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% buffer for the convertions to string
+/buffer [ 6 { 20 string } repeat ] def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&%%&%%%%
+%                                                                           %
+%   This function moves characters from "string2" into "string1" starting   %
+%   at "position" in string1. It keeps moving the characters until a \000   %
+%   is found in "string2" or until all its characters were moved. If the    %
+%   last position of "string1" was filled the move also stops to avoid a    %
+%   runtime exception. When the function exits all positions of "string2"   %
+%   will contain \000. The function also removes all the input parameters   %
+%   as well as all internal variables, leaving in the stack only the total  %
+%   length of the text moved to "string1", which is its return value.       %
+%                                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/move {% string1 string2 position
+   0 {
+     2 index length 1 index le { exit } if
+     3 index length 2 index le { exit } if
+     2 index 1 index get
+     dup 0 eq { pop 1 add exit } if
+     4 index exch 3 index exch put
+     2 index 1 index 0 put
+     1 add exch 1 add exch
+   } loop
+   exch 4 1 roll
+   1 2 index length 1 sub {
+      1 index exch 0 put
+   } for
+   pop pop
+} def
+
+% function to convert "moveto" commands into strings in the format: "<x> <y> moveto",
+% where <x> and <y> are respectively the values of the x and y coordinates.
+/m {
+  buffer 1 get cvs length exch
+  buffer 0 get cvs length
+  add 2 add 6 add string
+  dup buffer 0 get 0 move
+  1 index 1 index 32 put
+  1 add
+  1 index buffer 1 get 3 -1 roll move
+  1 index 1 index 32 put
+  1 add
+  1 index exch (moveto) putinterval =
+} def
+
+% function to convert "curveto" commands into strings in the format: 
+% "<x1> <y1> <x2> <y2> <x3> <y3> curveto",
+% where <xi> and <yi> are respectively the values of the xi and yi coordinates.
+/c {
+  0 5 -1 0 {
+     3 -1 roll buffer 3 -1 roll get cvs length add
+  } for
+  6 add 7 add string
+   0 0 1 5 {
+    2 index buffer 3 -1 roll get 3 -1 roll move
+    1 index 1 index 32 put 1 add
+  } for
+  1 index exch (curveto) putinterval =
+} def
+
+/reverse-bezier{
+  dup dup length 2 sub get
+  1 index dup length 1 sub get m
+  dup length 4 sub -2 0
+  {
+   1 index 1 index get 3 1 roll
+   1 index 1 index 1 add get 3 1 roll
+   6 mod 0 eq
+   { 7 1 roll c } if
+  } for
+  pop
+} def
+
+
+
+% [ 213.686     37.8411
+  % 190.687000  43.244700 131.320000  77.723200 118.008000 148.863400
+  % 104.695000 220.004400  42.372900 231.032400  16.039400 260.491400
+    % 1.601449 276.643400   3.372934 288.241400   3.372934 288.241400
+    % 3.372934 288.241400  -1.544060 272.618400  20.039400 248.909400
+   % 41.622900 225.200400  82.931000 209.475400  86.480800 144.747400
+   % 90.030600  80.019100  98.028700  43.356000 150.379000   1.563025
+% ]
+
+
+/path {
+  213.686  37.8411 moveto
+  190.687000  43.244700 131.320000  77.723200 118.008000 148.863400 curveto
+  104.695000 220.004400  42.372900 231.032400  16.039400 260.491400 curveto
+    1.601449 276.643400   3.372934 288.241400   3.372934 288.241400 curveto
+    3.372934 288.241400  -1.544060 272.618400  20.039400 248.909400 curveto
+   41.622900 225.200400  82.931000 209.475400  86.480800 144.747400 curveto
+   90.030600  80.019100  98.028700  43.356000 150.379000   1.563025 curveto
+} def
+
+/sp {
+  path
+  stroke
+} def
+
+r
+sp

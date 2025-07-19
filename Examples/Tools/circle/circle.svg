@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 593.285 637.895" overflow="visible">
+<path fill="none" stroke-width="2" stroke="#004C99" d="M145,265.896C200.343,265.764 244.874,221.233 245.006,165.89C244.874,110.547 200.343,66.0164 145,65.8845C89.6573,66.0164 45.1264,110.547 44.9945,165.89C45.1264,221.233 89.6573,265.764 145,265.896Z"/>
+<path fill="none" stroke-width="2" stroke="#004C99" d="M357,585.895C406.808,585.776 446.886,545.698 447.005,495.89L447.005,396.89C446.886,347.082 406.808,307.004 357,306.885L135,306.885C85.1916,307.004 45.1138,347.082 44.995,396.89L44.995,495.89C45.1138,545.698 85.1916,585.776 135,585.895Z"/>
+<path fill="none" stroke-width="4" stroke="#004C99" d="M501.28,635.895C551.088,635.776 591.166,595.698 591.285,545.89L591.285,92.0C591.166,42.1916 551.088,2.11377 501.28,1.99506L94,1.99506C44.1916,2.11377 4.11378,42.1916 3.99503,92.0L3.99503,545.89C4.11378,595.698 44.1916,635.776 94,635.895Z"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M200.343,265.764L145,265.896"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M145,265.896L89.6573,265.764"/>
+<circle r="3" cx="89.6573" cy="265.764" fill="#FF0000"/>
+<circle r="3" cx="200.343" cy="265.764" fill="#FF0000"/>
+<circle r="3" cx="145" cy="265.896" fill="#009933"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M244.874,110.547L245.006,165.89"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M245.006,165.89L244.874,221.233"/>
+<circle r="3" cx="244.874" cy="221.233" fill="#FF0000"/>
+<circle r="3" cx="244.874" cy="110.547" fill="#FF0000"/>
+<circle r="3" cx="245.006" cy="165.89" fill="#009933"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M89.6573,66.0164L145,65.8845"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M145,65.8845L200.343,66.0164"/>
+<circle r="3" cx="200.343" cy="66.0164" fill="#FF0000"/>
+<circle r="3" cx="89.6573" cy="66.0164" fill="#FF0000"/>
+<circle r="3" cx="145" cy="65.8845" fill="#009933"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M45.1264,221.233L44.9945,165.89"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M44.9945,165.89L45.1264,110.547"/>
+<circle r="3" cx="45.1264" cy="110.547" fill="#FF0000"/>
+<circle r="3" cx="45.1264" cy="221.233" fill="#FF0000"/>
+<circle r="3" cx="44.9945" cy="165.89" fill="#009933"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M135,585.895L85.1916,585.776"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M406.808,585.776L357,585.895"/>
+<circle r="3" cx="406.808" cy="585.776" fill="#FF0000"/>
+<circle r="3" cx="357" cy="585.895" fill="#009933"/>
+<circle r="3" cx="135" cy="585.895" fill="#009933"/>
+<circle r="3" cx="85.1916" cy="585.776" fill="#FF0000"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M447.005,495.89L446.886,545.698"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M446.886,347.082L447.005,396.89"/>
+<circle r="3" cx="446.886" cy="347.082" fill="#FF0000"/>
+<circle r="3" cx="447.005" cy="396.89" fill="#009933"/>
+<circle r="3" cx="447.005" cy="495.89" fill="#009933"/>
+<circle r="3" cx="446.886" cy="545.698" fill="#FF0000"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M357,306.885L406.808,307.004"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M85.1916,307.004L135,306.885"/>
+<circle r="3" cx="85.1916" cy="307.004" fill="#FF0000"/>
+<circle r="3" cx="135" cy="306.885" fill="#009933"/>
+<circle r="3" cx="357" cy="306.885" fill="#009933"/>
+<circle r="3" cx="406.808" cy="307.004" fill="#FF0000"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M44.995,396.89L45.1138,347.082"/>
+<path fill="none" stroke-width="1.0" stroke="#009933" d="M45.1138,545.698L44.995,495.89"/>
+<circle r="3" cx="45.1138" cy="545.698" fill="#FF0000"/>
+<circle r="3" cx="44.995" cy="495.89" fill="#009933"/>
+<circle r="3" cx="44.995" cy="396.89" fill="#009933"/>
+<circle r="3" cx="45.1138" cy="347.082" fill="#FF0000"/>
+<circle r="3" cx="145" cy="165.89" fill="#004C99"/>
+<text x="160.0" y="125.89" font-family="Arial" font-size="15" fill="#004C99">r = 100</text>
+<line x1="145" y1="165.89" x2="231.603" y2="115.89" stroke="#004C99" stroke-width="1"/>
+<circle r="3" cx="357" cy="396.89" fill="#004C99"/>
+<text x="370.5" y="360.89" font-family="Arial" font-size="15" fill="#004C99">r = 90</text>
+<line x1="357" y1="396.89" x2="434.942" y2="351.89" stroke="#004C99" stroke-width="1"/>
+<text x="315" y="60.89" font-family="Arial" font-size="20" fill="#004C99">Approximating circles with</text>
+<text x="315" y="82.89" font-family="Arial" font-size="20" fill="#004C99">cubic Bézier curves</text>
+<text x="315" y="107.89" font-family="Arial" font-size="16" fill="#004C99">For a circle centered at the origin:</text>
+<text x="333" y="135.89" font-family="Arial" font-size="16" fill="#004C99">= (r·a, 0)</text>
+<text x="333" y="156.89" font-family="Arial" font-size="16" fill="#004C99">= (r·b, r·c)</text>
+<text x="333" y="177.89" font-family="Arial" font-size="16" fill="#004C99">= (r·c, r·b)</text>
+<text x="333" y="198.89" font-family="Arial" font-size="16" fill="#004C99">= (0, r·a)</text>
+<text x="315" y="135.89" font-family="Arial" font-size="16" fill="#009933">P</text>
+<text x="324" y="138.89" font-family="Arial" font-size="9.6" fill="#009933">1</text>
+<text x="315" y="156.89" font-family="Arial" font-size="16" fill="#FF0000">P</text>
+<text x="324.5" y="159.89" font-family="Arial" font-size="9.6" fill="#FF0000">2</text>
+<text x="315" y="177.89" font-family="Arial" font-size="16" fill="#FF0000">P</text>
+<text x="324.5" y="180.89" font-family="Arial" font-size="9.6" fill="#FF0000">3</text>
+<text x="315" y="198.89" font-family="Arial" font-size="16" fill="#009933">P</text>
+<text x="323.5" y="201.89" font-family="Arial" font-size="9.6" fill="#009933">4</text>
+<text x="315" y="225.89" font-family="Arial" font-size="16" fill="#004C99">a = 1.00005519</text>
+<text x="315" y="245.89" font-family="Arial" font-size="16" fill="#004C99">b = 0.99873585</text>
+<text x="315" y="265.89" font-family="Arial" font-size="16" fill="#004C99">c = 0.55342686</text>
+<text x="225" y="165.89" font-family="Arial" font-size="15" fill="#009933">P</text>
+<text x="233.44" y="168.703" font-family="Arial" font-size="9" fill="#009933">1</text>
+<text x="238" y="101.547" font-family="Arial" font-size="15" fill="#FF0000">P</text>
+<text x="246.9" y="104.36" font-family="Arial" font-size="9" fill="#FF0000">2</text>
+<text x="207.343" y="70.89" font-family="Arial" font-size="15" fill="#FF0000">P</text>
+<text x="216.243" y="73.7025" font-family="Arial" font-size="9" fill="#FF0000">3</text>
+<text x="140" y="85.89" font-family="Arial" font-size="15" fill="#009933">P</text>
+<text x="148" y="88.7025" font-family="Arial" font-size="9" fill="#009933">4</text>
+<line x1="261" y1="165.89" x2="281" y2="165.89" stroke="#004C99" stroke-width="0.5"/>
+<line x1="261" y1="110.547" x2="281" y2="110.547" stroke="#004C99" stroke-width="0.5"/>
+<circle r="2" cx="271" cy="165.89" fill="#004C99"/>
+<circle r="2" cx="271" cy="110.547" fill="#004C99"/>
+<line x1="271" y1="100.547" x2="271" y2="130.719" stroke="#004C99" stroke-width="0.5"/>
+<line x1="271" y1="175.89" x2="271" y2="145.719" stroke="#004C99" stroke-width="0.5"/>
+<text x="263.5" y="143.719" font-family="Arial" font-size="15" fill="#004C99">r·c</text>
+</svg>

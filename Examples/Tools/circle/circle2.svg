@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" id="Layer_1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="591.29" height="637.9"
+	 viewBox="0 0 591.29 637.9" overflow="visible" enable-background="new 0 0 591.29 637.9" xml:space="preserve">
+<g>
+	<text transform="matrix(1 0 0 1 313.0049 60.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="20">Approximating circles with</text>
+	<text transform="matrix(1 0 0 1 313.0049 82.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="20">cubic Bézier curves</text>
+	<text transform="matrix(1 0 0 1 313.0049 107.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">For a circle centered at the origin:</text>
+	<text transform="matrix(1 0 0 1 313.0049 135.8945)" fill="#009933" font-family="'Lato-Regular'" font-size="16">P</text>
+	<text transform="matrix(1 0 0 1 321.3047 138.894)" fill="#009933" font-family="'Lato-Regular'" font-size="9.6">1</text>
+	<text transform="matrix(1 0 0 1 330.6045 135.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">= (r·</text>
+	<text transform="matrix(1 0 0 1 359.2363 135.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">a, 0)</text>
+	<text transform="matrix(1 0 0 1 313.0049 156.8945)" fill="#FF0000" font-family="'Lato-Regular'" font-size="16">P</text>
+	<text transform="matrix(1 0 0 1 321.6045 159.894)" fill="#FF0000" font-family="'Lato-Regular'" font-size="9.6">2</text>
+	<text transform="matrix(1 0 0 1 330.6045 156.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">= (r·</text>
+	<text transform="matrix(1 0 0 1 359.2363 156.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">b, r·</text>
+	<text transform="matrix(1 0 0 1 386.9082 156.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">c)</text>
+	<text transform="matrix(1 0 0 1 313.0049 177.8945)" fill="#FF0000" font-family="'Lato-Regular'" font-size="16">P</text>
+	<text transform="matrix(1 0 0 1 321.6045 180.894)" fill="#FF0000" font-family="'Lato-Regular'" font-size="9.6">3</text>
+	<text transform="matrix(1 0 0 1 330.6045 177.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">= (r·</text>
+	<text transform="matrix(1 0 0 1 359.2363 177.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">c, r·</text>
+	<text transform="matrix(1 0 0 1 385.5801 177.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">b)</text>
+	<text transform="matrix(1 0 0 1 313.0049 198.8945)" fill="#009933" font-family="'Lato-Regular'" font-size="16">P</text>
+	<text transform="matrix(1 0 0 1 321.6045 201.894)" fill="#009933" font-family="'Lato-Regular'" font-size="9.6">4</text>
+	<text transform="matrix(1 0 0 1 330.6045 198.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">= (0, r·</text>
+	<text transform="matrix(1 0 0 1 376.2441 198.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">a)</text>
+	<text transform="matrix(1 0 0 1 313.0049 225.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">a = 1.00005519</text>
+	<text transform="matrix(1 0 0 1 313.0049 245.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">b = 0.99873585</text>
+	<text transform="matrix(1 0 0 1 313.0049 265.8945)" fill="#004D99" font-family="'Lato-Regular'" font-size="16">c = 0.55342686</text>
+	
+		<line fill="none" stroke="#004D99" stroke-width="0.5" stroke-miterlimit="10" x1="143.005" y1="165.895" x2="229.607" y2="115.895"/>
+	<path fill="#004D99" d="M145.965,165.815c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C144.621,168.815,145.965,167.471,145.965,165.815"/>
+	<text transform="matrix(1 0 0 1 162.3359 124.1152)" fill="#004D99" font-family="'Lato-Regular'" font-size="15">r = 100</text>
+	<path fill="#004D99" d="M259.01,165.895h10h2c0-1.104-0.896-2-2-2s-2,0.896-2,2s0.896,2,2,2s2-0.896,2-2"/>
+	
+		<line fill="none" stroke="#004D99" stroke-width="0.5" stroke-miterlimit="10" x1="269.01" y1="175.895" x2="269.01" y2="149.331"/>
+	<text transform="matrix(1 0 0 1 261.0103 143.3301)" fill="#004D99" font-family="'Lato-Regular'" font-size="15">r·</text>
+	<text transform="matrix(1 0 0 1 271.3706 143.3301)" fill="#004D99" font-family="'Lato-Regular'" font-size="15">c</text>
+	<polyline fill="none" stroke="#004D99" stroke-width="0.5" stroke-miterlimit="10" points="259.01,165.895 269.01,165.895 
+		279.01,165.895 	"/>
+	<path fill="#004D99" d="M259.01,110.552h10h2c0-1.104-0.896-2-2-2s-2,0.896-2,2s0.896,2,2,2s2-0.896,2-2"/>
+	<path fill="none" stroke="#004D99" stroke-width="0.5" stroke-miterlimit="10" d="M259.01,110.552h10h10 M269.01,100.552v26.564"/>
+	<text transform="matrix(1 0 0 1 218.0103 165.8945)" fill="#009933" font-family="'Lato-Regular'" font-size="15">P</text>
+	<text transform="matrix(1 0 0 1 225.7104 168.8945)" fill="#009933" font-family="'Lato-Regular'" font-size="9">1</text>
+	<text transform="matrix(1 0 0 1 237.8784 100.5518)" fill="#FF0000" font-family="'Lato-Regular'" font-size="15">P</text>
+	<text transform="matrix(1 0 0 1 245.8784 103.5518)" fill="#FF0000" font-family="'Lato-Regular'" font-size="9">2</text>
+	<text transform="matrix(1 0 0 1 208.3477 71.0205)" fill="#FF0000" font-family="'Lato-Regular'" font-size="15">P</text>
+	<text transform="matrix(1 0 0 1 216.3477 74.0205)" fill="#FF0000" font-family="'Lato-Regular'" font-size="9">3</text>
+	<text transform="matrix(1 0 0 1 138.0049 85.8887)" fill="#009933" font-family="'Lato-Regular'" font-size="15">P</text>
+	<text transform="matrix(1 0 0 1 145.5049 88.8887)" fill="#009933" font-family="'Lato-Regular'" font-size="9">4</text>
+	<path fill="none" stroke="#004D99" stroke-width="2" stroke-miterlimit="10" d="M143.005,265.9
+		c55.343-0.132,99.874-44.663,100.005-100.005c-0.132-55.343-44.663-99.874-100.005-100.005
+		C87.662,66.021,43.131,110.552,43,165.895C43.131,221.238,87.662,265.769,143.005,265.9L143.005,265.9z"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M198.348,265.769l-55.343,0.132 M143.005,265.9l-55.343-0.132"/>
+	<path fill="#FF0000" d="M90.765,265.655c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C89.421,268.655,90.765,267.311,90.765,265.655"/>
+	<path fill="#FF0000" d="M201.405,265.655c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C200.061,268.655,201.405,267.311,201.405,265.655"/>
+	<path fill="#009933" d="M145.965,265.895c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3s1.344,3,3,3
+		C144.621,268.895,145.965,267.551,145.965,265.895"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M242.878,110.552l0.132,55.343 M243.01,165.895l-0.132,55.343"/>
+	<path fill="#FF0000" d="M245.805,221.255c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C244.461,224.255,245.805,222.911,245.805,221.255"/>
+	<path fill="#FF0000" d="M245.805,110.615c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C244.461,113.615,245.805,112.271,245.805,110.615"/>
+	<path fill="#009933" d="M246.045,165.815c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C244.701,168.815,246.045,167.471,246.045,165.815"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M87.662,66.021l55.343-0.132 M143.005,65.89l55.343,0.132"/>
+	<path fill="#FF0000" d="M201.405,65.975c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C200.061,68.975,201.405,67.631,201.405,65.975"/>
+	<path fill="#FF0000" d="M90.765,65.975c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C89.421,68.975,90.765,67.631,90.765,65.975"/>
+	<path fill="#009933" d="M145.965,65.975c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C144.621,68.975,145.965,67.631,145.965,65.975"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M43.131,221.238L43,165.895 M43,165.895l0.132-55.343"/>
+	<path fill="#FF0000" d="M46.125,110.615c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C44.781,113.615,46.125,112.271,46.125,110.615"/>
+	<path fill="#FF0000" d="M46.125,221.255c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C44.781,224.255,46.125,222.911,46.125,221.255"/>
+	<path fill="#009933" d="M45.885,165.815c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C44.541,168.815,45.885,167.471,45.885,165.815"/>
+	
+		<line fill="none" stroke="#004D99" stroke-width="0.5" stroke-miterlimit="10" x1="355.005" y1="396.895" x2="432.947" y2="351.895"/>
+	<path fill="#004D99" d="M358.005,396.936c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.655,1.344,3,3,3S358.005,398.591,358.005,396.936"
+		/>
+	<text transform="matrix(1 0 0 1 374.3555 360.6602)" fill="#004D99" font-family="'Lato-Regular'" font-size="15">r = 90</text>
+	<path fill="none" stroke="#004D99" stroke-width="2" stroke-miterlimit="10" d="M355.005,585.9
+		c49.809-0.119,89.887-40.197,90.005-90.006v-99c-0.118-49.809-40.196-89.886-90.005-90.004h-222
+		C83.196,307.009,43.119,347.086,43,396.895v99c0.119,49.809,40.196,89.887,90.005,90.006H355.005z"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M133.005,585.9l-49.809-0.119 M404.813,585.781l-49.809,0.119"/>
+	<path fill="#FF0000" d="M407.805,585.814c0-1.656-1.344-3-3-3s-3,1.344-3,3s1.344,3,3,3S407.805,587.471,407.805,585.814"/>
+	<path fill="#009933" d="M358.005,585.814c0-1.656-1.344-3-3-3s-3,1.344-3,3s1.344,3,3,3S358.005,587.471,358.005,585.814"/>
+	<path fill="#009933" d="M136.005,585.814c0-1.656-1.344-3-3-3s-3,1.344-3,3s1.344,3,3,3S136.005,587.471,136.005,585.814"/>
+	<path fill="#FF0000" d="M86.205,585.814c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3s1.344,3,3,3
+		C84.861,588.814,86.205,587.471,86.205,585.814"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M445.01,495.895l-0.118,49.809 M444.892,347.086l0.118,49.809"/>
+	<path fill="#FF0000" d="M447.885,347.016c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.655,1.344,3,3,3S447.885,348.671,447.885,347.016"
+		/>
+	<path fill="#009933" d="M448.125,396.936c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.655,1.344,3,3,3S448.125,398.591,448.125,396.936"
+		/>
+	<path fill="#009933" d="M448.125,495.814c0-1.656-1.344-3-3-3s-3,1.344-3,3s1.344,3,3,3S448.125,497.471,448.125,495.814"/>
+	<path fill="#FF0000" d="M447.885,545.734c0-1.656-1.344-3-3-3s-3,1.344-3,3s1.344,3,3,3S447.885,547.391,447.885,545.734"/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M355.005,306.89l49.809,0.119 M83.196,307.009l49.809-0.119"/>
+	<path fill="#FF0000" d="M86.205,306.935c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.656,1.344,3,3,3
+		C84.861,309.935,86.205,308.591,86.205,306.935"/>
+	<path fill="#009933" d="M136.005,306.935c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.656,1.344,3,3,3S136.005,308.591,136.005,306.935"
+		/>
+	<path fill="#009933" d="M358.005,306.935c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.656,1.344,3,3,3S358.005,308.591,358.005,306.935"
+		/>
+	<path fill="#FF0000" d="M407.805,306.935c0-1.656-1.344-3-3-3s-3,1.344-3,3c0,1.656,1.344,3,3,3S407.805,308.591,407.805,306.935"
+		/>
+	<path fill="none" stroke="#009933" stroke-miterlimit="10" d="M43,396.895l0.119-49.809 M43.119,545.703L43,495.895"/>
+	<path fill="#FF0000" d="M46.125,545.734c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3s1.344,3,3,3
+		C44.781,548.734,46.125,547.391,46.125,545.734"/>
+	<path fill="#009933" d="M45.885,495.814c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3s1.344,3,3,3
+		C44.541,498.814,45.885,497.471,45.885,495.814"/>
+	<path fill="#009933" d="M45.885,396.936c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.655,1.344,3,3,3
+		C44.541,399.936,45.885,398.591,45.885,396.936"/>
+	<path fill="#FF0000" d="M46.125,347.016c0-1.656-1.344-3-3-3c-1.656,0-3,1.344-3,3c0,1.655,1.344,3,3,3
+		C44.781,350.016,46.125,348.671,46.125,347.016"/>
+	<path fill="none" stroke="#004D99" stroke-width="4" stroke-miterlimit="10" d="M499.285,635.9
+		c49.808-0.119,89.886-40.197,90.005-90.006V92.005C589.171,42.197,549.093,2.119,499.285,2H92.005
+		C42.196,2.119,2.119,42.197,2,92.005v453.89c0.119,49.809,40.196,89.887,90.005,90.006H499.285z"/>
+</g>
+</svg>

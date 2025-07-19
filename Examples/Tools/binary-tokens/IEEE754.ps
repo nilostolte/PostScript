@@ -1,0 +1,101 @@
+%!PS
+/sca 1 def
+/PageSize [595.28  841.89] def %A4 size
+<< /PageSize [ PageSize aload pop sca mul exch sca mul exch ]>> setpagedevice
+sca dup scale
+%%%% Header %%%%
+/color [ 0  52 255 div  95 255 div ] def
+color aload pop setrgbcolor
+/Helvetica findfont 20 scalefont setfont
+(IEEE 754 Float Format in Hexadecimal for the Powers of 2) 
+dup stringwidth pop PageSize 0 get sub neg 2 div 807 moveto show
+
+/Helvetica findfont 10 scalefont setfont
+/str 20 string def                % To convert the floating point to string
+/float <8A 00 00 00 00> def       % PostScript token for a IEEE float 0.0
+/char 1 string def                % String to convert hexadecimal to ASCII
+
+%/hexasc { dup 10 ge { 7 add }if 48 add } def
+
+/fprint { 
+   1 1 4 { char 0 3 index 4 -1 roll get char 0 2 index -4 bitshift
+           %hexasc
+           dup 10 ge { 7 add }if 48 add
+           put char show 16#0F and 
+           %hexasc
+           dup 10 ge { 7 add }if 48 add
+           put char show
+         } for
+   pop
+} bind def
+ 
+
+
+/maxy 780 def
+/inc 12 def
+/x 29.64 def
+/x0 x inc sub def
+/nlines 64 def
+/height nlines inc mul def
+/ymin maxy nlines 1 sub inc mul sub def
+
+0 setlinewidth
+x0 maxy inc add 3 sub moveto 560 0 rlineto stroke
+
+0 1 3 {
+   gsave
+     2 setlinewidth
+     x 128 add maxy inc add 3 sub moveto 0 height neg rlineto
+     stroke
+   grestore
+   maxy inc neg ymin {
+     /y exch def
+     x y moveto
+     float 1 get 16#7F eq float 2 get 16#80 eq and {
+        (INFINITY)
+     }
+     { float token pop exch pop str cvs } ifelse
+     show
+     x 70 add y moveto float fprint
+     dup 0 eq {
+       x0  y 3 sub moveto 
+       560 0 rlineto
+       stroke
+     } if
+     float 2 float 2 get 16#80 and 16#80 eq { 
+        0 put
+        float 1 float 1 get 1 add put
+     }
+     { 16#80 put } ifelse
+   } for
+   /x x 140 add def
+   pop
+} for 
+stroke
+
+2 setlinewidth
+x0 maxy inc add 1 add moveto
+560 0 rlineto
+0 height 8 add neg rlineto
+-560 0 rlineto
+closepath
+stroke
+
+/c 0.55191502449 def
+/r 20 def
+/mc r c mul def
+
+4 setlinewidth
+3 r add 3 moveto
+PageSize 0 get 3 sub r sub 3 lineto
+mc 0 r r mc sub r r rcurveto
+PageSize 0 get 3 sub  PageSize 1 get 3 sub r sub lineto
+0 mc  mc r sub r  r neg r rcurveto
+3 r add PageSize 1 get 3 sub lineto
+mc neg  0  r neg mc r sub  r neg r neg rcurveto
+3 3 r add lineto
+0 mc neg  r mc sub r neg  r r neg rcurveto 
+closepath
+stroke
+
+showpage

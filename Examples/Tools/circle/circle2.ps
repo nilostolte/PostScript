@@ -1,0 +1,296 @@
+%!PS
+/sca 1 def
+/PageSize [595.28  841.89] def %A4 size
+<< /PageSize [ PageSize aload pop sca mul exch sca mul exch ]>> setpagedevice
+sca dup scale
+/illustrator false def
+
+/Helvetica-Isolatin2 << % reencode Helvetica in Isolatin1
+  /Encoding ISOLatin1Encoding  
+  % /Helvetica findfont {} forall
+  /Lato-Regular findfont {} forall
+>> definefont pop
+
+/pr 3 def
+
+% for interactive use
+/q {quit} def 
+
+/color { 0 0.3 0.6 setrgbcolor} def
+/red { 1 0 0 setrgbcolor} def
+/green { 0 1 0 setrgbcolor } def
+/mygreen { 0 0.6 0.2 setrgbcolor } def
+/mag { 1 0 1 setrgbcolor } def
+
+/a 1.00005519 def
+/c 0.55342686 def
+/b 0.99873585 def
+
+/set-radius { % radius
+  /r exch def
+  /ra r a mul def
+  /rb r b mul def
+  /rc r c mul def
+} def
+
+
+% /circle-factory {
+  % [  3 1 roll r add exch r add exch
+     % 2 copy ra sub /moveto  cvx 5 -2 roll
+     % 2 copy exch rc add exch rb sub 4 -2 roll
+     % 2 copy exch rb add exch rc sub 4 -2 roll
+     % 2 copy exch ra add exch /curveto cvx 5 -2 roll
+     % 2 copy exch rb add exch rc add 4 -2 roll
+     % 2 copy exch rc add exch rb add 4 -2 roll
+     % 2 copy ra add /curveto cvx 5 -2 roll
+     % 2 copy exch rc sub exch rb add 4 -2 roll
+     % 2 copy exch rb sub exch rc add 4 -2 roll
+     % 2 copy exch ra sub exch /curveto cvx 5 -2 roll
+     % 2 copy exch rb sub exch rc sub 4 -2 roll
+     % 2 copy exch rc sub exch rb sub 4 -2 roll
+            % ra sub /curveto cvx
+  % ] cvx
+% } def
+
+%                                                               %
+% constructs an executable array to draw a circle with radius r %
+%                                                               %
+/circle-factory { % x-left-coordinate y-lower-coordinate
+  [  3 -1 roll r add 3 -1 roll r add dup 3 1 roll
+     ra sub /moveto cvx
+     2 index rc add 4 index rb sub 
+     4 index rb add 6 index rc sub
+     6 index ra add 9 -1 roll /curveto cvx
+     4 index 2 index rc add 
+     8 index 4 index rb add
+     13 index 6 index ra add /curveto cvx
+     2 index rc sub 4 index 
+     4 index rb sub 8 index
+     6 index ra sub 13 index /curveto cvx
+     4 index 18 index 
+     8 index 22 index
+     13 index 6 index ra sub /curveto cvx
+     /closepath cvx
+  ] cvx
+} def
+
+/circle-vectors { % circle-executable-array
+  0 7 21 {
+    1 index 1 index get
+    2 index 2 index 1 add get
+    3 index 3 index 3 add get
+    4 index 4 index 4 add get
+    4 copy moveto lineto stroke
+    5 -1 roll 2 sub dup 0 lt { -4 add 5 index length add }if
+    5 index 1 index get 6 index 3 -1 roll 1 add get
+    2 copy 7 index 7 index moveto lineto stroke
+    gsave 2 { red pr 0 360 arc fill } repeat grestore
+    pr 0 360 arc fill
+  } for
+  pop
+} def
+
+%                                                                        %
+% constructs an executable array to draw a round-rectangle with radius r %
+%                                                                        %
+/round-rectangle-factory { % inside-width inside-height x-left-coordinate y-low-coordinate
+  [  3 -1 roll r add 3 -1 roll r add dup 5 -1 roll
+     add 2 index 6 -1 roll add 2 index ra sub /moveto cvx
+     2 index rc add 5 index rb sub
+     4 index rb add 7 index rc sub
+     6 index ra add 9 index /curveto cvx
+     2 index 12 -1 roll /lineto cvx
+     7 index  2 index rc add
+     11 index 4 index rb add
+     16 index 6 index ra add /curveto cvx
+     22 -1 roll 2 index /lineto cvx 
+     2 index rc sub 7 index
+     4 index rb sub 11 index
+     6 index ra sub 16 index /curveto cvx 
+     2 index 32 -1 roll /lineto cvx 
+     12 index rb sub 2 index rc sub
+     14 index rc sub 4 index rb sub
+     16 index 6 index ra sub /curveto cvx
+     /closepath cvx
+  ] cvx
+} def
+
+/round-rectangle-vectors { % round-rectangle-executable-array
+  -5 10 25 {
+    dup dup 0 lt { -1 add 2 index length add }if
+    2 index 1 index get
+    3 index 2 index 1 add get
+    4 index 3 index 2 add get
+    5 index 5 -1 roll 3 add get
+    4 copy moveto lineto stroke
+    5 index 5 index 5 add get
+    6 index 6 index 6 add get
+    7 index 7 index 8 add get
+    8 index 9 -1 roll 9 add get
+    4 copy moveto lineto stroke
+    gsave red pr 0 360 arc fill  grestore
+    2 { pr 0 360 arc fill } repeat
+    gsave red pr 0 360 arc fill  grestore
+  } for
+  pop
+} def
+
+/draw-radius { % x-index y-index executable-array
+  /Helvetica-Isolatin2 findfont 15 scalefont setfont
+  /str r 20 string cvs def
+  /rw (r = ) stringwidth pop str stringwidth pop add 2 div def
+  dup 
+  4 -1 roll get exch 3 -1 roll get 2 copy moveto
+  0.5 setlinewidth
+  r 0.5 mul 3 sqrt mul  r 0.5 mul rlineto stroke
+  2 copy pr 0 360 arc fill
+  r 0.25 mul add rw 0.7 mul add exch r 0.25 mul 3 sqrt mul add  
+  rw sub exch moveto
+  (r = ) show str show
+} def
+
+/draw-height { % x-index y-index executable-array
+  dup
+  4 -1 roll get exch 3 -1 roll get 2 copy 
+  exch 16 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave
+    /Helvetica-Isolatin2 findfont 15 scalefont setfont
+    pr 1 sub  0 360 arc fill 
+    10 sub moveto 0 rc 0.48 mul rlineto currentpoint stroke
+    6 add exch -8 add exch moveto 
+    (r) show <B7> show 1 0 rmoveto 
+    % currentpoint exch pop
+    % gsave 
+       % 0 -6 rmoveto /Symbol findfont 25 scalefont setfont <D6> show currentpoint pop
+       % gsave <D6> true charpath pathbbox grestore
+       % 4 1 roll pop pop 1.958 sub exch 0.2 sub moveto
+       % 0.75 setlinewidth
+       % 76 0 rlineto stroke
+    % grestore
+    % exch moveto 
+    % (\(a) show 1 0 rmoveto
+    % (-) show  1 0 rmoveto  
+    % (b) show 0.3 0 rmoveto 
+    % (\)) show 0.4 0 rmoveto 
+    % <B2> show ( + ) show 
+    (c) show %0.5 0 rmoveto <B2> show
+  grestore 
+  10 0 rlineto stroke
+  %2 copy rc add exch 10 add exch moveto
+  rc add exch 16 add exch moveto
+  10 0 rlineto currentpoint currentpoint
+  gsave  pr 1 sub  0 360 arc fill grestore 
+  10 0 rlineto stroke
+  10 add moveto 0 rc -0.48 mul rlineto stroke
+} def
+
+/show-points {
+  /Helvetica-Isolatin2 findfont 15 scalefont setfont
+  2 copy get 25 sub 2 index 2 index 1 add get moveto
+  mygreen
+  (P) show -1.3 -3 rmoveto 
+  gsave 0.6 0.6 scale (1) show grestore
+  2 copy 3 add get 5 sub 2 index 2 index 4 add get 10 add moveto
+  red
+  (P) show -1 -3 rmoveto
+  gsave 0.6 0.6 scale (2) show grestore
+  2 copy 5 add get 10 add 2 index 2 index 6 add get 5 sub moveto
+  red
+  (P) show -1 -3 rmoveto
+  gsave 0.6 0.6 scale (3) show grestore
+  2 copy 7 add get 5 sub 2 index 2 index 8 add get 20 sub moveto
+  mygreen
+  (P) show -1.5 -3 rmoveto
+  gsave 0.6 0.6 scale (4) show grestore
+  pop pop
+} def
+
+/draw-circle { %
+  color
+  100 set-radius
+  45 illustrator { 25 add } if
+  570 circle-factory dup /circle exch def
+  0 8 2 index draw-radius
+  7 8 2 index draw-height
+  dup 7 show-points
+  2 setlinewidth
+  color
+  circle stroke
+  1 setlinewidth
+  mygreen
+  circle-vectors
+} def
+
+/draw-round-rectangle { %
+  color
+  90 set-radius
+  222 99 45
+  illustrator { 25 add } if
+  250 round-rectangle-factory dup /rrect exch def
+  0 11 2 index draw-radius
+  2 setlinewidth
+  rrect stroke
+  1 setlinewidth
+  mygreen
+  round-rectangle-vectors
+} def
+
+/title { %
+  /tx 315 illustrator { 15 add } if def
+  color
+  /Helvetica-Isolatin2 findfont 20 scalefont setfont
+  tx 775 moveto (Approximating circles with) show
+  tx 753 moveto (cubic B) show <e9> show (zier curves) show
+  /Helvetica-Isolatin2 findfont 16 scalefont setfont
+  tx 728 moveto (For a circle centered at the origin:) show
+  tx 700 moveto
+  mygreen
+  (P) show -1.3 -3 rmoveto 
+  gsave 0.6 0.6 scale (1) show grestore 9.3 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (a, 0\)) show
+  tx 679 moveto
+  red
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (2) show grestore 9 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (b, r) show 
+  <B7> show 1 0 rmoveto (c\)) show
+  tx 658 moveto
+  red
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (3) show grestore 9 3 rmoveto
+  color (= \(r) show <B7> show 1 0 rmoveto (c, r) show 
+  <B7> show 1 0 rmoveto (b\)) show
+  tx 637 moveto 
+  mygreen
+  (P) show -1 -3 rmoveto 
+  gsave 0.6 0.6 scale (4) show grestore 9 3 rmoveto
+  color (= \(0, r) show 
+  <B7> show 1 0 rmoveto (a\)) show 
+  tx 610 moveto (a = 1.00005519) show
+  tx 590 moveto (b = 0.99873585) show
+  tx 570 moveto (c = 0.55342686) show
+} def
+
+
+/frame { %
+  color
+  4 setlinewidth
+  PageSize 0 get r 2 mul sub 8 sub illustrator { 23.71 add } if
+  PageSize 1 get r 2 mul sub 8 sub 200 sub
+  4 200
+  round-rectangle-factory /myframe exch def
+  myframe stroke
+} def
+
+/main { %
+  title
+  draw-circle
+  draw-round-rectangle
+  frame 
+
+} def
+
+main
+
+showpage

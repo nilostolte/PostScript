@@ -1,0 +1,168 @@
+%!PS
+/q { quit } bind def
+/m { moveto } bind def
+
+/xmax 700 def
+/ymax 700 def
+
+/SVG-parser {
+/xs 20 string def
+/ys 20 string def
+/x1 20 string def
+/y1 20 string def
+/x2 20 string def
+/y2 20 string def
+
+/path (<path fill="#000000" d=") def
+/2chars 2 string def  % buffer to store the two ascii characters
+/hexascii {% byte
+  dup -4 bitshift
+  %hexasc
+  dup 10 ge { 7 add }if 48 add
+  2chars 0 3 -1 roll put
+  16#0F and 
+  %hexasc
+  dup 10 ge { 7 add }if 48 add
+  2chars 1 3 -1 roll put
+} bind def
+
+/6chars 6 string def % buffer for converting hexadecimal to ascii
+/hexcolor {% array
+   dup 0 get 255 mul cvi
+   hexascii 
+   6chars 0 2chars putinterval
+   dup 1 get 255 mul cvi
+   hexascii 
+   6chars 2 2chars putinterval
+   2 get 255 mul cvi
+   hexascii 
+   6chars 4 2chars putinterval
+} bind def
+
+/xy {
+  neg ymax add ys cvs exch xs cvs dup length 2 index length add 2 add string } def
+/ps { 
+   dup 1 3 index putinterval dup 3 -1 roll length 1 add 44 put 
+   dup dup length 3 index length sub 4 -1 roll putinterval
+} bind def
+
+/str { cvs dup length 1 add string dup } bind def 
+
+/h {
+  pop /x 1 index x add def
+  xs str 0 104 put
+} bind def
+
+/H {
+  pop /x 1 index def
+  xs str 0 72 put
+} bind def
+
+/v {
+  exch pop /y 1 index y add def
+  neg ymax add ys str 0 118 put
+} bind def
+
+/V {
+  exch pop /y 1 index def
+  neg ymax add ys str 0 86 put
+} bind def
+
+/moveto {
+   /x 2 index def /y 1 index def
+   xy dup 0 77 put 
+   ps
+} bind def
+
+/lineto {
+   dup y eq 2 index x eq or {
+      dup y eq { H } { V } ifelse
+      dup 1 4 -1 roll putinterval
+   }
+   { /x 2 index def /y 1 index def
+     xy dup 0 76 put 
+     ps
+   } ifelse
+} bind def
+
+/curveto {
+    /x 2 index def /y 1 index def
+    neg ymax add ys cvs exch xs cvs 6 2 roll
+    neg ymax add y2 cvs exch x2 cvs 4 -2 roll
+    neg ymax add y1 cvs exch x1 cvs
+    0 1 1 6 {
+      index length add
+    } for
+    6 add string
+    dup 0 67 put
+    1 5 { 
+     2 copy 4 index putinterval 3 -1 roll length add
+     2 copy 44 put 1 add
+    } repeat
+    2 copy 5 -1 roll putinterval
+    pop
+} def
+
+/rlineto {
+   dup 0 eq 2 index 0 eq or {
+     dup 0 eq { h } { v } ifelse
+     dup 1 4 -1 roll putinterval
+   }
+   { /x 2 index x add def /y 1 index y add def
+     xy dup 0 108 put 
+     ps
+   } ifelse
+} bind def
+
+/closepath {
+  count 0 exch -1 1 {
+     index length add
+  } for
+  1 index length 1 add string dup 0 5 -1 roll putinterval 
+  dup dup length 1 sub 122 put exch 1 add
+  string
+  0 count -1 3 {
+     dup index length 3 index 3 index 4 -1 roll 3 add -1 roll putinterval add
+  } for 
+  pop
+} bind def
+
+/fill { 
+  [ currentrgbcolor ] hexcolor
+  path 13 6chars putinterval 
+  dup length path length add 3 add string
+  dup 0 path putinterval 
+  dup path length 4 -1 roll putinterval
+  dup dup length 3 sub ("/>) putinterval
+  =
+} bind def
+
+
+(" overflow="visible">)
+ymax xs cvs
+( )
+xmax xs cvs
+(<?xml version="1.0" encoding="UTF-8"?>\r\n<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 )
+0 1 1 5 { index length add} for string
+0 5 { 2 copy 4 index putinterval 3 -1 roll length add } repeat pop
+=
+} def
+
+/setbbox {
+   pop pop pop pop
+} def
+
+/show {
+  exch dup 0 get 77 eq { pop } { exch } ifelse 
+  newpath x y m true charpath false upath exec
+  pop fill
+} def
+
+/FranklinGothic-Book findfont 30 scalefont setfont
+
+SVG-parser
+
+20 600 moveto (This is the Truetype font FranklinGothic-Book) show
+20 570 moveto (used in PostScript directly. Testing.) show
+(</svg>) =
+quit

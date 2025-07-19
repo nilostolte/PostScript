@@ -1,0 +1,1 @@
+"C:\Program Files\gs\gs9.52\bin\gswin64c.exe" -dNOSAFER -dGraphicsAlphaBits=4 bezier-sub.gs

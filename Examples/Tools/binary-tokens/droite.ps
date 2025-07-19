@@ -1,0 +1,48 @@
+
+<<
+/p1 [155.359 103.132 ]
+/p2 [156.566 102]
+/p3 [188 99.304]
+>>
+begin
+/mid {      exch aload pop 3 -1 roll aload pop
+   3 -1 roll 4 index mul exch 1 5 index sub mul add
+   3 1 roll 1 4 index sub mul exch 4 -1 roll mul add exch
+} store
+%0.4 p1 p2 mid aaa
+% y = ax + d
+/a p2 1 get p1 1 get sub p2 0 get p1 0 get sub div store
+/d p2 1 get p2 0 get a mul sub store
+%/d p3 1 get p3 0 get a mul sub store
+%160.586 a mul d add mmmm
+%55 d sub a div mmmm
+end
+
+/bit 1 def
+%/convert { dup 176 sub 2 mul sub } def
+/convert { dup 176 exch sub 2 mul add } def
+/vector
+[
+159.996 130.25
+157.07 133.203 154.977 134.882 152.098 136.578
+150.512 137.515 149.363 138.832 149.363 139.714
+149.363 141.711 150.664 141.671 151.191 139.66
+151.418 138.796 152.898 137.468 154.484 136.711
+156.066 135.957 157.363 134.921 157.363 134.414
+157.363 133.906 158.273 133.078 159.387 132.57
+160.5 132.062 161.609 131.129 161.855 130.492
+162.098 129.855 162.809 129.531 163.43 129.769
+164.055 130.011 164.566 129.808 164.566 129.32
+164.566 127.82 161.859 128.367 159.996 130.25
+] def
+vector vector length 2 sub get convert
+vector vector length 1 sub get /m
+vector length 4 sub -2 0
+{
+ dup vector exch get convert exch
+ dup 1 add vector exch get exch
+ 6 mod 0 eq
+ { /c } if
+} for
+xxx
+
