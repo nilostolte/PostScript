@@ -1,0 +1,122 @@
+%!
+%%Page:
+/plot {
+	/function exch def
+        /limsup exch def
+	/liminf exch def
+	/inc exch def
+	liminf  function moveto
+	liminf inc add inc limsup
+		{ function lineto } for
+	} def
+
+0 setlinewidth
+gsave
+200 550 translate
+-100 110 moveto
+/Times-Roman findfont 12 scalefont setfont (x) show 
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (3) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (+y) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (3) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (-3xy=0) show
+
+0 100 moveto
+0 -200 rlineto
+100 0 moveto
+-200 0 rlineto
+50 50 scale
+%0.1 -0.3 3 { dup dup dup mul neg 1 add exch 3 mul 1 add div exch
+%           dup dup dup dup mul mul neg add exch 3 mul 1 add div } plot
+0.1 -0.6 1 { dup dup 3 mul exch dup dup mul mul 1 add div exch
+          dup dup mul 3 mul exch dup dup mul mul 1 add div } plot
+0.1 -.6 1 { dup dup 3 mul exch dup dup mul mul 1 add div exch
+          dup dup mul 3 mul exch dup dup mul mul 1 add div exch } plot
+
+stroke
+grestore
+
+gsave
+450 550 translate
+-100 110 moveto
+/Times-Roman findfont 12 scalefont setfont (\(3x) show 
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (-y) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (\)y-\(x) show
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (+y) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (\)) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (=0) show
+
+0 100 moveto
+0 -200 rlineto
+100 0 moveto
+-200 0 rlineto
+100 100 scale
+0.1 -80 80 { dup 
+             dup dup dup mul neg 3 add mul exch 
+             dup mul 1 add dup mul div exch
+             dup dup mul dup neg 3 add  mul exch 
+             dup mul 1 add dup mul div
+            } plot
+stroke
+grestore
+
+
+gsave
+200 250 translate
+-100 110 moveto
+/Times-Roman findfont 12 scalefont setfont (\(3x) show 
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (-y) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (\)) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (y) show
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (-\(x) show
+/Times-Roman findfont 7 scalefont setfont -1 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (+y) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (2) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (\)) show
+/Times-Roman findfont 7 scalefont setfont 0 4 rmoveto (4) show 0 -4 rmoveto
+/Times-Roman findfont 12 scalefont setfont (=0) show
+
+0 100 moveto
+0 -200 rlineto
+100 0 moveto
+-200 0 rlineto
+100 100 scale
+0.1 -80 80 { dup 
+             dup dup dup mul neg 3 add mul exch 
+             dup mul 1 add dup mul div exch
+             dup dup mul dup neg 3 add  mul exch 
+             dup mul 1 add dup mul div
+            } plot
+0.1 -80 80 { dup 
+             dup dup dup mul neg 3 add mul exch 
+             dup mul 1 add dup mul div exch
+             dup dup mul dup neg 3 add  mul exch 
+             dup mul 1 add dup mul div neg
+            } plot
+stroke
+grestore
+
+gsave
+450 250 translate
+
+0 100 moveto
+0 -200 rlineto
+100 0 moveto
+-200 0 rlineto
+
+100 100 scale
+.5 0 360  { dup dup 2 mul sin  3 1 roll cos 2 index mul exch sin 2 index mul
+             3 -1 roll pop
+            } plot
+stroke
+grestore
+
+showpage

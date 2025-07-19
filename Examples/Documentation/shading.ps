@@ -1,0 +1,820 @@
+%!PS-Adobe-3.0
+%%Creator: shading.c (PSLib)
+%%Creation-Date: 15/07/2004 05:58 
+%%Title: Shading Examples
+%%Author: Uwe Steinmann
+%%PageOrder: Ascend
+%%Pages: (atend)
+%%BoundingBox: 0 0 596 842
+%%Orientation: Portrait
+%%DocumentProcessColors: Black
+%%DocumentCustomColors: 
+%%CMYKCustomColor: 
+%%RGBCustomColor: 
+%%EndComments
+%%BeginProlog
+%%BeginResource: definicoes
+%%EndResource
+/PslibDict 300 dict def PslibDict begin/N{def}def/B{bind def}N
+/p{show}N/w{0 rmoveto}B/a{moveto}B/l{lineto}B/qs{currentpoint
+currentpoint newpath moveto 3 2 roll dup true charpath stroke
+stringwidth pop 3 2 roll add exch moveto}B/qf{currentpoint
+currentpoint newpath moveto 3 2 roll dup true charpath fill
+stringwidth pop 3 2 roll add exch moveto}B/qsf{currentpoint
+currentpoint newpath moveto 3 2 roll dup true charpath gsave stroke grestore fill
+stringwidth pop 3 2 roll add exch moveto}B/qc{currentpoint
+currentpoint newpath moveto 3 2 roll dup true charpath clip
+stringwidth pop 3 2 roll add exch moveto}B/qsc{currentpoint
+currentpoint initclip newpath moveto 3 2 roll dup true charpath clip stroke
+stringwidth pop 3 2 roll add exch moveto}B/qfc{currentpoint
+currentpoint initclip newpath moveto 3 2 roll dup true charpath clip fill
+stringwidth pop 3 2 roll add exch moveto}B/qfsc{currentpoint
+currentpoint initclip newpath moveto 3 2 roll dup true charpath gsave stroke grestore clip fill
+stringwidth pop 3 2 roll add exch moveto}B/qi{currentpoint
+3 2 roll
+stringwidth pop 3 2 roll add exch moveto}B/tr{currentpoint currentpoint 5 4 roll add moveto}B/rt{moveto}B/#copies{1}B
+/PslibPageBeginHook{pop pop pop pop pop}B
+/PslibPageEndHook{pop}B
+
+/reencdict 12 dict def /ReEncode { reencdict begin
+/newcodesandnames exch def /newfontname exch def /basefontname exch def
+/basefontdict basefontname findfont def /newfont basefontdict maxlength dict def
+basefontdict { exch dup /FID ne { dup /Encoding eq
+{ exch dup length array copy newfont 3 1 roll put }
+{ exch newfont 3 1 roll put } ifelse } { pop pop } ifelse } forall
+newfont /FontName newfontname put newcodesandnames aload pop
+128 1 255 { newfont /Encoding get exch /.notdef put } for
+newcodesandnames length 2 idiv { newfont /Encoding get 3 1 roll put } repeat
+newfontname newfont definefont pop end } def
+end
+/fontenc-TeXBase1 [
+8#001 /dotaccent 8#002 /fi 8#003 /fl 8#004 /fraction 8#005 /hungarumlaut 8#006 /Lslash 8#007 /lslash 
+8#010 /ogonek 8#011 /ring 8#013 /breve 8#014 /minus 8#016 /Zcaron 8#017 /zcaron 
+8#020 /caron 8#021 /dotlessi 8#022 /dotlessj 8#023 /ff 8#024 /ffi 8#025 /ffl 
+8#036 /grave 8#037 /quotesingle 
+8#040 /space 8#041 /exclam 8#042 /quotedbl 8#043 /numbersign 8#044 /dollar 8#045 /percent 8#046 /ampersand 8#047 /quoteright 
+8#050 /parenleft 8#051 /parenright 8#052 /asterisk 8#053 /plus 8#054 /comma 8#055 /hyphen 8#056 /period 8#057 /slash 
+8#060 /zero 8#061 /one 8#062 /two 8#063 /three 8#064 /four 8#065 /five 8#066 /six 8#067 /seven 
+8#070 /eight 8#071 /nine 8#072 /colon 8#073 /semicolon 8#074 /less 8#075 /equal 8#076 /greater 8#077 /question 
+8#100 /at 8#101 /A 8#102 /B 8#103 /C 8#104 /D 8#105 /E 8#106 /F 8#107 /G 
+8#110 /H 8#111 /I 8#112 /J 8#113 /K 8#114 /L 8#115 /M 8#116 /N 8#117 /O 
+8#120 /P 8#121 /Q 8#122 /R 8#123 /S 8#124 /T 8#125 /U 8#126 /V 8#127 /W 
+8#130 /X 8#131 /Y 8#132 /Z 8#133 /bracketleft 8#134 /backslash 8#135 /bracketright 8#136 /asciicircum 8#137 /underscore 
+8#140 /quoteleft 8#141 /a 8#142 /b 8#143 /c 8#144 /d 8#145 /e 8#146 /f 8#147 /g 
+8#150 /h 8#151 /i 8#152 /j 8#153 /k 8#154 /l 8#155 /m 8#156 /n 8#157 /o 
+8#160 /p 8#161 /q 8#162 /r 8#163 /s 8#164 /t 8#165 /u 8#166 /v 8#167 /w 
+8#170 /x 8#171 /y 8#172 /z 8#173 /braceleft 8#174 /bar 8#175 /braceright 8#176 /asciitilde 
+8#202 /quotesinglbase 8#203 /florin 8#204 /quotedblbase 8#205 /ellipsis 8#206 /dagger 8#207 /daggerdbl 
+8#210 /circumflex 8#211 /perthousand 8#212 /Scaron 8#213 /guilsinglleft 8#214 /OE 
+8#223 /quotedblleft 8#224 /quotedblright 8#225 /bullet 8#226 /endash 8#227 /emdash 
+8#230 /tilde 8#231 /trademark 8#232 /scaron 8#233 /guilsinglright 8#234 /oe 8#237 /Ydieresis 
+8#241 /exclamdown 8#242 /cent 8#243 /sterling 8#244 /currency 8#245 /yen 8#246 /brokenbar 8#247 /section 
+8#250 /dieresis 8#251 /copyright 8#252 /ordfeminine 8#253 /guillemotleft 8#254 /logicalnot 8#255 /hyphen 8#256 /registered 8#257 /macron 
+8#260 /degree 8#261 /plusminus 8#262 /twosuperior 8#263 /threesuperior 8#264 /acute 8#265 /mu 8#266 /paragraph 8#267 /periodcentered 
+8#270 /cedilla 8#271 /onesuperior 8#272 /ordmasculine 8#273 /guillemotright 8#274 /onequarter 8#275 /onehalf 8#276 /threequarters 8#277 /questiondown 
+8#300 /Agrave 8#301 /Aacute 8#302 /Acircumflex 8#303 /Atilde 8#304 /Adieresis 8#305 /Aring 8#306 /AE 8#307 /Ccedilla 
+8#310 /Egrave 8#311 /Eacute 8#312 /Ecircumflex 8#313 /Edieresis 8#314 /Igrave 8#315 /Iacute 8#316 /Icircumflex 8#317 /Idieresis 
+8#320 /Eth 8#321 /Ntilde 8#322 /Ograve 8#323 /Oacute 8#324 /Ocircumflex 8#325 /Otilde 8#326 /Odieresis 8#327 /multiply 
+8#330 /Oslash 8#331 /Ugrave 8#332 /Uacute 8#333 /Ucircumflex 8#334 /Udieresis 8#335 /Yacute 8#336 /Thorn 8#337 /germandbls 
+8#340 /agrave 8#341 /aacute 8#342 /acircumflex 8#343 /atilde 8#344 /adieresis 8#345 /aring 8#346 /ae 8#347 /ccedilla 
+8#350 /egrave 8#351 /eacute 8#352 /ecircumflex 8#353 /edieresis 8#354 /igrave 8#355 /iacute 8#356 /icircumflex 8#357 /idieresis 
+8#360 /eth 8#361 /ntilde 8#362 /ograve 8#364 /oacute 8#365 /ocircumflex 8#366 /odieresis 8#367 /divide 
+8#370 /oslash 8#371 /ugrave 8#372 /uacute 8#373 /ucircumflex 8#374 /udieresis 8#375 /yacute 8#376 /thorn 8#377 /ydieresis 
+] def
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+[ /Creator (shading.c \(PSLib\))
+  /Creation-Date (15/07/2004 05:58 )
+  /Title (Shading Examples)
+  /Author (Uwe Steinmann)
+  /Keywords (shading)
+/DOCINFO pdfmark
+%%EndProlog
+%%BeginSetup
+PslibDict begin
+%%EndSetup
+
+%%Page: 1 1
+%%PageBoundingBox: 0 0 596 842
+%%BeginPageSetup
+[ /CropBox [0 0 596.00 842.00] /PAGE pdfmark
+%%EndPageSetup
+save
+0 0 596.00 842.00 1 PslibPageBeginHook
+restore
+save
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 8.000000 scalefont setfont
+50.00 25.00 a
+(This)p 2.23 w (\002le)p 2.23 w (has)p 2.23 w (been)p 2.23 w (created)p 2.23 w (with)p 2.23 w (pslib)p 2.23 w (0.2.3)p 
+gsave % start level 1
+500.00 0.00 translate
+<<
+ /ShadingType 2
+ /Coords [0.00 0.00 90.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 20.000000 scalefont setfont
+50.00 763.00 a
+(Shading)p 
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 10.000000 scalefont setfont
+50.00 742.82 a
+(pslib)p 2.78 w (suppor)p 0.41 w (ts)p 2.78 w (a)p 2.78 w (P)p -0.49 w (ostScr)p 0.15 w (ipt)p 2.78 w (le)p -0.29 w (v)p -0.24 w (el)p 2.78 w (3)p 2.78 w (f)p -0.29 w (eature)p 2.78 w (called)p 2.78 w (shading.)p 
+50.00 727.82 a
+(A)p 2.78 w (shading)p 2.78 w (star)p 0.41 w (ts)p 2.78 w (at)p 2.78 w (a)p 2.78 w (cer)p 0.41 w (tain)p 2.78 w (point)p 2.78 w (on)p 2.78 w (the)p 2.78 w (page)p 2.78 w (with)p 2.78 w (a)p 
+50.00 712.82 a
+(giv)p -0.24 w (en)p 2.78 w (color)p 2.78 w (and)p 2.78 w (ends)p 2.78 w (at)p 2.78 w (a)p 2.78 w (second)p 2.78 w (point)p 2.78 w (with)p 2.78 w (diff)p -0.29 w (erent)p 2.78 w (color)p -0.49 w (.)p 
+50.00 697.82 a
+(The)p 2.78 w (type)p 2.78 w (of)p 2.78 w (shading)p 2.78 w (can)p 2.78 w (be)p 2.78 w ('axial')p 2.78 w (or)p 2.78 w (')p -0.49 w (r)p -0.10 w (adial'.)p 2.78 w (Shadings)p 2.78 w (are)p 
+50.00 682.82 a
+(used)p 2.78 w (f)p -0.29 w (or)p 2.78 w (man)p -0.14 w (y)p 2.78 w (pur)p 0.30 w (poses)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (shado)p -0.14 w (ws)p -0.14 w (,)p 2.78 w (three)p 2.78 w (dimensional)p 
+50.00 667.82 a
+(appear)p -0.10 w (ance)p 2.78 w (or)p 2.78 w (simply)p 2.78 w (to)p 2.78 w (mak)p -0.20 w (e)p 2.78 w (a)p 2.78 w (nice)p 2.78 w (bac)p -0.20 w (kg)p -0.10 w (round)p 2.78 w (f)p -0.29 w (or)p 2.78 w (a)p 
+50.00 652.82 a
+(diag)p -0.10 w (r)p -0.10 w (amm.)p 
+50.00 627.82 a
+(The)p 2.78 w (bar')p -0.49 w (s)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (to)p 2.78 w (the)p 2.78 w (r)p 0.15 w (ight)p 2.78 w (of)p 2.78 w (this)p 2.78 w (page)p 2.78 w (star)p 0.41 w (ts)p 2.78 w (at)p 
+50.00 612.82 a
+(\050500,)p 2.78 w (0\051)p 2.78 w (and)p 2.78 w (ends)p 2.78 w (at)p 2.78 w (\050590,)p 2.78 w (0\051.)p 2.78 w (It)p 2.78 w (e)p -0.29 w (xtends)p 2.78 w (o)p -0.14 w (v)p -0.24 w (er)p 2.78 w (the)p 2.78 w (whole)p 
+50.00 597.82 a
+(page)p 2.78 w (in)p 2.78 w (y)p 2.78 w (direction)p 2.78 w (which)p 2.78 w (is)p 2.78 w (nor)p 0.26 w (mal.)p 2.78 w (I)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (w)p -0.14 w (ant)p 2.78 w (to)p 2.78 w (restr)p 0.15 w (ict)p 
+50.00 582.82 a
+(the)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (to)p 2.78 w (a)p 2.78 w (giv)p -0.24 w (en)p 2.78 w (area,)p 2.78 w (one)p 2.78 w (will)p 2.78 w (ha)p -0.20 w (v)p -0.24 w (e)p 2.78 w (to)p 2.78 w (apply)p 
+50.00 567.82 a
+(PS_clip\050\051)p 2.78 w (on)p 2.78 w (a)p 2.78 w (path)p 2.78 w (bef)p -0.29 w (ore)p 2.78 w (calling)p 2.78 w (PS_sh\002ll\050\051)p 2.78 w (\050see)p 2.78 w (Shading)p 
+50.00 552.82 a
+(1\051.)p 
+50.00 527.82 a
+(A)p 2.78 w (g)p -0.10 w (r)p -0.10 w (andient)p 2.78 w (\002ll)p 2.78 w (can)p 2.78 w (easily)p 2.78 w (be)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wn)p 2.78 w (in)p 2.78 w (an)p 2.78 w (angle)p 2.78 w (if)p 2.78 w (the)p 2.78 w (star)p 0.41 w (t)p 
+50.00 512.82 a
+(and)p 2.78 w (end)p 2.78 w (position)p 2.78 w (ha)p -0.20 w (v)p -0.24 w (e)p 2.78 w (diff)p -0.29 w (erent)p 2.78 w (x)p 2.78 w (and)p 2.78 w (y)p 2.78 w (coordinates)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (in)p 
+50.00 497.82 a
+(Shading)p 2.78 w (2.)p 
+50.00 472.82 a
+(As)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (can)p 2.78 w (see)p 2.78 w (at)p 2.78 w (the)p 2.78 w (bar)p -0.49 w (,)p 2.78 w (the)p 2.78 w (shading)p 2.78 w (e)p -0.29 w (xtends)p 2.78 w (or)p 0.41 w (thogonal)p 
+50.00 457.82 a
+(to)p 2.78 w (the)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing)p 2.78 w (direction)p 2.78 w (b)p -0.20 w (ut)p 2.78 w (does)p 2.78 w (not)p 2.78 w (e)p -0.29 w (xtend)p 2.78 w (in)p 2.78 w (the)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing)p 
+50.00 442.82 a
+(direction.)p 2.78 w (This)p 2.78 w (beha)p -0.20 w (viour)p 2.78 w (can)p 2.78 w (also)p 2.78 w (be)p 2.78 w (altered)p 2.78 w (b)p -0.20 w (y)p 2.78 w (the)p 2.78 w (tw)p -0.10 w (o)p 
+50.00 427.82 a
+(par)p -0.10 w (ameters)p 2.78 w ('e)p -0.29 w (xtend0')p 2.78 w (and)p 2.78 w ('e)p -0.29 w (xtend1'.)p 2.78 w (Both)p 2.78 w (are)p 2.78 w (passed)p 2.78 w (as)p 
+50.00 412.82 a
+(par)p 0.41 w (t)p 2.78 w (of)p 2.78 w (the)p 2.78 w (option)p 2.78 w (list.)p 2.78 w (Setting)p 2.78 w (them)p 2.78 w (to)p 2.78 w ('tr)p 0.15 w (ue')p 2.78 w (will)p 2.78 w (e)p -0.29 w (xtend)p 2.78 w (the)p 
+50.00 397.82 a
+(g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (to)p -0.14 w (w)p -0.14 w (ards)p 2.78 w (the)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing)p 2.78 w (direction)p 2.78 w (with)p 2.78 w (the)p 2.78 w (color)p 
+50.00 382.82 a
+(where)p 2.78 w (it)p 2.78 w (left)p 2.78 w (off)p 2.78 w (or)p 2.78 w (star)p 0.41 w (ts)p 2.78 w (\050see)p 2.78 w (Shading)p 2.78 w (3\051.)p 
+50.00 357.82 a
+(The)p 2.78 w (second)p 2.78 w (class)p 2.78 w (of)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002lls)p 2.78 w (are)p 2.78 w (of)p 2.78 w (type)p 2.78 w (')p -0.49 w (r)p -0.10 w (adial'.)p 2.78 w (The)p -0.20 w (y)p 
+50.00 342.82 a
+(star)p 0.41 w (t)p 2.78 w (at)p 2.78 w (one)p 2.78 w (circle)p 2.78 w (and)p 2.78 w (g)p -0.10 w (ro)p -0.14 w (w/shr)p 0.15 w (ink)p 2.78 w (to)p -0.14 w (w)p -0.14 w (ards)p 2.78 w (a)p 2.78 w (second)p 2.78 w (circle)p -0.14 w (.)p 
+50.00 327.82 a
+(The)p 2.78 w (coordinates)p 2.78 w (mentioned)p 2.78 w (abo)p -0.14 w (v)p -0.24 w (e)p 2.78 w (no)p -0.14 w (w)p 2.78 w (specify)p 2.78 w (the)p 2.78 w (middle)p 
+50.00 312.82 a
+(points)p 2.78 w (of)p 2.78 w (the)p 2.78 w (circles)p -0.14 w (.)p 2.78 w (The)p 2.78 w (r)p -0.10 w (adi)p 2.78 w (of)p 2.78 w (both)p 2.78 w (circles)p 2.78 w (are)p 2.78 w (passed)p 
+50.00 297.82 a
+(again)p 2.78 w (within)p 2.78 w (the)p 2.78 w (option)p 2.78 w (list,)p 2.78 w (named)p 2.78 w (')p -0.49 w (r0')p 2.78 w (and)p 2.78 w (')p -0.49 w (r1')p 2.78 w (\050see)p 
+50.00 282.82 a
+(Shading)p 2.78 w (4\051.)p 
+50.00 257.82 a
+(The)p 2.78 w (pre)p -0.29 w (vious)p 2.78 w (e)p -0.29 w (xample)p 2.78 w (star)p 0.41 w (ts)p 2.78 w (with)p 2.78 w (a)p 2.78 w (circle)p 2.78 w (whose)p 2.78 w (r)p -0.10 w (adius)p 2.78 w (is)p 
+50.00 242.82 a
+(0.)p 2.78 w (Making)p 2.78 w (this)p 2.78 w (a)p 2.78 w (v)p -0.24 w (alue)p 2.78 w (g)p -0.10 w (reater)p 2.78 w (0)p 2.78 w (will)p 2.78 w (punch)p 2.78 w (a)p 2.78 w (whole)p 2.78 w (into)p 2.78 w (the)p 
+50.00 227.82 a
+(g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll.)p 
+gsave % start level 1
+350.00 680.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (1)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+<<
+ /ShadingType 2
+ /Coords [0.00 0.00 90.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 550.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (2)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+<<
+ /ShadingType 2
+ /Coords [10.00 10.00 90.00 90.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 420.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (3)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+<<
+ /ShadingType 2
+ /Coords [10.00 10.00 90.00 90.00]
+ /Extend [ true true ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 290.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (4)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+<<
+ /ShadingType 3
+ /Coords [29.00 29.00 0.00 55.00 55.00 45.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 160.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (5)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+<<
+ /ShadingType 3
+ /Coords [29.00 29.00 5.00 55.00 55.00 45.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceGray
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 ]
+  /C1 [ 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+restore
+save
+1 PslibPageEndHook
+restore
+showpage
+
+%%Page: 2 2
+%%PageBoundingBox: 0 0 596 842
+%%BeginPageSetup
+[ /CropBox [0 0 596.00 842.00] /PAGE pdfmark
+%%EndPageSetup
+save
+0 0 596.00 842.00 2 PslibPageBeginHook
+restore
+save
+<<
+ /ShadingType 3
+ /Coords [100.00 100.00 40.00 550.00 550.00 795.00]
+ /Extend [ false false ]
+ /AntiAlias true
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 1.0000 1.0000 1.0000 ]
+  /C1 [ 0.5000 0.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 20.000000 scalefont setfont
+50.00 763.00 a
+(The)p 5.56 w (w)p -0.20 w (or)p 0.30 w (ld)p 5.56 w (of)p 5.56 w (color)p 5.56 w (shading)p 
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 10.000000 scalefont setfont
+50.00 742.82 a
+(I)p 2.78 w (suppose)p 2.78 w (it)p 2.78 w (does)p 2.78 w (not)p 2.78 w (really)p 2.78 w (suppr)p 0.15 w (ise)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (that)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002lls)p 
+50.00 727.82 a
+(can)p 2.78 w (be)p 2.78 w (colorful.)p 2.78 w (The)p 2.78 w (\002rst)p 2.78 w (e)p -0.29 w (xample)p 2.78 w (is)p 2.78 w (the)p 2.78 w (bac)p -0.20 w (kg)p -0.10 w (round)p 2.78 w (of)p 2.78 w (this)p 
+50.00 712.82 a
+(page)p 2.78 w (which)p 2.78 w (is)p 2.78 w (a)p 2.78 w (r)p -0.10 w (adial)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (from)p 2.78 w (white)p 2.78 w (to)p 2.78 w (red)p 2.78 w (\050RGB)p 
+50.00 697.82 a
+([0,0,0.7]\051.)p 2.78 w (Its)p 2.78 w (outer)p 2.78 w (circle)p 2.78 w (has)p 2.78 w (a)p 2.78 w (v)p -0.24 w (er)p 0.30 w (y)p 2.78 w (large)p 2.78 w (r)p -0.10 w (adius)p 2.78 w (of)p 2.78 w (795)p 
+50.00 682.82 a
+(pix)p -0.29 w (els)p -0.14 w (.)p 2.78 w (The)p 2.78 w (inner)p 2.78 w (circle')p -0.49 w (s)p 2.78 w (r)p -0.10 w (adius)p 2.78 w (is)p 2.78 w (just)p 2.78 w (40)p 2.78 w (pix)p -0.29 w (els)p -0.14 w (.)p 2.78 w (If)p 2.78 w (there)p 
+50.00 667.82 a
+(w)p -0.14 w (as)p 2.78 w (something)p 2.78 w (behind)p 2.78 w (the)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (it)p 2.78 w (w)p -0.10 w (ould)p 2.78 w (shine)p 
+50.00 652.82 a
+(through)p 2.78 w (the)p 2.78 w (inner)p 2.78 w (circle)p -0.14 w (,)p 2.78 w (because)p 2.78 w (the)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll)p 2.78 w (does)p 2.78 w (not)p 
+50.00 637.82 a
+(e)p -0.29 w (xtend)p 2.78 w (into)p 2.78 w (that)p 2.78 w (direction.)p 2.78 w (There)p 2.78 w (is)p 2.78 w (a)p 2.78 w (contin)p -0.10 w (uation)p 2.78 w (of)p 2.78 w (the)p 
+50.00 622.82 a
+(red)p 2.78 w (color)p 2.78 w (be)p -0.20 w (y)p -0.20 w (ond)p 2.78 w (the)p 2.78 w (outer)p 2.78 w (circle)p -0.14 w (,)p 2.78 w (b)p -0.20 w (ut)p 2.78 w (that)p 2.78 w (does)p 2.78 w (not)p 2.78 w (mak)p -0.20 w (e)p 2.78 w (a)p 
+50.00 607.82 a
+(diff)p -0.29 w (erence)p 2.78 w (in)p 2.78 w (this)p 2.78 w (case)p -0.14 w (,)p 2.78 w (because)p 2.78 w (its)p 2.78 w (outside)p 2.78 w (of)p 2.78 w (the)p 2.78 w (page)p 2.78 w (and)p 
+50.00 592.82 a
+(theref)p -0.29 w (ore)p 2.78 w (not)p 2.78 w (visib)p -0.20 w (le)p -0.14 w (.)p 
+50.00 567.82 a
+(Shading)p 2.78 w (1)p 2.78 w (and)p 2.78 w (Shading)p 2.78 w (2)p 2.78 w (illustr)p -0.10 w (ate)p 2.78 w (the)p 2.78 w (diff)p -0.29 w (erence)p 2.78 w (of)p 2.78 w (the)p 
+50.00 552.82 a
+(e)p -0.29 w (xtend1)p 2.78 w (par)p -0.10 w (ameter)p 2.78 w (being)p 2.78 w (set)p 2.78 w (to)p 2.78 w (f)p -0.29 w (alse)p 2.78 w (in)p 2.78 w (Shading)p 2.78 w (1)p 2.78 w (or)p 2.78 w (tr)p 0.15 w (ue)p 
+50.00 537.82 a
+(in)p 2.78 w (Shading)p 2.78 w (2.)p 2.78 w (Using)p 2.78 w (e)p -0.29 w (xtend)p 2.78 w (is)p 2.78 w (alw)p -0.14 w (a)p -0.29 w (ys)p 2.78 w (a)p 2.78 w (bit)p 2.78 w (dangerous)p 
+50.00 522.82 a
+(because)p 2.78 w (it)p 2.78 w (easily)p 2.78 w (\002lls)p 2.78 w (up)p 2.78 w (the)p 2.78 w (whole)p 2.78 w (page)p -0.14 w (,)p 2.78 w (unless)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (clip)p 
+50.00 507.82 a
+(the)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing)p 2.78 w (area,)p 2.78 w (which)p 2.78 w (w)p -0.14 w (as)p 2.78 w (done)p 2.78 w (in)p 2.78 w (all)p 2.78 w (the)p 2.78 w (e)p -0.29 w (xamples)p 2.78 w (on)p 
+50.00 492.82 a
+(this)p 2.78 w (page)p -0.14 w (.)p 
+50.00 467.82 a
+(Using)p 2.78 w (white)p 2.78 w (as)p 2.78 w (the)p 2.78 w (star)p 0.41 w (t)p 2.78 w (or)p 2.78 w (end)p 2.78 w (color)p 2.78 w (is)p 2.78 w (quite)p 2.78 w (common)p 2.78 w (b)p -0.20 w (ut)p 
+50.00 452.82 a
+(not)p 2.78 w (nessecar)p 0.30 w (y)p -0.99 w (.)p 2.78 w (Shading)p 2.78 w (3)p 2.78 w (sho)p -0.14 w (ws)p 2.78 w (that)p 2.78 w (an)p -0.14 w (y)p 2.78 w (other)p 2.78 w (color)p 2.78 w (can)p 
+50.00 437.82 a
+(be)p 2.78 w (used)p 2.78 w (as)p 2.78 w (w)p -0.10 w (ell.)p 
+50.00 412.82 a
+(The)p 2.78 w (tube)p 2.78 w (in)p 2.78 w (Shading)p 2.78 w (4)p 2.78 w (is)p 2.78 w (a)p 2.78 w (bit)p 2.78 w (of)p 2.78 w (a)p 2.78 w (misuse)p 2.78 w (of)p 2.78 w (shadings)p -0.14 w (.)p 2.78 w (It)p 
+50.00 397.82 a
+(used)p 2.78 w (alsmost)p 2.78 w (identical)p 2.78 w (star)p 0.41 w (t)p 2.78 w (and)p 2.78 w (end)p 2.78 w (colors)p 2.78 w (f)p -0.29 w (or)p 2.78 w (the)p 2.78 w (shading)p 
+50.00 382.82 a
+(without)p 2.78 w (an)p -0.14 w (y)p 2.78 w (e)p -0.29 w (xtend)p 2.78 w (par)p -0.10 w (ameter)p 2.78 w (set.)p 2.78 w (This)p 2.78 w (only)p 2.78 w (w)p -0.10 w (or)p 0.15 w (ks)p 2.78 w (if)p 2.78 w (the)p 
+50.00 367.82 a
+(tw)p -0.10 w (o)p 2.78 w (colors)p 2.78 w (are)p 2.78 w (not)p 2.78 w (identical.)p 2.78 w (If)p 2.78 w (the)p -0.20 w (y)p 2.78 w (w)p -0.10 w (ere)p 2.78 w (identical)p 2.78 w (y)p -0.20 w (ou)p 
+50.00 352.82 a
+(w)p -0.10 w (ould)p 2.78 w (see)p 2.78 w (just)p 2.78 w (the)p 2.78 w (star)p 0.41 w (t)p 2.78 w (and)p 2.78 w (circle)p 2.78 w (o)p -0.14 w (v)p -0.24 w (er)p 0.15 w (lapping,)p 2.78 w (because)p 
+50.00 337.82 a
+(the)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (function)p 2.78 w (has)p 2.78 w (no)p 2.78 w (domain)p 2.78 w (it)p 2.78 w (can)p 2.78 w (r)p 0.15 w (un)p 2.78 w (o)p -0.14 w (v)p -0.24 w (er)p -0.49 w (.)p 2.78 w (W)p -0.29 w (ell,)p 
+50.00 322.82 a
+(this)p 2.78 w (is)p 2.78 w (an)p -0.14 w (yw)p -0.14 w (a)p -0.29 w (y)p 2.78 w (not)p 2.78 w (the)p 2.78 w (w)p -0.14 w (a)p -0.29 w (y)p 2.78 w (to)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (w)p 2.78 w (tubes)p -0.14 w (.)p 
+50.00 297.82 a
+(Y)p -1.40 w (ou)p 2.78 w (w)p -0.10 w (onder)p 2.78 w (if)p 2.78 w (this)p 2.78 w (all)p 2.78 w (w)p -0.10 w (or)p 0.15 w (ks)p 2.78 w (with)p 2.78 w (CMYK)p 2.78 w (colors?)p 2.78 w (Y)p -1.40 w (es)p -0.14 w (,)p 2.78 w (of)p 
+50.00 282.82 a
+(course)p 2.78 w (it)p 2.78 w (does!)p 2.78 w (And)p 2.78 w (what)p 2.78 w (about)p 2.78 w (spot)p 2.78 w (colors?)p 2.78 w (No)p 2.78 w (prob)p -0.20 w (lem)p 
+50.00 267.82 a
+(either)p -0.49 w (,)p 2.78 w (with)p 2.78 w (one)p 2.78 w (little)p 2.78 w (restr)p 0.15 w (iction.)p 2.78 w (The)p 2.78 w (star)p 0.41 w (t)p 2.78 w (and)p 2.78 w (end)p 2.78 w (spot)p 
+50.00 252.82 a
+(color)p 2.78 w (m)p -0.10 w (ust)p 2.78 w (be)p 2.78 w (same)p 2.78 w (one)p -0.14 w (,)p 2.78 w (b)p -0.20 w (ut)p 2.78 w (with)p 2.78 w (diff)p -0.29 w (erent)p 2.78 w (tint)p 2.78 w (v)p -0.24 w (alue)p -0.14 w (.)p 2.78 w (That)p 
+50.00 237.82 a
+(means)p 2.78 w (that)p 2.78 w (the)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (just)p 2.78 w (changes)p 2.78 w (the)p 2.78 w (tint)p 2.78 w (v)p -0.24 w (alue)p 2.78 w (b)p -0.20 w (ut)p 2.78 w (not)p 
+50.00 222.82 a
+(the)p 2.78 w (color)p 2.78 w (itself)p -0.29 w (.)p 2.78 w (I)p 2.78 w (am)p 2.78 w (not)p 2.78 w (sure)p 2.78 w (if)p 2.78 w (this)p 2.78 w (is)p 2.78 w (an)p 2.78 w (unbear)p -0.10 w (ab)p -0.20 w (le)p 
+50.00 207.82 a
+(restr)p 0.15 w (iction)p 2.78 w (or)p 2.78 w (not.)p 2.78 w (Shading)p 2.78 w (5)p 2.78 w (sho)p -0.14 w (ws)p 2.78 w (an)p 2.78 w (e)p -0.29 w (xample)p 2.78 w (of)p 2.78 w (P)p -0.40 w (antone)p 
+50.00 192.82 a
+(5565)p 2.78 w (C)p 2.78 w (star)p 0.41 w (ting)p 2.78 w (at)p 2.78 w (a)p 2.78 w (tint)p 2.78 w (v)p -0.24 w (alue)p 2.78 w (of)p 2.78 w (0.2)p 2.78 w (\050the)p 2.78 w (outer)p 2.78 w (circle\051)p 2.78 w (and)p 
+50.00 177.82 a
+(ending)p 2.78 w (with)p 2.78 w (0.8)p 2.78 w (\050the)p 2.78 w (middle)p 2.78 w (point\051.)p 
+gsave % start level 1
+350.00 650.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (1)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+1.0000 1.0000 1.0000 setrgbcolor
+fill
+<<
+ /ShadingType 3
+ /Coords [50.00 50.00 40.00 50.00 50.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias true
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.7000 0.0000 ]
+  /C1 [ 1.0000 1.0000 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 520.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (2)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+1.0000 1.0000 1.0000 setrgbcolor
+fill
+<<
+ /ShadingType 3
+ /Coords [50.00 50.00 40.00 50.00 50.00 0.00]
+ /Extend [ true false ]
+ /AntiAlias true
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.7000 0.0000 ]
+  /C1 [ 1.0000 1.0000 1.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 390.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (3)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+1.0000 1.0000 1.0000 setrgbcolor
+fill
+<<
+ /ShadingType 3
+ /Coords [50.00 50.00 40.00 50.00 50.00 0.00]
+ /Extend [ true false ]
+ /AntiAlias true
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 1.0000 1.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 260.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (4)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+1.0000 1.0000 1.0000 setrgbcolor
+fill
+<<
+ /ShadingType 3
+ /Coords [30.00 30.00 20.00 53.00 53.00 35.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 0.0000 0.0000 0.9000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+gsave % start level 1
+350.00 130.00 translate
+0.00 -12.00 a
+(Shading)p 2.77 w (5)p 
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+clip
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+1.0000 1.0000 1.0000 setrgbcolor
+fill
+<<
+ /ShadingType 3
+ /Coords [50.00 50.00 40.00 50.00 50.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias true
+ /ColorSpace [ /Separation (PANTONE 5565 C)
+  /DeviceCMYK { dup 0.370000 mul exch dup 0.000000 mul exch dup 0.340000 mul exch 0.340000 mul }
+   ]
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.2000 ]
+  /C1 [ 0.8000 ]
+  /N 1.0000
+ >>
+>>
+shfill
+grestore % end level 1
+restore
+save
+2 PslibPageEndHook
+restore
+showpage
+
+%%Page: 3 3
+%%PageBoundingBox: 0 0 596 842
+%%BeginPageSetup
+[ /CropBox [0 0 596.00 842.00] /PAGE pdfmark
+%%EndPageSetup
+save
+0 0 596.00 842.00 3 PslibPageBeginHook
+restore
+save
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 20.000000 scalefont setfont
+50.00 763.00 a
+(Shading)p 5.56 w (patter)p 0.51 w (n)p 
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 10.000000 scalefont setfont
+50.00 742.82 a
+(The)p 2.78 w (e)p -0.29 w (xamples)p 2.78 w (so)p 2.78 w (f)p -0.29 w (ar)p 2.78 w (w)p -0.10 w (ere)p 2.78 w (using)p 2.78 w (the)p 2.78 w (PS_shading\050\051)p 2.78 w (and)p 2.78 w (PS_sh\002ll\050\051)p 2.78 w (in)p 2.78 w (combination)p 
+50.00 727.82 a
+(wiht)p 2.78 w (PS_clip\050\051.)p 2.78 w (The)p -0.20 w (y)p 2.78 w (are)p 2.78 w (more)p 2.78 w (than)p 2.78 w (suf\002cient)p 2.78 w (in)p 2.78 w (most)p 2.78 w (cases)p -0.14 w (,)p 2.78 w (b)p -0.20 w (ut)p 2.78 w (pslib)p 2.78 w (has)p 2.78 w (a)p 
+50.00 712.82 a
+(second)p 2.78 w (approach)p 2.78 w (to)p 2.78 w (create)p 2.78 w (areas)p 2.78 w (with)p 2.78 w (a)p 2.78 w (g)p -0.10 w (r)p -0.10 w (adient)p 2.78 w (\002ll.)p 2.78 w (Beside)p 2.78 w (regular)p 2.78 w (patter)p 0.26 w (ns)p 2.78 w (\227)p 
+50.00 697.82 a
+(which)p 2.78 w (are)p 2.78 w (used)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (regular)p 2.78 w (colors)p 2.78 w (\227)p 2.78 w (used)p 2.78 w (f)p -0.29 w (or)p 2.78 w (\002lling)p 2.78 w (an)p 2.78 w (area)p 2.78 w (with)p 2.78 w (a)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing,)p 2.78 w (one)p 
+50.00 682.82 a
+(can)p 2.78 w (use)p 2.78 w (shading)p 2.78 w (patter)p 0.26 w (n)p 2.78 w (in)p 2.78 w (the)p 2.78 w (same)p 2.78 w (w)p -0.14 w (a)p -0.29 w (y)p -0.99 w (.)p 2.78 w (The)p 2.78 w (results)p 2.78 w (are)p 2.78 w (similar)p -0.49 w (,)p 2.78 w (the)p -0.20 w (y)p 2.78 w (w)p -0.14 w (a)p -0.29 w (y)p 2.78 w (of)p 
+50.00 667.82 a
+(doing)p 2.78 w (it)p 2.78 w (is)p 2.78 w (diff)p -0.29 w (erent.)p 2.78 w (Each)p 2.78 w (\002lled)p 2.78 w (rectangle)p 2.78 w (belo)p -0.14 w (w)p 2.78 w (this)p 2.78 w (te)p -0.29 w (xt)p 2.78 w (uses)p 2.78 w (the)p 2.78 w (same)p 2.78 w (shading)p 
+50.00 652.82 a
+(patter)p 0.26 w (n)p 2.78 w (f)p -0.29 w (or)p 2.78 w (\002lling.)p 
+<< /PatternType 2   /Shading
+<<
+ /ShadingType 2
+ /Coords [50.00 0.00 470.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 1.0000 1.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+>> matrix makepattern /pattern1 exch def
+50.0000 550.0000 a
+150.0000 550.0000 l
+150.0000 650.0000 l
+50.0000 650.0000 l
+closepath
+pattern1 setpattern
+fill
+180.0000 550.0000 a
+280.0000 550.0000 l
+280.0000 650.0000 l
+180.0000 650.0000 l
+closepath
+fill
+310.0000 550.0000 a
+410.0000 550.0000 l
+410.0000 650.0000 l
+310.0000 650.0000 l
+closepath
+fill
+440.0000 550.0000 a
+540.0000 550.0000 l
+540.0000 650.0000 l
+440.0000 650.0000 l
+closepath
+fill
+50.00 522.82 a
+0.000000 setgray
+(The)p 2.78 w (line)p 2.78 w (of)p 2.78 w (rectangles)p 2.78 w (illustr)p -0.10 w (ates)p 2.78 w (one)p 2.78 w (impor)p 0.41 w (tant)p 2.78 w (aspect)p 2.78 w (of)p 2.78 w (shading.)p 2.78 w (The)p 2.78 w (shading)p 2.78 w (is)p 
+50.00 507.82 a
+(de\002ned)p 2.78 w (relativ)p 2.78 w (to)p 2.78 w (the)p 2.78 w (current)p 2.78 w (coordinate)p 2.78 w (system.)p 2.78 w (In)p 2.78 w (this)p 2.78 w (case)p 2.78 w (it)p 2.78 w (star)p 0.41 w (ts)p 2.78 w (at)p 2.78 w (x-position)p 
+50.00 492.82 a
+(50)p 2.78 w (and)p 2.78 w (ends)p 2.78 w (at)p 2.78 w (x-position)p 2.78 w (470)p 2.78 w (in)p 2.78 w (an)p 2.78 w (unmodi\002ed)p 2.78 w (coordinate)p 2.78 w (system.)p 2.78 w (The)p 2.78 w (r)p 0.15 w (ight)p 
+50.00 477.82 a
+(most)p 2.78 w (rectangle)p 2.78 w (is)p 2.78 w (not)p 2.78 w (\002lled)p 2.78 w (completly)p 2.78 w (because)p 2.78 w (of)p 2.78 w (the)p 2.78 w (shadings)p 2.78 w (end.)p 2.78 w (Filling)p 2.78 w (areas)p 
+50.00 462.82 a
+(is)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (punching)p 2.78 w (wholes)p 2.78 w (in)p 2.78 w (a)p 2.78 w (white)p 2.78 w (coat)p 2.78 w (on)p 2.78 w (top)p 2.78 w (of)p 2.78 w (the)p 2.78 w (page)p 2.78 w (and)p 2.78 w (peeking)p 2.78 w (through.)p 
+50.00 447.82 a
+(This)p 2.78 w (is)p 2.78 w (mostly)p 2.78 w (not)p 2.78 w (what)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (w)p -0.14 w (ant.)p 2.78 w (If)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (w)p -0.10 w (ould)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (to)p 2.78 w (\002ll)p 2.78 w (the)p 2.78 w (rectangle)p 2.78 w (with)p 2.78 w (the)p 2.78 w (full)p 
+50.00 432.82 a
+(r)p -0.10 w (ange)p 2.78 w (of)p 2.78 w (the)p 2.78 w (shading,)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (will)p 2.78 w (ha)p -0.20 w (v)p -0.24 w (e)p 2.78 w (to)p 2.78 w (create)p 2.78 w (a)p 2.78 w (shading)p 2.78 w (star)p 0.41 w (ting)p 2.78 w (at)p 2.78 w (0)p 2.78 w (and)p 2.78 w (ending)p 2.78 w (at)p 
+50.00 417.82 a
+(the)p 2.78 w (width)p 2.78 w (of)p 2.78 w (the)p 2.78 w (rectangle)p -0.14 w (.)p 2.78 w (Bef)p -0.29 w (ore)p 2.78 w (\002lling)p 2.78 w (the)p 2.78 w (rectangle)p 2.78 w (y)p -0.20 w (ou)p 2.78 w (will)p 2.78 w (ha)p -0.20 w (v)p -0.24 w (e)p 2.78 w (to)p 2.78 w (tr)p -0.10 w (anslate)p 
+50.00 402.82 a
+(the)p 2.78 w (coordinate)p 2.78 w (system)p 2.78 w (to)p 2.78 w (the)p 2.78 w (lo)p -0.14 w (w)p -0.10 w (er)p 2.78 w (left)p 2.78 w (cor)p 0.26 w (ner)p 2.78 w (of)p 2.78 w (the)p 2.78 w (rectangle)p -0.14 w (,)p 2.78 w (create)p 2.78 w (the)p 2.78 w (patter)p 0.26 w (n)p 
+50.00 387.82 a
+(in)p 2.78 w (the)p 2.78 w (modi\002ed)p 2.78 w (coordinate)p 2.78 w (system)p 2.78 w (and)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (w)p 2.78 w (a)p 2.78 w (\002lled)p 2.78 w (rectangle)p 2.78 w (at)p 2.78 w (\0500,)p 2.78 w (0\051.)p 2.78 w (The)p 
+50.00 372.82 a
+(patter)p 0.26 w (n)p 2.78 w (m)p -0.10 w (ust)p 2.78 w (be)p 2.78 w (created)p 2.78 w (after)p 2.78 w (the)p 2.78 w (tr)p -0.10 w (anslation,)p 2.78 w (because)p 2.78 w (it)p 2.78 w (alw)p -0.14 w (a)p -0.29 w (ys)p 2.78 w (uses)p 2.78 w (the)p 2.78 w (activ)p -0.24 w (e)p 
+50.00 357.82 a
+(coordinate)p 2.78 w (system.)p 
+gsave % start level 1
+50.00 240.00 translate
+<< /PatternType 2   /Shading
+<<
+ /ShadingType 2
+ /Coords [0.00 0.00 100.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 1.0000 1.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+>> matrix makepattern /pattern2 exch def
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+pattern2 setpattern
+fill
+grestore % end level 1
+gsave % start level 1
+180.00 240.00 translate
+<< /PatternType 2   /Shading
+<<
+ /ShadingType 2
+ /Coords [0.00 0.00 100.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 1.0000 1.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+>> matrix makepattern /pattern3 exch def
+0.0000 0.0000 a
+100.0000 0.0000 l
+100.0000 100.0000 l
+0.0000 100.0000 l
+closepath
+pattern3 setpattern
+fill
+grestore % end level 1
+restore
+save
+3 PslibPageEndHook
+restore
+showpage
+
+%%Page: 4 4
+%%PageBoundingBox: 0 0 596 842
+%%BeginPageSetup
+[ /CropBox [0 0 596.00 842.00] /PAGE pdfmark
+%%EndPageSetup
+save
+0 0 596.00 842.00 4 PslibPageBeginHook
+restore
+save
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 20.000000 scalefont setfont
+50.00 763.00 a
+(Using)p 5.56 w (shading)p 5.56 w (patter)p 0.51 w (ns)p 5.56 w (f)p -0.59 w (or)p 5.56 w (dr)p -0.20 w (a)p -0.40 w (wing)p 
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 10.000000 scalefont setfont
+50.00 742.82 a
+(A)p 2.78 w (patter)p 0.26 w (n)p 2.78 w (is)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (a)p 2.78 w (color)p 2.78 w (and)p 2.78 w (be)p 2.78 w (used)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (one)p -0.14 w (.)p 2.78 w (The)p 2.78 w (e)p -0.29 w (xamples)p 2.78 w (on)p 2.78 w (the)p 2.78 w (pre)p -0.29 w (vious)p 
+50.00 727.82 a
+(pages)p 2.78 w (used)p 2.78 w (the)p 2.78 w (patter)p 0.26 w (n)p 2.78 w (f)p -0.29 w (or)p 2.78 w (\002lling)p 2.78 w (rectangles)p -0.14 w (.)p 2.78 w (Wh)p -0.29 w (y)p 2.78 w (not)p 2.78 w (use)p 2.78 w (it)p 2.78 w (f)p -0.29 w (or)p 2.78 w (something)p 2.78 w (more)p 
+50.00 712.82 a
+(f)p -0.29 w (ancy)p 2.78 w (lik)p -0.20 w (e)p 2.78 w (\002lling)p 2.78 w (the)p 2.78 w (outline)p 2.78 w (of)p 2.78 w (a)p 2.78 w (te)p -0.29 w (xt)p 2.78 w (or)p 2.78 w (dr)p -0.10 w (a)p -0.20 w (wing)p 2.78 w (with)p 2.78 w (a)p 2.78 w (patter)p 0.26 w (n.)p 
+gsave % start level 1
+50.00 620.00 translate
+<< /PatternType 2   /Shading
+<<
+ /ShadingType 2
+ /Coords [0.00 0.00 470.00 0.00]
+ /Extend [ false false ]
+ /AntiAlias false
+ /ColorSpace /DeviceRGB
+ /Function
+ <<
+  /FunctionType 2 /Domain [ 0 1 ]
+  /C0 [ 0.0000 0.0000 1.0000 ]
+  /C1 [ 1.0000 1.0000 0.0000 ]
+  /N 1.0000
+ >>
+>>
+>> matrix makepattern /pattern4 exch def
+/Helvetica /Helvetica-TeXBase1 fontenc-TeXBase1 ReEncode
+/Helvetica-TeXBase1 findfont 90.000000 scalefont setfont
+0.00 10.00 a
+pattern4 setpattern
+(Some)p 25.02 w (te)p -2.70 w (xt.)p 
+5.000000 setlinewidth
+0.00 0.00 a
+470.00 0.00 l
+stroke
+grestore % end level 1
+restore
+save
+4 PslibPageEndHook
+restore
+showpage
+%%Trailer
+end
+%% Pages: 4
+%%BoundingBox: 0 0 596 842
+%%Orientation: Portrait
+%%EOF

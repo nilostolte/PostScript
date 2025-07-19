@@ -1,0 +1,226 @@
+%!PS
+
+/q {quit} def
+
+/FranklinGothic-Book findfont 20 scalefont setfont
+
+/num [ (0%) (10%) (20%) (30%) (40%) (50%) (60%) (70%) (80%) (90%) (100%) ] def
+/nwd [ 
+  (0%) stringwidth pop
+  (10%) stringwidth pop
+  (20%) stringwidth pop
+  (30%) stringwidth pop
+  (40%) stringwidth pop
+  (50%) stringwidth pop
+  (60%) stringwidth pop
+  (70%) stringwidth pop
+  (80%) stringwidth pop
+  (90%) stringwidth pop
+ (100%) stringwidth pop
+] def
+
+
+/trig { % size
+  0 0
+  2 index 0 
+  5 -1 roll dup 0.5 mul exch 30 cos mul
+} def
+
+/polygon {% array-of-points
+  dup 0 get 1 index 1 get moveto
+  2 2 2 index length 2 sub {
+    dup 2 index exch get 
+    2 index 3 -1 roll 1 add get lineto
+  } for
+  closepath
+} def
+
+50 300 translate
+/side 500 def
+
+1.5 setlinewidth
+0.6 0.6 0.6 setrgbcolor
+
+% bottom texts and lines
+
+/inc side 10 div def
+/cos30 30 cos def
+/indx 0 def
+
+-0.5 inc mul cos30 inc mul neg moveto 
+gsave
+  0 setgray
+  num 0 get 60 rotate 0 -20 rmoveto show
+grestore
+
+0 0 lineto
+side inc
+10 {
+  dup 0.5 inc mul sub cos30 inc mul neg moveto
+  gsave
+    0 setgray
+    /indx indx 1 add def
+    num indx get 60 rotate 0 -20 rmoveto show
+  grestore
+  exch 
+  dup dup 0.5 mul exch cos30 mul rlineto stroke
+  inc sub
+  exch
+  inc add
+} repeat
+
+pop pop
+
+% left side texts and lines
+
+0 0 moveto -0.5 inc mul inc cos30 mul rlineto currentpoint stroke
+gsave
+  0 setgray
+  moveto num 10 get -60 rotate 0 -20 rmoveto show    
+grestore
+/indx 10 def
+inc
+9 {
+  dup 0 moveto
+  dup dup inc add -0.5 mul exch inc add cos30 mul rlineto currentpoint stroke
+  gsave
+    0 setgray
+    /indx indx 1 sub def
+   moveto num indx get -60 rotate 0 -20 rmoveto show    
+  grestore
+  inc add
+} repeat
+pop
+0.5 side mul cos30 side mul moveto -0.5 inc mul inc cos30 mul rlineto currentpoint stroke
+gsave
+  0 setgray
+  moveto num 0 get -60 rotate 0 -20 rmoveto show    
+grestore
+
+% right side texts and lines
+
+side 0 moveto inc 0 rlineto currentpoint stroke
+/indx 0 def
+gsave
+  0 setgray
+  exch nwd indx get sub exch 5 add moveto num indx get show
+grestore
+side inc
+10 {
+  dup 0.5 mul 1 index cos30 mul moveto
+  exch inc sub
+  dup inc add 0 rlineto currentpoint stroke
+  gsave
+    0 setgray
+    /indx indx 1 add def
+    exch nwd indx get sub exch 5 add moveto num indx get show
+  grestore
+  exch
+  inc add
+} repeat
+pop pop
+
+%
+% small lines around the triangle
+%
+
+% bottom side
+0 0 
+/iinc inc 0.1 mul def
+/subl 5 def
+/msub subl 2 mul def
+10 {
+  4 {
+   exch iinc add exch
+   2 copy moveto
+   subl neg dup 0.5 mul exch cos30 mul rlineto stroke
+  } repeat
+  exch iinc add exch
+  2 copy moveto
+  msub neg dup 0.5 mul exch cos30 mul rlineto stroke
+  4 {
+   exch iinc add exch
+   2 copy moveto
+   subl neg dup 0.5 mul exch cos30 mul rlineto  stroke
+  } repeat
+  exch iinc add exch
+} repeat
+pop pop
+
+%right side
+/xinc inc 0.1 mul -0.5 mul def
+/yinc inc 0.1 mul cos30 mul def
+side 0
+10 {
+  4 {
+   yinc add exch xinc add exch
+   2 copy moveto
+   subl 0 rlineto stroke
+  } repeat
+  yinc add exch xinc add exch
+  2 copy moveto
+  msub 0 rlineto stroke
+  4 {
+   yinc add exch xinc add exch
+   2 copy moveto
+   subl 0 rlineto  stroke
+  } repeat
+  yinc add exch xinc add exch
+} repeat
+pop pop
+
+% left side
+/xinc inc 0.1 mul 0.5 mul def
+0 0
+10 {
+  4 {
+   yinc add exch xinc add exch
+   2 copy moveto
+   subl dup -0.5 mul exch cos30 mul rlineto stroke
+  } repeat
+  yinc add exch xinc add exch
+  2 copy moveto
+  msub dup -0.5 mul exch cos30 mul rlineto stroke
+  4 {
+   yinc add exch xinc add exch
+   2 copy moveto
+   subl dup -0.5 mul exch cos30 mul rlineto  stroke
+  } repeat
+  yinc add exch xinc add exch
+} repeat
+pop pop
+
+%
+% draw the polygon (triangle)
+%
+
+0 setgray
+2 setlinewidth
+[ side trig ] polygon stroke
+pop
+
+/ax 2 2 mul def
+/ay 7 2 mul def
+/yarr -100 def
+/arr {
+  side 0.5 mul 100 add 1 sub yarr moveto 
+  0 ax neg rlineto ay ax rlineto ay neg ax rlineto
+  0 ax neg rlineto fill
+  side 0.5 mul 100 sub yarr moveto 200 0 rlineto stroke
+} def
+
+0 0 moveto
+0.4 0.4 0.4 setrgbcolor
+arr
+gsave
+  side  0 translate
+  120 rotate
+  arr
+grestore
+gsave
+  side 0.5 mul side cos30 mul translate
+  240 rotate
+  arr
+grestore
+
+showpage

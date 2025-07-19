@@ -1,0 +1,41 @@
+0.2 setlinewidth
+300 550 translate
+
+/L 40 def
+/B 30 def
+/w 2.5 def
+/w2 w w mul def
+/L2 L L mul def
+/inc 0.01 def
+
+/egg {
+	dup mul % x2
+	-4 mul % -4x2
+	L2 add % L2-4x2
+	1 index w mul 8 mul w2 4 mul add  L2 add
+	div
+	sqrt
+	B mul 2 div
+} def
+
+/shape {
+	-20 0 moveto
+	-20 inc add inc 20  {
+		dup egg lineto
+	} for
+	20 0 lineto
+
+	20 inc sub inc neg -20  {
+		dup egg neg lineto
+	} for
+	-20 0 lineto
+} def
+
+12 12 scale
+1 .7 0 setrgbcolor
+shape  fill
+0 setgray
+shape stroke
+
+
+showpage

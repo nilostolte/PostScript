@@ -1,0 +1,31 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 179 130
+/plot {
+	/function exch def
+        /limsup exch def
+	/liminf exch def
+	/inc exch def
+	liminf dup function 1. 0 360 arc fill
+      liminf dup function moveto
+	liminf inc add inc limsup
+		{ dup function lineto  } for
+	} def
+
+0 setlinewidth
+
+85 30 translate
+
+-80 0 moveto 160 0 rlineto stroke
+0 -20 moveto 0 110 rlineto stroke
+
+0 90 moveto
+-2 0 rlineto 2 7 rlineto 2 -7 rlineto
+-2 0 rlineto fill
+80 0 moveto 0 -2 rlineto 7 2 rlineto -7 2 rlineto
+0 -2 rlineto fill
+
+newpath
+1 -80 80 { 80 div dup mul 80 mul } plot
+stroke
+
+showpage
