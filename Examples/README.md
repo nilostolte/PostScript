@@ -26,7 +26,7 @@ Fritz Hügelschäffer formula:<br>
 Where B is the egg maximum breadth (on the Y axis), L is the egg length (on the X axis), and w is the parameter (in the image w= 2.5) 
 that shows the distance between two vertical lines corresponding to the maximum breadth and the half length of the egg.
 
-Below is an image produced by this code on GhostScript and [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf) the
+Below is an image produced by [this code on GhostScript](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) and [here](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf) the
 file converted to [PDF](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.pdf).
 
 <kbd>
