@@ -17,7 +17,7 @@ egg has, to date, escaped a universally applicable mathematical formulation. Ana
 laid in four geometric figures: sphere, ellipsoid, ovoid, and pyriform (conical or pear-shaped). The first three have
 a clear mathematical definition according to [Fritz Hügelschäffer](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20article.pdf).
 
-[This](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) is the PostScript code implementing
+[This](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) is the [PostScript](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/egg.ps) code implementing
 the shape using Fritz Hügelschäffer formula. Please check [Egg and Math: Introducing a Universal Formula for Egg Shape](https://github.com/nilostolte/PostScript/blob/main/Examples/Egg/Egg%20article.pdf) article for more details on the
 parameters and for a more complete formula for pyriform egg shapes.
 
